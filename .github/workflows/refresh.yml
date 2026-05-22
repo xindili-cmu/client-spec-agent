@@ -1,0 +1,41 @@
+name: Weekly Climate Intel Refresh
+
+on:
+  schedule:
+    # Every Monday at 09:00 UTC (= 5am ET / 2am PT — adjust if needed)
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # allow manual trigger from Actions tab
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # allow committing data.json + changelog
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run refresh script
+        env:
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+        run: node scripts/refresh.js
+
+      - name: Commit updated data.json + changelog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Weekly refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi

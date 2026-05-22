@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FusionPark · Climate Tech Intelligence</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafbfc; --surface:#ffffff; --surface-2:#f4f5f7;
+  --border:#e5e7eb; --border-strong:#d1d5db;
+  --text:#0f172a; --text-2:#475569; --muted:#94a3b8;
+  --primary:#4f46e5; --primary-soft:#eef2ff;
+  --success:#059669; --success-soft:#ecfdf5;
+  --warn:#d97706; --warn-soft:#fffbeb;
+  --danger:#dc2626; --danger-soft:#fef2f2;
+  --info:#0284c7; --info-soft:#f0f9ff;
+  --sec-nuclear:#7c3aed; --sec-storage:#0891b2; --sec-hydrogen:#059669;
+  --sec-carbon:#475569; --sec-minerals:#b45309; --sec-aviation:#2563eb;
+  --sec-fusion:#db2777;
+  --mono:'SF Mono',Menlo,Monaco,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer}
+.app{max-width:1480px;margin:0 auto;padding:0 24px}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+.loading{display:flex;align-items:center;justify-content:center;min-height:100vh;color:var(--text-2);font-size:14px;flex-direction:column;gap:12px}
+.loading-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-err{color:var(--danger);background:var(--danger-soft);padding:16px 20px;border-radius:8px;max-width:520px;font-family:var(--mono);font-size:12px;line-height:1.6}
+
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border);gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:28px;height:28px;background:linear-gradient(135deg,#4f46e5,#0891b2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:14px}
+.brand-name{font-weight:600;font-size:15px;letter-spacing:-0.3px}
+.brand-name em{color:var(--primary);font-style:normal}
+.brand-sub{font-size:12px;color:var(--text-2);margin-left:6px;padding-left:10px;border-left:1px solid var(--border)}
+.hdr-meta{display:flex;align-items:center;gap:10px;font-size:12px}
+.data-stamp{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:var(--surface);border:1px solid var(--border);border-radius:100px;color:var(--text-2);font-family:var(--mono);font-size:11px}
+.data-stamp::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--success)}
+.live-q{font-family:var(--mono);color:var(--muted);font-size:11px}
+.export-btn{padding:6px 13px;background:var(--primary);color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.export-btn:hover{background:#4338ca}
+
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--border)}
+.tab{padding:14px 18px;font-size:13px;color:var(--text-2);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;font-weight:500;display:flex;align-items:center;gap:8px}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--primary);border-bottom-color:var(--primary);font-weight:600}
+.tab-count{background:var(--surface-2);color:var(--text-2);padding:1px 7px;border-radius:100px;font-size:11px;font-weight:500;font-family:var(--mono)}
+.tab.on .tab-count{background:var(--primary-soft);color:var(--primary)}
+
+.body{padding:24px 0 60px}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.kpi-lbl{font-size:11px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.kpi-val{font-size:26px;font-weight:600;line-height:1.1;letter-spacing:-0.5px}
+.kpi-val .unit{font-size:14px;color:var(--text-2);font-weight:500;margin-left:2px}
+.kpi-sub{font-size:11px;margin-top:6px;color:var(--text-2)}
+
+.section{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:16px;overflow:hidden}
+.section-hdr{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.section-title{font-size:13px;font-weight:600;letter-spacing:-0.1px}
+.section-sub{font-size:11px;color:var(--muted);margin-left:8px;font-weight:400}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filter-chip{padding:5px 11px;border:1px solid var(--border);border-radius:100px;font-size:12px;background:var(--surface);color:var(--text-2);transition:all 0.15s;font-weight:500}
+.filter-chip:hover{border-color:var(--border-strong);color:var(--text)}
+.filter-chip.on{background:var(--text);color:white;border-color:var(--text)}
+.search-input{padding:6px 12px;border:1px solid var(--border);border-radius:100px;font-size:12px;background:var(--surface);color:var(--text);outline:none;width:200px;font-family:var(--sans)}
+.search-input:focus{border-color:var(--primary)}
+
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl thead th{text-align:left;padding:10px 14px;font-size:10.5px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border);background:var(--surface-2);white-space:nowrap}
+.tbl tbody td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.tbl tbody tr.row-main{cursor:pointer;transition:background 0.1s}
+.tbl tbody tr.row-main:hover td{background:var(--surface-2)}
+.tbl tbody tr.row-main.expanded td{background:var(--primary-soft);border-bottom-color:transparent}
+.tbl tbody tr.row-expand td{padding:0;background:var(--primary-soft);border-bottom:2px solid var(--primary)}
+.tbl .name{font-weight:600;line-height:1.35}
+.tbl .muted{color:var(--text-2);font-size:12px}
+.tbl .num{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.row-caret{display:inline-block;width:14px;color:var(--muted);transition:transform 0.15s;margin-right:2px}
+.row-caret.open{transform:rotate(90deg);color:var(--primary)}
+
+.expand-panel{padding:18px 24px;background:linear-gradient(180deg,var(--primary-soft) 0%,var(--surface) 100%);display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
+@media (max-width:1100px){.expand-panel{grid-template-columns:1fr}}
+.expand-block{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.expand-block h4{font-size:11px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.exec-row{padding:7px 0;border-bottom:1px dashed var(--border);font-size:12.5px}
+.exec-row:last-child{border-bottom:none}
+.exec-row.cindy-board{background:linear-gradient(90deg,var(--primary-soft) 0%,transparent 100%);padding:8px 10px;margin:0 -10px;border-radius:5px;border-bottom:none}
+.exec-name{font-weight:600;color:var(--text)}
+.exec-title{color:var(--text-2);font-size:11.5px}
+.exec-bg{color:var(--muted);font-size:11px;margin-top:2px}
+.news-item{padding:6px 0;border-bottom:1px dashed var(--border);font-size:12}
+.news-item:last-child{border-bottom:none}
+.news-date{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-right:6px}
+.intro-path{padding:7px 9px;background:var(--primary-soft);border-radius:6px;font-size:12px;margin-bottom:5px;line-height:1.5}
+.intro-path strong{color:var(--primary)}
+
+.bx{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:100px;font-size:11px;font-weight:500;white-space:nowrap;line-height:1.5}
+.bx-nuclear{background:#f5f3ff;color:var(--sec-nuclear)}
+.bx-fusion{background:#fce7f3;color:var(--sec-fusion)}
+.bx-storage{background:#ecfeff;color:var(--sec-storage)}
+.bx-hydrogen{background:#ecfdf5;color:var(--sec-hydrogen)}
+.bx-carbon{background:#f1f5f9;color:var(--sec-carbon)}
+.bx-minerals{background:#fef3c7;color:var(--sec-minerals)}
+.bx-aviation{background:#dbeafe;color:var(--sec-aviation)}
+.bx-stat-priv{background:var(--surface-2);color:var(--text-2)}
+.bx-stat-public{background:var(--info-soft);color:var(--info)}
+
+.cindy-vc{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--primary);font-weight:600;padding:2px 7px;background:var(--primary-soft);border-radius:4px;margin-right:4px;margin-bottom:3px}
+.cindy-vc::before{content:'★';font-size:9px}
+
+.board-path-tag{margin-top:6px;display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;color:#7c3aed;background:#f5f3ff;padding:3px 8px;border-radius:4px;border:1px solid #ddd6fe}
+.board-path-tag .board-label{background:#7c3aed;color:white;padding:1px 5px;border-radius:3px;font-size:9px;letter-spacing:0.3px}
+
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;padding:16px}
+.vc-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;transition:border-color 0.15s,box-shadow 0.15s}
+.vc-card.active{border-color:var(--success);background:linear-gradient(180deg,var(--success-soft) 0%,var(--surface) 50%)}
+.vc-name{font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.vc-meta{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:6px}
+.vc-tier{display:inline-block;padding:1px 6px;font-size:10px;border-radius:4px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+.vc-tier-inc{background:#fef3c7;color:#b45309}
+.vc-tier-early{background:#dbeafe;color:#1d4ed8}
+.vc-tier-late{background:#f3e8ff;color:#7c3aed}
+.vc-portfolio{font-size:11px;font-weight:600;color:var(--success);font-family:var(--mono)}
+
+.action-card{background:linear-gradient(180deg,#ecfdf5 0%,var(--surface) 60%);border:1px solid #a7f3d0;border-radius:10px;padding:18px;margin-bottom:16px}
+.action-card-hdr{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.action-card-title{font-size:14px;font-weight:600;color:var(--success)}
+.action-card-sub{font-size:11px;color:var(--text-2);margin-left:auto}
+.action-list{display:flex;flex-direction:column;gap:10px}
+.action-row{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:14px}
+.action-rank{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--success);width:30px;text-align:center}
+.action-main{flex:1;min-width:0}
+.action-name{font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.action-reasons{font-size:11.5px;color:var(--text-2);margin-top:4px;line-height:1.5}
+.action-reason-chip{display:inline-block;padding:1px 7px;background:var(--success-soft);color:var(--success);border-radius:100px;font-size:10.5px;margin-right:4px;font-weight:500}
+.action-reason-chip.board{background:#f5f3ff;color:#7c3aed}
+.action-score{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--success);background:var(--success-soft);padding:4px 10px;border-radius:6px}
+
+.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px}
+.chart-title{font-size:13px;font-weight:600;margin-bottom:14px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bar-row-label{width:130px;font-size:12px;color:var(--text-2);font-weight:500}
+.bar-track{flex:1;height:22px;background:var(--surface-2);border-radius:4px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;color:white;font-size:11px;font-weight:600;font-family:var(--mono);min-width:30px}
+.bar-row-value{width:80px;text-align:right;font-family:var(--mono);font-size:12px;font-weight:600}
+
+.source-notice{background:var(--success-soft);border:1px solid #a7f3d0;border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:12.5px;color:var(--text);display:flex;align-items:flex-start;gap:10px;line-height:1.55}
+.source-notice strong{color:var(--success);font-weight:600}
+
+.prov-section{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:16px}
+.prov-title{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.prov-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.prov-dot-ok{background:var(--success)}
+.prov-dot-pending{background:var(--warn)}
+.prov-list{font-size:13px;color:var(--text-2);line-height:1.7;padding-left:20px}
+.prov-list li{margin-bottom:6px}
+.prov-list strong{color:var(--text);font-weight:600}
+
+.footer{padding:20px 0;border-top:1px solid var(--border);margin-top:40px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:5px}
+
+@media (max-width:980px){.kpi-grid{grid-template-columns:repeat(2,1fr)} .tabs{overflow-x:auto;flex-wrap:nowrap}}
+</style>
+</head>
+<body>
+<div id="root"><div class="loading"><div class="loading-spinner"></div><div>Loading FusionPark Climate Intel…</div></div></div>
+
+<script type="text/babel">
+const { useState, useMemo, useEffect } = React;
+
+// v3.0 — Cloud-deployed. Data loaded from data.json (committed weekly by GitHub Actions).
+
+// ---- Mutable module-level data (populated by fetch before first render) ----
+let STARTUPS = [];
+let VCS = { incubator: [], early: [], late: [] };
+let DATA_AS_OF = '';
+let VC_PORTFOLIO_COUNT = {};
+let ALL_CINDY_VCS = [];
+
+const SECTOR_LABEL = {nuclear:'Nuclear / SMR', fusion:'Fusion', storage:'Storage', hydrogen:'Hydrogen', carbon:'Carbon Removal', minerals:'Critical Minerals', aviation:'Aviation / SAF'};
+const SECTOR_COLOR = {nuclear:'var(--sec-nuclear)', fusion:'var(--sec-fusion)', storage:'var(--sec-storage)', hydrogen:'var(--sec-hydrogen)', carbon:'var(--sec-carbon)', minerals:'var(--sec-minerals)', aviation:'var(--sec-aviation)'};
+const STATUS_LABEL = {private:'Private', public:'Public'};
+const HOT_SPAC_SECTORS = new Set(['nuclear','fusion','hydrogen','storage']);
+
+const fmtMoney = (m) => { if (m == null) return '—'; if (m >= 1000) return `$${(m/1000).toFixed(1)}B`; return `$${m}M`; };
+const fmtDate = (iso) => { if (!iso) return '—'; const [y, mo] = iso.split('-'); const mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return mo ? `${mn[+mo-1]} ${y}` : y; };
+const monthsBetween = (iso) => { const d = new Date(iso + '-01'); const now = new Date(DATA_AS_OF); return Math.round((now - d) / (1000 * 60 * 60 * 24 * 30.4)); };
+
+const findCindyVCInText = (text) => {
+  if (!text) return null;
+  for (const vc of ALL_CINDY_VCS) {
+    const vcKey = vc.split(' /')[0].split(' (')[0].trim();
+    if (vcKey.length < 6) continue;
+    const escaped = vcKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\b${escaped}\\b`, 'i');
+    if (re.test(text)) return vcKey;
+  }
+  return null;
+};
+const getBoardPaths = (s) => {
+  if (!s.leadership?.board) return [];
+  return s.leadership.board.map(b => ({ member: b, vc: findCindyVCInText(b.bg) })).filter(x => x.vc !== null);
+};
+
+const computeActionScore = (s) => {
+  let score = 0; const reasons = []; const boardReasons = [];
+  if (s.round?.date) {
+    const m = monthsBetween(s.round.date);
+    if (m <= 3) { score += 3; reasons.push('Round in last 90d'); }
+    else if (m <= 6) { score += 2; reasons.push('Round in last 6mo'); }
+  }
+  const backers = (s.cindyVCBackers || []).length;
+  if (backers >= 3) { score += 2; reasons.push(`${backers} Cindy-VCs backing`); }
+  else if (backers >= 1) { score += 1; reasons.push(`${backers} Cindy-VC backer${backers>1?'s':''}`); }
+  const boardPaths = getBoardPaths(s);
+  if (boardPaths.length > 0) { score += boardPaths.length; boardReasons.push(`${boardPaths.length} Cindy-VC on board (${boardPaths.map(p => p.vc).join(', ')})`); }
+  if (s.status === 'private' && s.round?.amount && s.round.amount >= 100) { score += 2; reasons.push('Series B+ scale ($100M+)'); }
+  if (HOT_SPAC_SECTORS.has(s.sector)) { score += 2; reasons.push('Hot SPAC sector'); }
+  if (s.recentNews && s.recentNews.length > 0) {
+    const recentNewsIn30d = s.recentNews.some(n => { try { return monthsBetween(n.date) <= 1; } catch { return false; } });
+    if (recentNewsIn30d) { score += 1; reasons.push('Recent news (30d)'); }
+  }
+  return { score, reasons, boardReasons, boardPaths };
+};
+
+const SectorBadge = ({ sector }) => (<span className={`bx bx-${sector}`}>{SECTOR_LABEL[sector] || sector}</span>);
+const StatusBadge = ({ status, ticker }) => (<span className={`bx bx-stat-${status === 'public' ? 'public' : 'priv'}`}>{STATUS_LABEL[status]}{ticker ? ` · ${ticker}` : ''}</span>);
+const CindyVC = ({ name }) => (<span className="cindy-vc" title="In your tracked 143-fund universe">{name}</span>);
+const BoardPathTag = ({ paths }) => paths.length === 0 ? null : (
+  <div className="board-path-tag" title="Board members affiliated with VCs in your tracked universe">
+    <span className="board-label">BOARD</span>
+    {paths.length} ★ via {paths.map(p => p.vc).join(', ')}
+  </div>
+);
+
+const exportToXlsx = () => {
+  if (typeof XLSX === 'undefined') { alert('SheetJS not loaded yet — please retry'); return; }
+  const wb = XLSX.utils.book_new();
+  const watchlist = STARTUPS.map(s => { const bp = getBoardPaths(s); return { Company: s.name, Sector: SECTOR_LABEL[s.sector], HQ: s.hq, Status: STATUS_LABEL[s.status], Ticker: s.ticker || '', Technology: s.tech, 'Last Round Type': s.round?.type || '', 'Last Round Amount ($M)': s.round?.amount || '', 'Last Round Date': s.round?.date || '', 'Lead Investor': s.round?.lead || '', 'Cindy-VC Backers': (s.cindyVCBackers || []).join(' · '), 'Cindy-VC Board Paths': bp.map(p => `${p.member.name} (${p.vc})`).join(' · '), CEO: s.leadership?.ceo?.name || '', 'CEO Title': s.leadership?.ceo?.title || '', 'CEO Background': s.leadership?.ceo?.bg || '', 'Source URL': s.source || '' }; });
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(watchlist), 'Watchlist');
+  const allVCs = [...VCS.incubator.map(v=>({...v,Tier:'Incubator'})), ...VCS.early.map(v=>({...v,Tier:'Early'})), ...VCS.late.map(v=>({...v,Tier:'Late'}))];
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(allVCs.map(v => ({ VC: v.name, Tier: v.Tier, Location: v.loc || '', 'Portfolio Cos in Watchlist': VC_PORTFOLIO_COUNT[v.name] || 0 }))), 'VC Universe');
+  const ranked = STARTUPS.map(s => { const sc = computeActionScore(s); return { Company: s.name, Sector: SECTOR_LABEL[s.sector], Score: sc.score, 'Investor Reasons': sc.reasons.join(' · '), 'Board Path Reasons': sc.boardReasons.join(' · '), 'Last Round': `${s.round?.type || ''} ${fmtMoney(s.round?.amount)} ${fmtDate(s.round?.date)}`.trim(), CEO: s.leadership?.ceo?.name || '' }; }).sort((a,b) => b.Score - a.Score);
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(ranked), 'Action Queue');
+  const ldrRows = STARTUPS.flatMap(s => { const rows = []; if (s.leadership?.ceo) rows.push({ Company: s.name, Role: s.leadership.ceo.title, Name: s.leadership.ceo.name, Background: s.leadership.ceo.bg || '', 'Cindy-VC link': findCindyVCInText(s.leadership.ceo.bg) || '' }); (s.leadership?.cofounders || []).forEach(c => rows.push({ Company: s.name, Role: c.title, Name: c.name, Background: c.bg || '', 'Cindy-VC link': findCindyVCInText(c.bg) || '' })); (s.leadership?.board || []).forEach(b => rows.push({ Company: s.name, Role: `Board: ${b.role}`, Name: b.name, Background: b.bg || '', 'Cindy-VC link': findCindyVCInText(b.bg) || '' })); return rows; });
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(ldrRows), 'Leadership');
+  XLSX.writeFile(wb, `fusionpark_climate_intel_${DATA_AS_OF}.xlsx`);
+};
+
+const ActionQueueCard = () => {
+  const ranked = useMemo(() => STARTUPS.map(s => ({ ...s, _score: computeActionScore(s) })).sort((a,b) => b._score.score - a._score.score).slice(0, 5), []);
+  return (
+    <div className="action-card">
+      <div className="action-card-hdr">
+        <span className="action-card-title">⚡ This Week's Top 5 to Approach</span>
+        <span className="action-card-sub">Round recency · investors · board paths · stage · sector heat</span>
+      </div>
+      <div className="action-list">
+        {ranked.map((s, i) => (
+          <div key={s.id} className="action-row">
+            <div className="action-rank">#{i+1}</div>
+            <div className="action-main">
+              <div className="action-name">{s.name} <SectorBadge sector={s.sector} /> <span className="muted" style={{fontSize:11,fontWeight:400}}>CEO: {s.leadership?.ceo?.name || '—'}</span></div>
+              <div className="action-reasons">
+                {s._score.reasons.map((r,j) => <span key={j} className="action-reason-chip">{r}</span>)}
+                {s._score.boardReasons.map((r,j) => <span key={`b${j}`} className="action-reason-chip board">{r}</span>)}
+              </div>
+            </div>
+            <div className="action-score">{s._score.score}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Overview = () => {
+  const total = STARTUPS.length;
+  const publicCount = STARTUPS.filter(s => s.status === 'public').length;
+  const withCindyAccess = STARTUPS.filter(s => (s.cindyVCBackers || []).length > 0 || getBoardPaths(s).length > 0).length;
+  const totalRoundCapital = STARTUPS.reduce((sum, s) => sum + (s.round?.amount || 0), 0);
+  const recent12mo = STARTUPS.filter(s => s.round?.date && monthsBetween(s.round.date) <= 12);
+  const recent12moCapital = recent12mo.reduce((sum, s) => sum + (s.round?.amount || 0), 0);
+  const sectorRows = Object.keys(SECTOR_LABEL).map(sec => { const list = STARTUPS.filter(s => s.sector === sec); return { sec, count: list.length, capital: list.reduce((sum, s) => sum + (s.round?.amount || 0), 0) }; }).filter(r => r.count > 0).sort((a,b) => b.capital - a.capital);
+  const sectorMax = sectorRows[0]?.capital || 1;
+  return (
+    <div>
+      <div className="source-notice"><strong>v3.0 cloud-deployed:</strong>&nbsp;Data auto-refreshes every Monday via GitHub Actions. Email digest summarizes the week's changes. Click any Watchlist row to expand into leadership + intro paths + news.</div>
+      <ActionQueueCard />
+      <div className="kpi-grid">
+        <div className="kpi"><div className="kpi-lbl">Startups Tracked</div><div className="kpi-val">{total}</div><div className="kpi-sub">{publicCount} public · {total - publicCount} private</div></div>
+        <div className="kpi"><div className="kpi-lbl">Capital (Latest Rounds)</div><div className="kpi-val">${(totalRoundCapital/1000).toFixed(1)}<span className="unit">B</span></div><div className="kpi-sub">Sum across latest disclosed round per company</div></div>
+        <div className="kpi"><div className="kpi-lbl">Trailing 12mo Capital</div><div className="kpi-val">${(recent12moCapital/1000).toFixed(1)}<span className="unit">B</span></div><div className="kpi-sub">{recent12mo.length} rounds in last 12 months</div></div>
+        <div className="kpi"><div className="kpi-lbl">Reachable via Your Network</div><div className="kpi-val">{withCindyAccess}</div><div className="kpi-sub">{Math.round(withCindyAccess/total*100)}% · incl. board paths</div></div>
+      </div>
+      <div className="chart-card">
+        <div className="chart-title">Capital deployed by sector — latest round per company</div>
+        {sectorRows.map(({sec, count, capital}) => (<div key={sec} className="bar-row"><div className="bar-row-label">{SECTOR_LABEL[sec]} <span style={{color:'var(--muted)',fontSize:11}}>({count})</span></div><div className="bar-track"><div className="bar-fill" style={{ width:`${(capital/sectorMax*100)}%`, background: SECTOR_COLOR[sec] }}>{capital >= sectorMax * 0.25 ? fmtMoney(capital) : ''}</div></div><div className="bar-row-value">{fmtMoney(capital)}</div></div>))}
+      </div>
+    </div>
+  );
+};
+
+const StartupWatchlist = () => {
+  const [sectorFilter, setSectorFilter] = useState('all');
+  const [search, setSearch] = useState('');
+  const [sortBy, setSortBy] = useState('score');
+  const [expandedRow, setExpandedRow] = useState(null);
+  const filtered = useMemo(() => {
+    let rows = STARTUPS;
+    if (sectorFilter !== 'all') rows = rows.filter(s => s.sector === sectorFilter);
+    if (search) { const q = search.toLowerCase(); rows = rows.filter(s => s.name.toLowerCase().includes(q) || s.hq.toLowerCase().includes(q) || (s.tech||'').toLowerCase().includes(q) || (s.leadership?.ceo?.name||'').toLowerCase().includes(q)); }
+    rows = [...rows].sort((a,b) => {
+      if (sortBy === 'score') return computeActionScore(b).score - computeActionScore(a).score;
+      if (sortBy === 'recent') return new Date(b.round?.date || 0) - new Date(a.round?.date || 0);
+      if (sortBy === 'size') return (b.round?.amount||0) - (a.round?.amount||0);
+      if (sortBy === 'backers') return ((b.cindyVCBackers||[]).length + getBoardPaths(b).length) - ((a.cindyVCBackers||[]).length + getBoardPaths(a).length);
+      return 0;
+    });
+    return rows;
+  }, [sectorFilter, search, sortBy]);
+  const sectors = Object.keys(SECTOR_LABEL);
+  return (
+    <div className="section">
+      <div className="section-hdr">
+        <div className="filters">
+          <button className={`filter-chip ${sectorFilter==='all'?'on':''}`} onClick={()=>setSectorFilter('all')}>All · {STARTUPS.length}</button>
+          {sectors.map(sec => { const count = STARTUPS.filter(s => s.sector === sec).length; if (count === 0) return null; return (<button key={sec} className={`filter-chip ${sectorFilter===sec?'on':''}`} onClick={()=>setSectorFilter(sec)}>{SECTOR_LABEL[sec]} · {count}</button>); })}
+        </div>
+        <div style={{display:'flex',gap:8,alignItems:'center'}}>
+          <input className="search-input" placeholder="Search name / HQ / tech / CEO…" value={search} onChange={e=>setSearch(e.target.value)} />
+          <select className="search-input" style={{width:'auto'}} value={sortBy} onChange={e=>setSortBy(e.target.value)}>
+            <option value="score">Sort: action score</option>
+            <option value="recent">Sort: most recent</option>
+            <option value="size">Sort: round size</option>
+            <option value="backers">Sort: total your-VC paths</option>
+          </select>
+        </div>
+      </div>
+      <div style={{padding:'8px 16px',fontSize:11.5,color:'var(--muted)',background:'var(--surface-2)',borderBottom:'1px solid var(--border)'}}>👆 Click any row to expand. ★ BOARD tag = Cindy-VC affiliate sits on this company's board.</div>
+      <div style={{overflowX:'auto'}}>
+        <table className="tbl">
+          <thead><tr><th></th><th>Company</th><th>Sector</th><th>HQ</th><th>Status</th><th>Last Round</th><th>Lead</th><th>Your VC Paths</th><th>Source</th></tr></thead>
+          <tbody>
+            {filtered.map(s => {
+              const isExpanded = expandedRow === s.id;
+              const boardPaths = getBoardPaths(s);
+              return (<React.Fragment key={s.id}>
+                <tr className={`row-main ${isExpanded?'expanded':''}`} onClick={()=>setExpandedRow(isExpanded ? null : s.id)}>
+                  <td style={{width:20}}><span className={`row-caret ${isExpanded?'open':''}`}>▶</span></td>
+                  <td className="name" style={{maxWidth:200}}>{s.name}<div className="muted" style={{marginTop:3,fontWeight:400,fontSize:11.5}}>{s.tech}</div></td>
+                  <td><SectorBadge sector={s.sector} /></td>
+                  <td className="muted" style={{whiteSpace:'nowrap'}}>{s.hq}</td>
+                  <td><StatusBadge status={s.status} ticker={s.ticker} /></td>
+                  <td><div className="num">{fmtMoney(s.round?.amount)}</div><div style={{fontFamily:'var(--mono)',fontSize:11,color:'var(--muted)'}}>{s.round?.type} · {fmtDate(s.round?.date)}</div></td>
+                  <td className="muted" style={{fontSize:11.5,maxWidth:180}}>{s.round?.lead}</td>
+                  <td style={{maxWidth:220}}>
+                    {(s.cindyVCBackers || []).length === 0 && boardPaths.length === 0 && <span className="muted" style={{fontSize:11}}>—</span>}
+                    {(s.cindyVCBackers || []).map((vc,i) => <CindyVC key={i} name={vc} />)}
+                    <BoardPathTag paths={boardPaths} />
+                  </td>
+                  <td>{s.source && <a href={s.source} target="_blank" rel="noreferrer" onClick={e=>e.stopPropagation()} style={{fontSize:11,fontFamily:'var(--mono)'}}>verify ↗</a>}</td>
+                </tr>
+                {isExpanded && (<tr className="row-expand"><td colSpan="9">
+                  <div className="expand-panel">
+                    <div className="expand-block">
+                      <h4>👥 Leadership</h4>
+                      {s.leadership?.ceo && (<div className="exec-row"><div className="exec-name">{s.leadership.ceo.name}</div><div className="exec-title">{s.leadership.ceo.title}</div>{s.leadership.ceo.bg && <div className="exec-bg">{s.leadership.ceo.bg}</div>}</div>)}
+                      {(s.leadership?.cofounders || []).map((c,i) => (<div key={i} className="exec-row"><div className="exec-name">{c.name}</div><div className="exec-title">{c.title}</div>{c.bg && <div className="exec-bg">{c.bg}</div>}</div>))}
+                      {(s.leadership?.board || []).map((b,i) => { const vcMatch = findCindyVCInText(b.bg); return (<div key={i} className={`exec-row ${vcMatch ? 'cindy-board' : ''}`}><div className="exec-name">{b.name} {vcMatch && <span style={{color:'#7c3aed',fontSize:11}}>★</span>}</div><div className="exec-title">{b.role}</div>{b.bg && <div className="exec-bg">{b.bg}</div>}</div>); })}
+                    </div>
+                    <div className="expand-block">
+                      <h4>🔗 Intro Paths</h4>
+                      {(s.leadership?.introPaths || []).map((p,i) => (<div key={i} className="intro-path"><strong>{p.via}</strong>{p.who && <> — {p.who}</>}{p.note && <div style={{color:'var(--text-2)',fontSize:11,marginTop:2}}>{p.note}</div>}</div>))}
+                      {(!s.leadership?.introPaths || s.leadership.introPaths.length === 0) && <div className="muted" style={{fontSize:12}}>No intro paths mapped</div>}
+                    </div>
+                    <div className="expand-block">
+                      <h4>📰 Recent Activity</h4>
+                      {(s.recentNews || []).map((n,i) => (<div key={i} className="news-item"><span className="news-date">{fmtDate(n.date)}</span>{n.text}</div>))}
+                    </div>
+                  </div>
+                </td></tr>)}
+              </React.Fragment>);
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+const VCUniverse = () => {
+  const [tier, setTier] = useState('all');
+  const [showActiveOnly, setShowActiveOnly] = useState(false);
+  const allVCs = useMemo(() => [...VCS.incubator.map(v=>({...v, tier:'inc'})), ...VCS.early.map(v=>({...v, tier:'early'})), ...VCS.late.map(v=>({...v, tier:'late'}))], []);
+  const VC_BOARD_COUNT = useMemo(() => { const c = {}; STARTUPS.forEach(s => getBoardPaths(s).forEach(p => { c[p.vc] = (c[p.vc] || 0) + 1; })); return c; }, []);
+  let visible = tier === 'all' ? allVCs : allVCs.filter(v => v.tier === tier);
+  if (showActiveOnly) visible = visible.filter(v => (VC_PORTFOLIO_COUNT[v.name] || 0) + (VC_BOARD_COUNT[v.name] || 0) > 0);
+  const visibleWithCounts = visible.map(v => ({...v, investorCount: VC_PORTFOLIO_COUNT[v.name] || 0, boardCount: VC_BOARD_COUNT[v.name] || 0})).sort((a,b) => (b.investorCount + b.boardCount) - (a.investorCount + a.boardCount));
+  const activeVCs = new Set([...Object.keys(VC_PORTFOLIO_COUNT), ...Object.keys(VC_BOARD_COUNT)]).size;
+  const mostActive = visibleWithCounts.filter(v => v.investorCount + v.boardCount > 0)[0];
+  return (
+    <div>
+      <div className="kpi-grid">
+        <div className="kpi"><div className="kpi-lbl">VCs Tracked</div><div className="kpi-val">{allVCs.length}</div><div className="kpi-sub">Across 3 stage tiers</div></div>
+        <div className="kpi"><div className="kpi-lbl">Active in Universe</div><div className="kpi-val">{activeVCs}</div><div className="kpi-sub">As investor or board affiliate</div></div>
+        <div className="kpi"><div className="kpi-lbl">Most Active</div><div className="kpi-val" style={{fontSize:18}}>{mostActive?.name || '—'}</div><div className="kpi-sub">{(mostActive?.investorCount || 0) + (mostActive?.boardCount || 0)} total paths</div></div>
+        <div className="kpi"><div className="kpi-lbl">Late-Stage Funds</div><div className="kpi-val">{VCS.late.length}</div><div className="kpi-sub">Growth-stage signal source</div></div>
+      </div>
+      <div className="section">
+        <div className="section-hdr">
+          <div><span className="section-title">VC Directory</span><span className="section-sub">{visible.length} of {allVCs.length} shown · ★ = portfolio investor · BOARD = board affiliate</span></div>
+          <div className="filters">
+            <button className={`filter-chip ${tier==='all'?'on':''}`} onClick={()=>setTier('all')}>All · {allVCs.length}</button>
+            <button className={`filter-chip ${tier==='inc'?'on':''}`} onClick={()=>setTier('inc')}>Incubator · {VCS.incubator.length}</button>
+            <button className={`filter-chip ${tier==='early'?'on':''}`} onClick={()=>setTier('early')}>Early · {VCS.early.length}</button>
+            <button className={`filter-chip ${tier==='late'?'on':''}`} onClick={()=>setTier('late')}>Late · {VCS.late.length}</button>
+            <button className={`filter-chip ${showActiveOnly?'on':''}`} onClick={()=>setShowActiveOnly(!showActiveOnly)} style={{marginLeft:8}}>{showActiveOnly ? '✓ Active only' : 'Active only'}</button>
+          </div>
+        </div>
+        <div className="vc-grid">
+          {visibleWithCounts.map((v, i) => (
+            <div key={i} className={`vc-card ${(v.investorCount + v.boardCount) > 0 ? 'active' : ''}`}>
+              <div className="vc-name">{v.name}</div>
+              {v.loc && <div className="vc-meta">{v.loc}</div>}
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:6,flexWrap:'wrap',gap:4}}>
+                <span className={`vc-tier vc-tier-${v.tier}`}>{v.tier === 'inc' ? 'Incubator' : v.tier === 'early' ? 'Early' : 'Late'}</span>
+                <div style={{display:'flex',gap:4}}>
+                  {v.investorCount > 0 && <span className="vc-portfolio">★ {v.investorCount}</span>}
+                  {v.boardCount > 0 && <span style={{fontSize:11,fontWeight:600,color:'#7c3aed',fontFamily:'var(--mono)'}}>BOARD {v.boardCount}</span>}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Provenance = () => (
+  <div>
+    <div className="prov-section">
+      <div className="prov-title"><span className="prov-dot prov-dot-ok"></span>v3.0 — cloud-deployed (this version)</div>
+      <ul className="prov-list">
+        <li><strong>Hosting</strong>: Cloudflare Pages (auto-deploys from GitHub on every commit)</li>
+        <li><strong>Access control</strong>: Cloudflare Access (login required to view)</li>
+        <li><strong>Weekly refresh</strong>: GitHub Actions cron — every Monday 9am UTC, runs <code>scripts/refresh.js</code> which: queries Exa REST API for each of 26 startups, detects new funding rounds and news in last 30 days, writes <code>data/changelog_YYYY-MM-DD.md</code>, sends email digest via Resend, commits updated <code>data.json</code>.</li>
+        <li><strong>Email digest</strong>: weekly summary of detected changes (new round candidates · news events) sent to your inbox.</li>
+        <li><strong>Manual data edits</strong>: edit <code>data.json</code> in the GitHub repo (web UI or local), commit → Cloudflare auto-redeploys.</li>
+      </ul>
+    </div>
+    <div className="prov-section">
+      <div className="prov-title"><span className="prov-dot prov-dot-ok"></span>v2.1 features (still here)</div>
+      <ul className="prov-list">
+        <li><strong>Action Queue</strong> on Overview — "This Week's Top 5 to Approach" with algorithmic scoring</li>
+        <li><strong>Board-path scoring</strong> — Cindy-VC affiliates on company boards add to Action Queue score (purple BOARD chips)</li>
+        <li><strong>Watchlist expand-row</strong> — click any company for full outreach detail</li>
+        <li><strong>Export to xlsx</strong> — 4-sheet workbook via SheetJS</li>
+      </ul>
+    </div>
+    <div className="prov-section">
+      <div className="prov-title"><span className="prov-dot prov-dot-pending"></span>What the refresh does NOT auto-modify</div>
+      <ul className="prov-list">
+        <li>The refresh script <strong>detects candidate changes</strong> but does NOT auto-overwrite round / leadership fields in data.json — those edits are reviewed manually to avoid fabrication risk.</li>
+        <li>Each week you get an email with detected candidates; you decide what to merge.</li>
+        <li>To merge: edit <code>data.json</code> in the repo (GitHub web editor works for one-off edits), commit → Cloudflare redeploys automatically.</li>
+      </ul>
+    </div>
+  </div>
+);
+
+const TABS = [
+  { id:'overview', label:'Overview · Action Queue', count: null },
+  { id:'startups', label:'Watchlist', count: null },
+  { id:'vcs', label:'VC Universe', count: null },
+  { id:'prov', label:'Provenance', count: null },
+];
+
+const App = () => {
+  const [tab, setTab] = useState('overview');
+  const tabs = TABS.map(t => ({...t, count: t.id === 'startups' ? STARTUPS.length : t.id === 'vcs' ? VCS.incubator.length + VCS.early.length + VCS.late.length : null}));
+  return (
+    <div className="app">
+      <div className="hdr">
+        <div className="brand">
+          <div className="brand-mark">F</div>
+          <div className="brand-name">Fusion<em>Park</em><span className="brand-sub">Climate Tech Intelligence</span></div>
+        </div>
+        <div className="hdr-meta">
+          <span className="live-q">v3.0 · cloud · auto-refresh</span>
+          <span className="data-stamp">Data as of {DATA_AS_OF}</span>
+          <button className="export-btn" onClick={exportToXlsx} title="Download 4-sheet xlsx workbook">⬇ Export xlsx</button>
+        </div>
+      </div>
+      <div className="tabs">
+        {tabs.map(t => (<button key={t.id} className={`tab ${tab===t.id?'on':''}`} onClick={()=>setTab(t.id)}>{t.label}{t.count != null && <span className="tab-count">{t.count}</span>}</button>))}
+      </div>
+      <div className="body">
+        {tab === 'overview' && <Overview />}
+        {tab === 'startups' && <StartupWatchlist />}
+        {tab === 'vcs' && <VCUniverse />}
+        {tab === 'prov' && <Provenance />}
+      </div>
+      <div className="footer">
+        <div>FusionPark Climate Tech Intelligence · v3.0 cloud · {STARTUPS.length} startups · {VCS.incubator.length + VCS.early.length + VCS.late.length} VCs</div>
+        <div>Auto-refresh: every Monday 9am UTC via GitHub Actions</div>
+      </div>
+    </div>
+  );
+};
+
+// ---- Async data load + render ----
+async function loadAndRender() {
+  try {
+    const res = await fetch('data.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    STARTUPS = data.startups || [];
+    VCS = data.vcs || { incubator: [], early: [], late: [] };
+    DATA_AS_OF = data.dataAsOf || '—';
+    ALL_CINDY_VCS = [...VCS.incubator, ...VCS.early, ...VCS.late].map(v => v.name);
+    VC_PORTFOLIO_COUNT = (() => { const c = {}; STARTUPS.forEach(s => (s.cindyVCBackers||[]).forEach(v => { const k=v.split('/')[0].trim(); c[k]=(c[k]||0)+1; })); return c; })();
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  } catch (err) {
+    document.getElementById('root').innerHTML = `<div class="loading"><div class="loading-err"><strong>Failed to load data.json</strong><br><br>Error: ${err.message}<br><br>If running locally, serve via <code>npx serve</code> or <code>python -m http.server</code>. Opening the file via file:// will block fetch() for CORS reasons.</div></div>`;
+  }
+}
+loadAndRender();
+</script>
+</body>
+</html>

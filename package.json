@@ -1,0 +1,14 @@
+{
+  "name": "fusionpark-climate-intel",
+  "version": "3.0.0",
+  "description": "Weekly auto-refresh for FusionPark Climate Tech Intelligence dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "refresh": "node scripts/refresh.js",
+    "test-refresh": "DRY_RUN=true node scripts/refresh.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
