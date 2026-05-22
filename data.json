@@ -1,37 +1,2012 @@
 {
-  "dataAsOf": "2026-05-21",
+  "dataAsOf": "2026-05-22",
   "schemaVersion": "2.1",
   "startups": [
-    { "id": "kairos", "name": "Kairos Power", "sector": "nuclear", "hq": "Alameda, CA", "status": "private", "tech": "Fluoride-salt-cooled high-temp reactor; Hermes demo with Google PPA (50MW to TVA 2030)", "round": { "type": "DOE TIA (ARDP)", "amount": 303, "date": "2024-02-21", "lead": "US DOE — milestone-based, non-dilutive" }, "cindyVCBackers": ["Breakthrough"], "source": "https://www.kairospower.com/updates/u-s-department-of-energy-and-kairos-power-execute-novel-performance-based-fixed-price-milestone-contract", "leadership": { "ceo": { "name": "Mike Laufer", "title": "CEO & Co-Founder", "bg": "Co-founder; oversees all business + technical ops + government affairs" }, "cofounders": [{ "name": "Edward Blandford", "title": "CTO & Chief Nuclear Officer", "bg": "Co-founder" }], "board": [], "introPaths": [{ "via": "Breakthrough Energy Ventures ★", "who": "Existing equity investor", "note": "On your VC universe" }] }, "recentNews": [{ "date": "2025-08", "text": "Google + TVA PPA — first US utility advanced-reactor PPA, 50MW Hermes 2 by 2030" }, { "date": "2026-03", "text": "Hermes pivot — single commercial-scale reactor (50MWe)" }] },
-    { "id": "xenergy", "name": "X-energy", "sector": "nuclear", "hq": "Rockville, MD", "status": "private", "tech": "Xe-100 SMR + TRISO-X fuel; Amazon partnership for 5GW+ by 2039; Dow Seadrift site", "round": { "type": "Series C-1 (upsized close)", "amount": 700, "date": "2025-02-06", "lead": "Amazon Climate Pledge Fund (anchor)" }, "cindyVCBackers": ["Amazon Climate Pledge"], "source": "https://x-energy.com/news/x-energy-closes-upsized-700-million-series-c-1-financing-round-to-accelerate-the-development-of-advanced-small-modular-nuclear-technology/", "leadership": { "ceo": { "name": "J. Clay Sell", "title": "CEO & Director (since Jan 2019)", "bg": "Ex-DOE Deputy Secretary (G.W. Bush admin); ex-Hunt Energy Horizons President; J.D. UT Austin" }, "cofounders": [{ "name": "Dr. Kam Ghaffarian", "title": "Founder & Executive Chairman", "bg": "Serial entrepreneur" }], "board": [{ "name": "Christopher Ginther", "role": "Conflicts Committee Chair", "bg": "" }, { "name": "Gregory Goff", "role": "Nominating Chair", "bg": "" }, { "name": "Kathleen Hyle", "role": "Audit Chair", "bg": "" }, { "name": "Michael Wallace", "role": "Director", "bg": "" }], "introPaths": [{ "via": "Amazon Climate Pledge ★", "who": "Lead investor in Series C-1" }, { "via": "DOE network", "who": "via CEO Sell (ex-Deputy Secretary)" }] }, "recentNews": [{ "date": "2024-10", "text": "Initial Series C-1 close at ~$500M with Amazon as anchor" }, { "date": "2025-02", "text": "Series C-1 upsized to $700M; Segra Capital + Jane Street + Ares + Emerson Collective joined" }] },
-    { "id": "oklo", "name": "Oklo", "sector": "nuclear", "hq": "Santa Clara, CA", "status": "public", "ticker": "OKLO", "tech": "Aurora microreactor; targeting AI data-center + industrial markets", "round": { "type": "SPAC merger close", "amount": 306, "date": "2024-05-09", "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)" }, "cindyVCBackers": [], "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm", "leadership": { "ceo": { "name": "Jacob DeWitte", "title": "Co-Founder, CEO & Chairman (since Apr 2025)", "bg": "Took over Chairman role from Sam Altman in April 2025" }, "cofounders": [{ "name": "Caroline Cochran", "title": "Co-Founder & COO", "bg": "" }], "board": [{ "name": "Daniel Poneman", "role": "Director (joined Mar 2025)", "bg": "" }, { "name": "Michael Thompson", "role": "Director (joined Mar 2025)", "bg": "" }], "introPaths": [{ "via": "Public company", "who": "Investor relations team" }] }, "recentNews": [{ "date": "2025-04", "text": "Sam Altman stepped down as Chairman; Jacob DeWitte assumed Chairman role" }, { "date": "2025-03", "text": "Chris Wright departed board upon confirmation as US Secretary of Energy" }] },
-    { "id": "nuscale", "name": "NuScale Power", "sector": "nuclear", "hq": "Portland, OR", "status": "public", "ticker": "SMR", "tech": "NRC-certified SMR (77MWe module, 12-module VOYGR plant)", "round": { "type": "SPAC merger close", "amount": 380, "date": "2022-05-02", "lead": "Spring Valley Acquisition Corp (Pearl Energy)" }, "cindyVCBackers": [], "source": "https://www.businesswire.com/news/home/20220502005301/en/NuScale-Power-Completes-Merger-with-Spring-Valley-Acquisition-Corp", "leadership": { "ceo": { "name": "John L. Hopkins", "title": "President & CEO (since Dec 2012)", "bg": "Ex-Fluor Corporation (24 yrs); US Chamber of Commerce board chair; NEI board member" }, "cofounders": [], "board": [{ "name": "Alan Boeckmann", "role": "Chairman", "bg": "" }], "introPaths": [{ "via": "Public company", "who": "Investor relations" }, { "via": "NEI / US Chamber network", "who": "via Hopkins" }] }, "recentNews": [{ "date": "2025", "text": "NRC final safety evaluation report" }] },
-    { "id": "terrapower", "name": "TerraPower", "sector": "nuclear", "hq": "Bellevue, WA", "status": "private", "tech": "Natrium sodium-cooled fast reactor + molten salt storage; Wyoming demo plant; Bill Gates-founded", "round": { "type": "Fundraise", "amount": 650, "date": "2025-06-18", "lead": "NVentures (NVIDIA) + HD Hyundai + Bill Gates" }, "cindyVCBackers": [], "source": "https://www.businesswire.com/news/home/20250618150590/en/TerraPower-Announces-%24650-Million-Fundraise", "leadership": { "ceo": { "name": "Chris Levesque", "title": "President & CEO", "bg": "Long-time nuclear industry executive" }, "cofounders": [{ "name": "Bill Gates", "title": "Chairman & Founder", "bg": "" }, { "name": "Nathan Myhrvold", "title": "Vice Chairman", "bg": "" }], "board": [{ "name": "Ralph Izzo", "role": "Director (joined 2023)", "bg": "Ex-PSEG Executive Chair" }, { "name": "Kristine Svinicki", "role": "Director", "bg": "Ex-NRC Chair" }, { "name": "John Gilleland", "role": "Director", "bg": "" }, { "name": "Mohamed Al Hammadi", "role": "Director", "bg": "" }], "introPaths": [{ "via": "Bill Gates / Gates Frontier network", "who": "Chairman + founder" }, { "via": "NRC alumni", "who": "via Svinicki" }] }, "recentNews": [{ "date": "2025-05", "text": "Eric Williams promoted to first COO; Steven Hellman joins as CFO from UBS" }, { "date": "2025-06", "text": "$650M fundraise — NVIDIA NVentures new investor" }] },
-    { "id": "lastenergy", "name": "Last Energy", "sector": "nuclear", "hq": "Washington, DC", "status": "private", "tech": "20MWe PWR microreactors; factory-built; Europe-focused (Poland / Romania / UK)", "round": { "type": "Series B", "amount": 40, "date": "2024-08-29", "lead": "Gigafund" }, "cindyVCBackers": [], "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor", "leadership": { "ceo": { "name": "Bret Kugelmass", "title": "CEO & Founder", "bg": "Stanford engineer; ex-Panasonic, Nanosolar, UC Berkeley + NASA research" }, "cofounders": [], "board": [{ "name": "Adam Wyrick", "role": "CFO", "bg": "" }, { "name": "Kristin Meister", "role": "General Counsel & Chief Compliance Officer", "bg": "" }], "introPaths": [{ "via": "Bret Kugelmass directly", "who": "Founder accessible via DC tech / nuclear community" }] }, "recentNews": [{ "date": "2024", "text": "80 commercial unit agreements secured; targeting first plant 2026" }] },
-    { "id": "cfs", "name": "Commonwealth Fusion Systems", "sector": "fusion", "hq": "Devens, MA", "status": "private", "tech": "SPARC tokamak; HTS magnet tech; first ARC power plant under development in Virginia; ~$3B total raised", "round": { "type": "Series B2", "amount": 863, "date": "2025-08-28", "lead": "Oversubscribed; multi-investor round" }, "cindyVCBackers": ["Breakthrough", "Lowercarbon", "Gigascale", "Planet First", "Startlight Venture"], "source": "https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-863-million-series-b2-round-to-accelerate-the-commercialization-of-fusion-energy/", "leadership": { "ceo": { "name": "Bob Mumgaard", "title": "Co-Founder & CEO", "bg": "MIT spinout; longtime fusion leader" }, "cofounders": [{ "name": "Brandon Sorbom", "title": "Co-Founder & Chief Science Officer", "bg": "First author of ARC paper at MIT" }], "board": [{ "name": "Christopher Liddell", "role": "Independent Director (joined Aug 2025)", "bg": "Ex-White House Deputy Chief of Staff; ex-Microsoft CFO; ex-GM CFO" }, { "name": "Alan Eustace", "role": "Director", "bg": "Ex-Senior VP Engineering at Google" }, { "name": "Katie Rae", "role": "Director", "bg": "CEO & Managing Partner of Engine Ventures" }, { "name": "Clara Andreoletti", "role": "Director", "bg": "President & CEO of Eni Next (Eni venture arm)" }], "introPaths": [{ "via": "5 Cindy-VC backers ★", "who": "Breakthrough · Lowercarbon · Gigascale · Planet First · Startlight Venture" }] }, "recentNews": [{ "date": "2025-08", "text": "Series B2 $863M — largest deep-tech / energy round since CFS Series B 2021" }, { "date": "2025-08", "text": "Christopher Liddell joined Board of Directors" }] },
-    { "id": "helion", "name": "Helion Energy", "sector": "fusion", "hq": "Everett, WA", "status": "private", "tech": "Pulsed magneto-inertial fusion; Polaris prototype; Microsoft PPA targeting 2028 electricity", "round": { "type": "Series F", "amount": 425, "date": "2025-01-28", "lead": "Lightspeed + SoftBank Vision Fund 2 · Sam Altman + Mithril + Capricorn" }, "cindyVCBackers": ["Capricorn"], "source": "https://www.helionenergy.com/articles/helion-announces-425m-series-f-investment-to-scale-commercialized-fusion-power/", "leadership": { "ceo": { "name": "Dr. David Kirtley", "title": "Co-Founder & CEO", "bg": "Ex-MSNW, U Michigan, Air Force Research Laboratory, NASA Glenn Research Center" }, "cofounders": [{ "name": "Chris Pihl", "title": "Co-Founder & CTO", "bg": "" }, { "name": "Dr. George Votroubek", "title": "Co-Founder & Principal Scientist", "bg": "" }], "board": [{ "name": "Ajay Royan", "role": "Director", "bg": "Mithril Capital (co-founded with Peter Thiel)" }], "introPaths": [{ "via": "Capricorn ★", "who": "Existing major investor" }, { "via": "Sam Altman", "who": "Major individual investor" }] }, "recentNews": [{ "date": "2024-12", "text": "Activated Polaris prototype" }, { "date": "2025-01", "text": "Series F $425M; $5.4B post-money; SoftBank + Lightspeed first time" }] },
-    { "id": "form", "name": "Form Energy", "sector": "storage", "hq": "Somerville, MA", "status": "private", "tech": "Iron-air battery (100-hr duration); WV plant; 75GWh commercial pipeline; 300MW/30GWh deal with Xcel for Google MN data center", "round": { "type": "Series F", "amount": 405, "date": "2024-10-09", "lead": "T. Rowe Price (with GE Vernova as new strategic)" }, "cindyVCBackers": ["Breakthrough", "TPG Rise Climate", "Capricorn", "EIP", "Gigascale"], "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/", "leadership": { "ceo": { "name": "Mateo Jaramillo", "title": "CEO & Co-Founder", "bg": "Ex-Tesla Energy VP; Harvard A.B. Economics; Yale Divinity Masters" }, "cofounders": [{ "name": "Ted Wiley", "title": "Co-Founder, President & COO", "bg": "" }, { "name": "Dr. Yet-Ming Chiang", "title": "Co-Founder & CSO", "bg": "MIT Prof" }, { "name": "William Woodford", "title": "Co-Founder & CTO", "bg": "" }], "board": [{ "name": "Joseph Thorp", "role": "Director", "bg": "Sr. Director of Tech, Saudi Aramco Energy Ventures" }, { "name": "Claudio Descalzi Pieri", "role": "Director", "bg": "Also on CFS board" }], "introPaths": [{ "via": "5 Cindy-VC backers ★", "who": "Breakthrough · TPG Rise · Capricorn · EIP · Gigascale" }, { "via": "Aramco Energy Ventures", "who": "via Joseph Thorp board seat" }] }, "recentNews": [{ "date": "2026-02", "text": "300MW/30GWh deployment with Xcel Energy for Google MN data center — largest iron-air battery system globally" }, { "date": "2026-04", "text": "Commercial pipeline surpassed 75 GWh" }] },
-    { "id": "antora", "name": "Antora Energy", "sector": "storage", "hq": "Sunnyvale, CA", "status": "private", "tech": "Thermal photovoltaic battery (carbon block heat → TPV cells, >40% efficiency)", "round": { "type": "Series B", "amount": 150, "date": "2024-02-22", "lead": "Decarbonization Partners (BlackRock + Temasek)" }, "cindyVCBackers": ["Decarbonization Partners", "Lowercarbon", "Breakthrough", "NextEra", "Overture"], "source": "https://www.businesswire.com/news/home/20240222603243/en/Antora-Energy-Raises-%24150-Million-to-Slash-Industrial-Emissions-and-Spur-U.S.-Manufacturing", "leadership": { "ceo": { "name": "Andrew Ponec", "title": "CEO & Co-Founder", "bg": "Ex-Dragonfly Systems founder (acquired by SunPower); Stanford" }, "cofounders": [{ "name": "Justin Briggs, Ph.D.", "title": "Co-Founder & COO", "bg": "Stanford Applied Physics" }, { "name": "David Bierman, Ph.D.", "title": "Co-Founder & CCO", "bg": "MIT Mechanical Engineering PhD" }], "board": [], "introPaths": [{ "via": "5 Cindy-VC backers ★", "who": "Decarbonization Partners · Lowercarbon · Breakthrough · NextEra · Overture" }] }, "recentNews": [{ "date": "2024-12", "text": "Among top green thermal-battery startups for VC" }] },
-    { "id": "rondo", "name": "Rondo Energy", "sector": "storage", "hq": "Alameda, CA", "status": "private", "tech": "Thermal brick battery for industrial heat; up to 1500°C; SCG Southeast Asia partnership Dec 2025", "round": { "type": "Series B", "amount": 60, "date": "2023-08-16", "lead": "Energy Impact Partners" }, "cindyVCBackers": ["EIP", "Breakthrough", "Microsoft Climate Innovation Fund"], "source": "https://rondo.com/", "leadership": { "ceo": { "name": "Eric Trusiewicz", "title": "CEO (recent appointment)", "bg": "Ex-Breakthrough Energy Ventures EIR; ex-Stanford fellow; Yale B.A. + Stanford MBA" }, "cofounders": [{ "name": "John O'Donnell", "title": "Founder & Chief Innovation Officer", "bg": "" }, { "name": "Pete von Behrens", "title": "Founder & CTO", "bg": "" }], "board": [], "introPaths": [{ "via": "3 Cindy-VC backers ★", "who": "EIP · Breakthrough · Microsoft Climate Innovation Fund" }, { "via": "CEO Eric Trusiewicz", "who": "Came from Breakthrough Energy Ventures" }] }, "recentNews": [{ "date": "2024-06", "text": "€75M project financing — Breakthrough Energy Catalyst + European Investment Bank" }, { "date": "2025-12", "text": "SCG (Thailand) partnership — Southeast Asia's first industrial heat battery" }] },
-    { "id": "esinc", "name": "ESS Inc", "sector": "storage", "hq": "Wilsonville, OR", "status": "public", "ticker": "GWH", "tech": "Iron flow battery for grid-scale long-duration storage", "round": { "type": "SPAC merger close", "amount": 308, "date": "2021-10-08", "lead": "ACON S2 Acquisition Corp" }, "cindyVCBackers": [], "source": "https://essinc.com/", "leadership": { "ceo": { "name": "Drew Buckley", "title": "CEO (current)", "bg": "Succeeded Eric Dresselhuys" }, "cofounders": [{ "name": "Craig Evans", "title": "Co-Founder & President", "bg": "Original CEO; now leading engineering / R&D / mfg" }], "board": [{ "name": "Michael R. Niggli", "role": "Founding Chairman", "bg": "" }, { "name": "Raffi Garabedian", "role": "Director", "bg": "CEO of Electric Hydrogen — cross-portfolio link" }, { "name": "Sandeep Nijhawan", "role": "Director", "bg": "" }, { "name": "Kyle Teamey", "role": "Director", "bg": "" }], "introPaths": [{ "via": "Public company", "who": "Investor relations" }, { "via": "Raffi Garabedian (EH2 CEO) on board", "who": "Cross-portfolio bridge to EH2 outreach" }] }, "recentNews": [{ "date": "2024-25", "text": "Continued grid-scale deployments" }] },
-    { "id": "sila", "name": "Sila Nanotechnologies", "sector": "storage", "hq": "Alameda, CA", "status": "private", "tech": "Silicon anode (Titan Silicon) for Li-ion; Moses Lake WA plant; Mercedes / Panasonic customers", "round": { "type": "Series G", "amount": 375, "date": "2024-06-27", "lead": "Sutter Hill Ventures + T. Rowe Price" }, "cindyVCBackers": [], "source": "https://www.businesswire.com/news/home/20240627486898/en/Sila-Raises-%24375M-to-Deliver-Titan-Silicon-for-Auto-Series-Production", "leadership": { "ceo": { "name": "Gene Berdichevsky", "title": "Co-Founder & CEO", "bg": "Tesla employee #7; Principal Engineer on Roadster battery; Stanford MS" }, "cofounders": [{ "name": "Dr. Gleb Yushin", "title": "Co-Founder & CTO", "bg": "Georgia Tech Materials Science professor" }, { "name": "Alex Jacobs", "title": "Co-Founder & VP Engineering", "bg": "Ex-Tesla; ex-IDEO" }], "board": [{ "name": "Michael Speiser", "role": "Director", "bg": "Sutter Hill Ventures MD; Snowflake founding CEO" }], "introPaths": [{ "via": "Sutter Hill Ventures", "who": "via Michael Speiser" }, { "via": "Tesla alumni network", "who": "via CEO Berdichevsky + co-founder Jacobs" }] }, "recentNews": [{ "date": "2024-06", "text": "Series G $375M — Moses Lake plant on schedule" }] },
-    { "id": "eh2", "name": "Electric Hydrogen", "sector": "hydrogen", "hq": "Natick, MA", "status": "private", "tech": "100MW PEM electrolyzer plants; Devens MA gigafactory (1.2GW capacity); first US H2 unicorn", "round": { "type": "Series C", "amount": 380, "date": "2023-10-03", "lead": "Fortescue + Fifth Wall + Energy Impact Partners" }, "cindyVCBackers": ["EIP", "5th Wall", "Microsoft Climate Innovation Fund", "Amazon Climate Pledge", "Breakthrough", "Capricorn", "Prelude Venture", "S2G"], "source": "https://eh2.com/electric-hydrogen-raises-380-million-to-transform-the-economics-of-green-hydrogen-production-2/", "leadership": { "ceo": { "name": "Raffi Garabedian", "title": "Co-Founder & CEO", "bg": "Ex-First Solar CTO; also on ESS Inc board" }, "cofounders": [{ "name": "Derek Warnick", "title": "Co-Founder & CFO", "bg": "" }, { "name": "Dr. David Eaglesham", "title": "Co-Founder & CTO", "bg": "" }], "board": [], "introPaths": [{ "via": "8 Cindy-VC backers ★", "who": "EIP · 5th Wall · MSFT Climate · Amazon Climate · Breakthrough · Capricorn · Prelude · S2G" }] }, "recentNews": [{ "date": "2024-03", "text": "$50M equipment financing from Trinity Capital" }, { "date": "2024-05", "text": "$100M credit facility from HSBC + JPM + Stifel + Hercules" }] },
-    { "id": "verdagy", "name": "Verdagy", "sector": "hydrogen", "hq": "Moss Landing, CA", "status": "private", "tech": "Anion exchange membrane (AEM) electrolyzers; eDynamic 20MW modules", "round": { "type": "Series B", "amount": 73, "date": "2023-08-08", "lead": "Temasek + Shell Ventures (co-lead)" }, "cindyVCBackers": ["Shell Ventures", "TDK Ventures", "Zeon Ventures"], "source": "https://verdagy.com/wp-content/uploads/2023/08/Verdagy-Secures-Series-B-Funding-Led-By-Temasek-And-Shell-Ventures.pdf", "leadership": { "ceo": { "name": "Marty Neese", "title": "CEO", "bg": "Ex-SunPower exec; ex-Ballard Power Systems" }, "cofounders": [{ "name": "Dr. Ryan Gilliam", "title": "Founder & Board Member", "bg": "Serial entrepreneur" }], "board": [{ "name": "Rahul Bammi", "role": "President", "bg": "25+ yrs CxO experience" }, { "name": "Peter Cousins", "role": "COO", "bg": "Ex-Tesla gigafactory scaling" }], "introPaths": [{ "via": "3 Cindy-VC backers ★", "who": "Shell Ventures · TDK Ventures · Zeon Ventures" }] }, "recentNews": [{ "date": "2024-03", "text": "$39.6M DOE grant" }, { "date": "2024-10", "text": "Tupras Ventures led additional venture round" }] },
-    { "id": "ohmium", "name": "Ohmium", "sector": "hydrogen", "hq": "Fremont, CA", "status": "private", "tech": "PEM electrolyzers; India manufacturing footprint", "round": { "type": "Series C", "amount": 250, "date": "2023-04-26", "lead": "TPG Rise Climate" }, "cindyVCBackers": ["TPG Rise Climate", "Energy Transition Venture"], "source": "https://www.businesswire.com/news/home/20230426005330/en/Green-Hydrogen-Company-Ohmium-Closes-%24250-Million-Series-C-Fundraise-Led-by-TPG-Rise-Climate", "leadership": { "ceo": { "name": "Arne Ballantine", "title": "Founder & CEO", "bg": "Ex-Bloom Energy, ex-Plug Power, ex-IBM" }, "cofounders": [], "board": [{ "name": "Paul Dainora", "role": "CCO", "bg": "" }, { "name": "Enakshi Singh", "role": "CFO", "bg": "" }], "introPaths": [{ "via": "2 Cindy-VC backers ★", "who": "TPG Rise Climate · Energy Transition Venture" }] }, "recentNews": [{ "date": "2024-07", "text": "3M backed Ohmium for green hydrogen tech expansion" }, { "date": "2024-09", "text": "CE Mark approval for Lotus PEM electrolyzers" }] },
-    { "id": "climeworks", "name": "Climeworks", "sector": "carbon", "hq": "Zurich, CH", "status": "private", "tech": "Direct air capture; Mammoth plant in Iceland (36k tons CO₂/yr); >$1B total equity", "round": { "type": "Equity round", "amount": 162, "date": "2025-07-02", "lead": "BigPoint Holding + Partners Group" }, "cindyVCBackers": [], "source": "https://climeworks.com/press-release/climeworks-raises-usd-162m-to-scale-up-technology", "leadership": { "ceo": { "name": "Dr. Christoph Gebald", "title": "Co-CEO & Co-Founder", "bg": "Mechanical engineer; ETH Zürich + UC Berkeley; PhD ETH Zürich" }, "cofounders": [{ "name": "Dr. Jan Wurzbacher", "title": "Co-CEO & Co-Founder", "bg": "Mechanical engineer; ETH Zürich + UNSW; PhD ETH Zürich" }], "board": [{ "name": "Alfred Gantner", "role": "Director", "bg": "Co-founder + exec board member, Partners Group" }, { "name": "Syrie Crouch", "role": "Director", "bg": "Ex-Shell VP Carbon Capture & Storage" }, { "name": "Dr. Maurits van Tol", "role": "Director", "bg": "CEO Catalyst Technologies" }], "introPaths": [{ "via": "Partners Group", "who": "via Gantner board seat + major investor" }, { "via": "Shell network", "who": "via Crouch board seat" }] }, "recentNews": [{ "date": "2025-07", "text": "$162M equity raise — largest carbon-removal investment of 2025 YTD globally" }] },
-    { "id": "heirloom", "name": "Heirloom Carbon", "sector": "carbon", "hq": "Brisbane, CA", "status": "private", "tech": "Mineralization-based DAC using crushed limestone; Louisiana plant 2026; Microsoft + Frontier credit buyers", "round": { "type": "Series B", "amount": 150, "date": "2024-12-04", "lead": "Future Positive + Lowercarbon Capital (co-lead)" }, "cindyVCBackers": ["Lowercarbon", "Breakthrough", "MCJ Collective"], "source": "https://www.heirloomcarbon.com/news/heirloom-closes-150-million-series-b", "leadership": { "ceo": { "name": "Shashank Samala", "title": "CEO & Co-Founder", "bg": "Ex-Tempo Automation co-founder + VP Product" }, "cofounders": [{ "name": "Noah McQueen", "title": "Head of Research & Co-Founder", "bg": "PhD Chemical Engineering, UPenn" }], "board": [], "introPaths": [{ "via": "3 Cindy-VC backers ★", "who": "Lowercarbon · Breakthrough · MCJ Collective" }] }, "recentNews": [{ "date": "2024-12", "text": "Series B $150M — Japan Airlines / Mitsubishi / Mitsui / MOL / Siemens FS / H&M joined" }, { "date": "2025-12", "text": "Development Bank of Japan + Chiyoda invest" }] },
-    { "id": "twelve", "name": "Twelve", "sector": "carbon", "hq": "Berkeley, CA", "status": "private", "tech": "CO₂-to-products electrolysis; AirPlant One SAF plant in Moses Lake WA; Alaska Airlines / IAG customers", "round": { "type": "Series C", "amount": 200, "date": "2024-09-19", "lead": "TPG + Capricorn + Pulse Fund" }, "cindyVCBackers": ["TPG Rise Climate", "Capricorn", "5th Wall", "DCVC Climate"], "source": "https://www.tpg.com/news-and-insights/twelve-announces-645-million-in-funding-led-by-tpg-to-transform-co2-into-jet-fuel-and-electrochemicals-at-scale", "leadership": { "ceo": { "name": "Nicholas Flanders", "title": "CEO & Co-Founder", "bg": "Stanford MBA; ex-McKinsey" }, "cofounders": [{ "name": "Dr. Etosha Cave", "title": "Co-Founder", "bg": "Stanford PhD" }, { "name": "Dr. Kendra Kuhl", "title": "Co-Founder", "bg": "Stanford PhD" }], "board": [{ "name": "Hemai Parthasarathy", "role": "Director", "bg": "" }, { "name": "Mark Loch", "role": "Director", "bg": "Highland Ventures Group founder" }], "introPaths": [{ "via": "4 Cindy-VC backers ★", "who": "TPG Rise Climate · Capricorn · 5th Wall · DCVC Climate" }] }, "recentNews": [{ "date": "2024-09", "text": "$645M package — Series C $200M + TPG Rise project equity $400M + $45M credit" }] },
-    { "id": "charm", "name": "Charm Industrial", "sector": "carbon", "hq": "San Francisco, CA", "status": "private", "tech": "Bio-oil pyrolysis from agricultural residue → deep geologic sequestration", "round": { "type": "Series B", "amount": 100, "date": "2023-06-06", "lead": "General Catalyst" }, "cindyVCBackers": ["Lowercarbon"], "source": "https://www.finsmes.com/2023/06/charm-industrial-raises-100m-in-series-b-financing.html", "leadership": { "ceo": { "name": "Peter Reinhardt", "title": "CEO & Co-Founder", "bg": "Ex-Segment CEO & co-founder (sold to Twilio for $3.2B in 2020); MIT aerospace" }, "cofounders": [], "board": [{ "name": "Tim Thomson", "role": "CFO", "bg": "Ex-Impossible Foods, Stripe, Plenty" }, { "name": "Hemant Taneja", "role": "Director", "bg": "CEO & MD General Catalyst" }], "introPaths": [{ "via": "Lowercarbon ★", "who": "Repeat investor" }, { "via": "General Catalyst", "who": "via Hemant Taneja" }] }, "recentNews": [{ "date": "2024-06", "text": "Geological sequestration of carbon patent published" }] },
-    { "id": "mp", "name": "MP Materials", "sector": "minerals", "hq": "Las Vegas, NV", "status": "public", "ticker": "MP", "tech": "Mountain Pass rare-earth mine (~15% global rare-earth output); Fort Worth magnet plant", "round": { "type": "SPAC merger close", "amount": 545, "date": "2020-11-18", "lead": "Fortress Value Acquisition Corp + PIPE" }, "cindyVCBackers": [], "source": "https://www.businesswire.com/news/home/20201117006236/en/MP-Materials-Completes-Business-Combination-and-Will-Begin-Trading-on-the-NYSE-under-MP", "leadership": { "ceo": { "name": "James Litinsky", "title": "Founder, Chairman & CEO (since 2017)", "bg": "Founded JHL Capital Group 2006; ex-Fortress; Yale Economics; J.D./MBA Northwestern" }, "cofounders": [], "board": [], "introPaths": [{ "via": "Public company", "who": "Investor relations" }] }, "recentNews": [{ "date": "2025+", "text": "Continued rare-earth supply chain buildout" }] },
-    { "id": "lilac", "name": "Lilac Solutions", "sector": "minerals", "hq": "Oakland, CA", "status": "private", "tech": "Direct lithium extraction (DLE) using ion-exchange tech; brine-based", "round": { "type": "Series C", "amount": 145, "date": "2024-02-12", "lead": "Mercuria + Lowercarbon + Breakthrough (multi-lead)" }, "cindyVCBackers": ["Lowercarbon", "Breakthrough"], "source": "https://lilacsolutions.com/news/lilac-solutions-announces-145-million-series-c-to-scale-lithium-supply-for-the-electric-vehicle-era", "leadership": { "ceo": { "name": "Raef Sully", "title": "CEO (since Feb 2024)", "bg": "Ex-Nutrien $10B nitrogen + phosphate business unit CEO" }, "cofounders": [{ "name": "David Snydacker", "title": "Founder, President & CTO", "bg": "Solo founded Lilac 2016" }], "board": [{ "name": "David Danielson", "role": "Director", "bg": "Breakthrough Energy Ventures" }, { "name": "Clay Dumas", "role": "Director", "bg": "Lowercarbon Capital" }, { "name": "Sam Romer", "role": "Director", "bg": "Mercuria — Series C lead" }, { "name": "Ian Pearce", "role": "Director", "bg": "" }], "introPaths": [{ "via": "2 board members from Cindy universe ★★", "who": "David Danielson (BEV) · Clay Dumas (Lowercarbon)", "note": "Strongest direct-board path in entire universe" }] }, "recentNews": [{ "date": "2024-02", "text": "Series C $145M; total $315M raised; Mitsubishi Corporation new investor" }, { "date": "2024-02", "text": "Raef Sully appointed CEO; David Snydacker (founder) moves to President & CTO" }] },
-    { "id": "energyx", "name": "EnergyX", "sector": "minerals", "hq": "Austin, TX", "status": "private", "tech": "Lithium DLE; Project Lonestar in Smackover formation (TX/AR/LA); 25k tpa target", "round": { "type": "Series B", "amount": 50, "date": "2023-04-11", "lead": "GM Ventures" }, "cindyVCBackers": [], "source": "https://energyx.com/press-release/gm-leads-50-million-funding-round-in-energyx-to-unlock-u-s-based-lithium-supply-for-rapidly-scaling-ev-production/", "leadership": { "ceo": { "name": "Teague Egan", "title": "Founder, CEO & Chairman", "bg": "USC Marshall BA Entrepreneurship; ex-Innovation Factory founder" }, "cofounders": [{ "name": "Kris Haber", "title": "Vice Chairman", "bg": "" }, { "name": "Amit Patwardhan", "title": "EVP Tech / CTO", "bg": "" }], "board": [], "introPaths": [{ "via": "GM Ventures", "who": "Series B lead + strategic partner" }] }, "recentNews": [{ "date": "2024-10", "text": "Reg A crowdfunding raised $62M+; Austin innovation lab opening" }] },
-    { "id": "redwood", "name": "Redwood Materials", "sector": "minerals", "hq": "Carson City, NV", "status": "private", "tech": "Battery recycling and cathode materials; founded by JB Straubel; +$2B DOE loan commitment", "round": { "type": "Series E", "amount": 425, "date": "2026-01", "lead": "Series E close at $425M" }, "cindyVCBackers": ["Capricorn", "Microsoft Climate Innovation Fund"], "source": "https://www.redwoodmaterials.com/about/", "leadership": { "ceo": { "name": "JB Straubel", "title": "Founder & CEO", "bg": "Tesla co-founder + ex-CTO (15 yrs); led cell design + Gigafactory" }, "cofounders": [], "board": [{ "name": "Colin Campbell", "role": "CTO", "bg": "" }, { "name": "Deepak Ahuja", "role": "CFO", "bg": "Ex-Tesla CFO" }, { "name": "Cal Lankton", "role": "CCO", "bg": "" }], "introPaths": [{ "via": "Capricorn ★", "who": "Co-lead Series D + repeat investor" }, { "via": "Microsoft Climate Innovation Fund ★", "who": "Series D investor" }, { "via": "Tesla mafia", "who": "via Straubel + Ahuja" }] }, "recentNews": [{ "date": "2025-08", "text": "Caterpillar collaboration begins" }, { "date": "2026-01", "text": "Series E closed at $425M" }, { "date": "2026-03", "text": "Crusoe partnership expanded" }] },
-    { "id": "lanzajet", "name": "LanzaJet", "sector": "aviation", "hq": "Skokie, IL", "status": "private", "tech": "Alcohol-to-jet SAF; Freedom Pines plant in Georgia operational since Jan 2024; 10M gal/yr capacity", "round": { "type": "Strategic investment", "amount": null, "date": "2024-04-22", "lead": "Microsoft Climate Innovation Fund (amount undisclosed)" }, "cindyVCBackers": ["Microsoft Climate Innovation Fund", "Breakthrough", "Shell Ventures"], "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-investment-from-microsofts-climate-innovation-fund-supporting-continued-company-growth", "leadership": { "ceo": { "name": "Jimmy Samartzis", "title": "CEO & Board Director", "bg": "Ex-United Airlines executive; MBA Oxford; on Fermi Lab Board" }, "cofounders": [], "board": [], "introPaths": [{ "via": "3 Cindy-VC backers ★", "who": "Microsoft Climate Innovation Fund · Breakthrough · Shell Ventures" }] }, "recentNews": [{ "date": "2024-01", "text": "Freedom Pines Fuels plant (Georgia) opens — world's first ethanol-to-SAF production plant" }, { "date": "2024-04", "text": "Microsoft Climate Innovation Fund investment" }] },
-    { "id": "beta", "name": "Beta Technologies", "sector": "aviation", "hq": "Burlington, VT", "status": "private", "tech": "Electric aircraft ALIA (CTOL + VTOL variants) for cargo + passenger; FAA certification pursuit", "round": { "type": "Series C", "amount": 318, "date": "2024-10-31", "lead": "QIA (Qatar Investment Authority)" }, "cindyVCBackers": ["TPG Rise Climate"], "source": "https://www.businesswire.com/news/home/20241031872366/en/BETA-Technologies-raises-more-than-%24300M-in-additional-equity-capital-to-fund-growth-and-commercialization", "leadership": { "ceo": { "name": "Kyle Clark", "title": "President, CEO & Board Member", "bg": "Founder; test pilot; Harvard A.B. Materials Sciences" }, "cofounders": [{ "name": "Dr. David Churchill", "title": "Co-Founder & CTO", "bg": "Ex-LORD-MicroStrain VP Engineering; PhD UPenn" }], "board": [{ "name": "Chuck Davis", "role": "Chair (independent)", "bg": "" }, { "name": "Dr. Martine Rothblatt", "role": "Director", "bg": "United Therapeutics founder & CEO; SiriusXM founder" }, { "name": "John Slattery", "role": "Director", "bg": "Ex-GE Aviation EVP/CCO; ex-Embraer Commercial Aviation CEO" }, { "name": "Amy Gowder", "role": "Director", "bg": "GE representative" }], "introPaths": [{ "via": "TPG Rise Climate ★", "who": "Series B lead + Series C participant" }] }, "recentNews": [{ "date": "2024-10", "text": "Series C $318M — QIA-led, with Fidelity + TPG Rise Climate increasing ownership" }] }
+    {
+      "id": "kairos",
+      "name": "Kairos Power",
+      "sector": "nuclear",
+      "hq": "Alameda, CA",
+      "status": "private",
+      "tech": "Fluoride-salt-cooled high-temp reactor; Hermes demo with Google PPA (50MW to TVA 2030)",
+      "round": {
+        "type": "DOE TIA (ARDP)",
+        "amount": 303,
+        "date": "2024-02-21",
+        "lead": "US DOE — milestone-based, non-dilutive"
+      },
+      "cindyVCBackers": [
+        "Breakthrough"
+      ],
+      "source": "https://www.kairospower.com/updates/u-s-department-of-energy-and-kairos-power-execute-novel-performance-based-fixed-price-milestone-contract",
+      "leadership": {
+        "ceo": {
+          "name": "Mike Laufer",
+          "title": "CEO & Co-Founder",
+          "bg": "Co-founder; oversees all business + technical ops + government affairs"
+        },
+        "cofounders": [
+          {
+            "name": "Edward Blandford",
+            "title": "CTO & Chief Nuclear Officer",
+            "bg": "Co-founder"
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "Breakthrough Energy Ventures ★",
+            "who": "Existing equity investor",
+            "note": "On your VC universe"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-08",
+          "text": "Google + TVA PPA — first US utility advanced-reactor PPA, 50MW Hermes 2 by 2030"
+        },
+        {
+          "date": "2026-03",
+          "text": "Hermes pivot — single commercial-scale reactor (50MWe)"
+        }
+      ]
+    },
+    {
+      "id": "xenergy",
+      "name": "X-energy",
+      "sector": "nuclear",
+      "hq": "Rockville, MD",
+      "status": "private",
+      "tech": "Xe-100 SMR + TRISO-X fuel; Amazon partnership for 5GW+ by 2039; Dow Seadrift site",
+      "round": {
+        "type": "Series C-1 (upsized close)",
+        "amount": 700,
+        "date": "2025-02-06",
+        "lead": "Amazon Climate Pledge Fund (anchor)"
+      },
+      "cindyVCBackers": [
+        "Amazon Climate Pledge"
+      ],
+      "source": "https://x-energy.com/news/x-energy-closes-upsized-700-million-series-c-1-financing-round-to-accelerate-the-development-of-advanced-small-modular-nuclear-technology/",
+      "leadership": {
+        "ceo": {
+          "name": "J. Clay Sell",
+          "title": "CEO & Director (since Jan 2019)",
+          "bg": "Ex-DOE Deputy Secretary (G.W. Bush admin); ex-Hunt Energy Horizons President; J.D. UT Austin"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. Kam Ghaffarian",
+            "title": "Founder & Executive Chairman",
+            "bg": "Serial entrepreneur"
+          }
+        ],
+        "board": [
+          {
+            "name": "Christopher Ginther",
+            "role": "Conflicts Committee Chair",
+            "bg": ""
+          },
+          {
+            "name": "Gregory Goff",
+            "role": "Nominating Chair",
+            "bg": ""
+          },
+          {
+            "name": "Kathleen Hyle",
+            "role": "Audit Chair",
+            "bg": ""
+          },
+          {
+            "name": "Michael Wallace",
+            "role": "Director",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Amazon Climate Pledge ★",
+            "who": "Lead investor in Series C-1"
+          },
+          {
+            "via": "DOE network",
+            "who": "via CEO Sell (ex-Deputy Secretary)"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-10",
+          "text": "Initial Series C-1 close at ~$500M with Amazon as anchor"
+        },
+        {
+          "date": "2025-02",
+          "text": "Series C-1 upsized to $700M; Segra Capital + Jane Street + Ares + Emerson Collective joined"
+        }
+      ]
+    },
+    {
+      "id": "oklo",
+      "name": "Oklo",
+      "sector": "nuclear",
+      "hq": "Santa Clara, CA",
+      "status": "public",
+      "ticker": "OKLO",
+      "tech": "Aurora microreactor; targeting AI data-center + industrial markets",
+      "round": {
+        "type": "SPAC merger close",
+        "amount": 306,
+        "date": "2024-05-09",
+        "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm",
+      "leadership": {
+        "ceo": {
+          "name": "Jacob DeWitte",
+          "title": "Co-Founder, CEO & Chairman (since Apr 2025)",
+          "bg": "Took over Chairman role from Sam Altman in April 2025"
+        },
+        "cofounders": [
+          {
+            "name": "Caroline Cochran",
+            "title": "Co-Founder & COO",
+            "bg": ""
+          }
+        ],
+        "board": [
+          {
+            "name": "Daniel Poneman",
+            "role": "Director (joined Mar 2025)",
+            "bg": ""
+          },
+          {
+            "name": "Michael Thompson",
+            "role": "Director (joined Mar 2025)",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Public company",
+            "who": "Investor relations team"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-04",
+          "text": "Sam Altman stepped down as Chairman; Jacob DeWitte assumed Chairman role"
+        },
+        {
+          "date": "2025-03",
+          "text": "Chris Wright departed board upon confirmation as US Secretary of Energy"
+        }
+      ]
+    },
+    {
+      "id": "nuscale",
+      "name": "NuScale Power",
+      "sector": "nuclear",
+      "hq": "Portland, OR",
+      "status": "public",
+      "ticker": "SMR",
+      "tech": "NRC-certified SMR (77MWe module, 12-module VOYGR plant)",
+      "round": {
+        "type": "SPAC merger close",
+        "amount": 380,
+        "date": "2022-05-02",
+        "lead": "Spring Valley Acquisition Corp (Pearl Energy)"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.businesswire.com/news/home/20220502005301/en/NuScale-Power-Completes-Merger-with-Spring-Valley-Acquisition-Corp",
+      "leadership": {
+        "ceo": {
+          "name": "John L. Hopkins",
+          "title": "President & CEO (since Dec 2012)",
+          "bg": "Ex-Fluor Corporation (24 yrs); US Chamber of Commerce board chair; NEI board member"
+        },
+        "cofounders": [],
+        "board": [
+          {
+            "name": "Alan Boeckmann",
+            "role": "Chairman",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Public company",
+            "who": "Investor relations"
+          },
+          {
+            "via": "NEI / US Chamber network",
+            "who": "via Hopkins"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025",
+          "text": "NRC final safety evaluation report"
+        }
+      ]
+    },
+    {
+      "id": "terrapower",
+      "name": "TerraPower",
+      "sector": "nuclear",
+      "hq": "Bellevue, WA",
+      "status": "private",
+      "tech": "Natrium sodium-cooled fast reactor + molten salt storage; Wyoming demo plant; Bill Gates-founded",
+      "round": {
+        "type": "Fundraise",
+        "amount": 650,
+        "date": "2025-06-18",
+        "lead": "NVentures (NVIDIA) + HD Hyundai + Bill Gates"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.businesswire.com/news/home/20250618150590/en/TerraPower-Announces-%24650-Million-Fundraise",
+      "leadership": {
+        "ceo": {
+          "name": "Chris Levesque",
+          "title": "President & CEO",
+          "bg": "Long-time nuclear industry executive"
+        },
+        "cofounders": [
+          {
+            "name": "Bill Gates",
+            "title": "Chairman & Founder",
+            "bg": ""
+          },
+          {
+            "name": "Nathan Myhrvold",
+            "title": "Vice Chairman",
+            "bg": ""
+          }
+        ],
+        "board": [
+          {
+            "name": "Ralph Izzo",
+            "role": "Director (joined 2023)",
+            "bg": "Ex-PSEG Executive Chair"
+          },
+          {
+            "name": "Kristine Svinicki",
+            "role": "Director",
+            "bg": "Ex-NRC Chair"
+          },
+          {
+            "name": "John Gilleland",
+            "role": "Director",
+            "bg": ""
+          },
+          {
+            "name": "Mohamed Al Hammadi",
+            "role": "Director",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Bill Gates / Gates Frontier network",
+            "who": "Chairman + founder"
+          },
+          {
+            "via": "NRC alumni",
+            "who": "via Svinicki"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-05",
+          "text": "Eric Williams promoted to first COO; Steven Hellman joins as CFO from UBS"
+        },
+        {
+          "date": "2025-06",
+          "text": "$650M fundraise — NVIDIA NVentures new investor"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy",
+      "name": "Last Energy",
+      "sector": "nuclear",
+      "hq": "Washington, DC",
+      "status": "private",
+      "tech": "20MWe PWR microreactors; factory-built; Europe-focused (Poland / Romania / UK)",
+      "round": {
+        "type": "Series B",
+        "amount": 40,
+        "date": "2024-08-29",
+        "lead": "Gigafund"
+      },
+      "cindyVCBackers": [],
+      "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor",
+      "leadership": {
+        "ceo": {
+          "name": "Bret Kugelmass",
+          "title": "CEO & Founder",
+          "bg": "Stanford engineer; ex-Panasonic, Nanosolar, UC Berkeley + NASA research"
+        },
+        "cofounders": [],
+        "board": [
+          {
+            "name": "Adam Wyrick",
+            "role": "CFO",
+            "bg": ""
+          },
+          {
+            "name": "Kristin Meister",
+            "role": "General Counsel & Chief Compliance Officer",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Bret Kugelmass directly",
+            "who": "Founder accessible via DC tech / nuclear community"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024",
+          "text": "80 commercial unit agreements secured; targeting first plant 2026"
+        }
+      ]
+    },
+    {
+      "id": "cfs",
+      "name": "Commonwealth Fusion Systems",
+      "sector": "fusion",
+      "hq": "Devens, MA",
+      "status": "private",
+      "tech": "SPARC tokamak; HTS magnet tech; first ARC power plant under development in Virginia; ~$3B total raised",
+      "round": {
+        "type": "Series B2",
+        "amount": 863,
+        "date": "2025-08-28",
+        "lead": "Oversubscribed; multi-investor round"
+      },
+      "cindyVCBackers": [
+        "Breakthrough",
+        "Lowercarbon",
+        "Gigascale",
+        "Planet First",
+        "Startlight Venture"
+      ],
+      "source": "https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-863-million-series-b2-round-to-accelerate-the-commercialization-of-fusion-energy/",
+      "leadership": {
+        "ceo": {
+          "name": "Bob Mumgaard",
+          "title": "Co-Founder & CEO",
+          "bg": "MIT spinout; longtime fusion leader"
+        },
+        "cofounders": [
+          {
+            "name": "Brandon Sorbom",
+            "title": "Co-Founder & Chief Science Officer",
+            "bg": "First author of ARC paper at MIT"
+          }
+        ],
+        "board": [
+          {
+            "name": "Christopher Liddell",
+            "role": "Independent Director (joined Aug 2025)",
+            "bg": "Ex-White House Deputy Chief of Staff; ex-Microsoft CFO; ex-GM CFO"
+          },
+          {
+            "name": "Alan Eustace",
+            "role": "Director",
+            "bg": "Ex-Senior VP Engineering at Google"
+          },
+          {
+            "name": "Katie Rae",
+            "role": "Director",
+            "bg": "CEO & Managing Partner of Engine Ventures"
+          },
+          {
+            "name": "Clara Andreoletti",
+            "role": "Director",
+            "bg": "President & CEO of Eni Next (Eni venture arm)"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "5 Cindy-VC backers ★",
+            "who": "Breakthrough · Lowercarbon · Gigascale · Planet First · Startlight Venture"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-08",
+          "text": "Series B2 $863M — largest deep-tech / energy round since CFS Series B 2021"
+        },
+        {
+          "date": "2025-08",
+          "text": "Christopher Liddell joined Board of Directors"
+        }
+      ]
+    },
+    {
+      "id": "helion",
+      "name": "Helion Energy",
+      "sector": "fusion",
+      "hq": "Everett, WA",
+      "status": "private",
+      "tech": "Pulsed magneto-inertial fusion; Polaris prototype; Microsoft PPA targeting 2028 electricity",
+      "round": {
+        "type": "Series F",
+        "amount": 425,
+        "date": "2025-01-28",
+        "lead": "Lightspeed + SoftBank Vision Fund 2 · Sam Altman + Mithril + Capricorn"
+      },
+      "cindyVCBackers": [
+        "Capricorn"
+      ],
+      "source": "https://www.helionenergy.com/articles/helion-announces-425m-series-f-investment-to-scale-commercialized-fusion-power/",
+      "leadership": {
+        "ceo": {
+          "name": "Dr. David Kirtley",
+          "title": "Co-Founder & CEO",
+          "bg": "Ex-MSNW, U Michigan, Air Force Research Laboratory, NASA Glenn Research Center"
+        },
+        "cofounders": [
+          {
+            "name": "Chris Pihl",
+            "title": "Co-Founder & CTO",
+            "bg": ""
+          },
+          {
+            "name": "Dr. George Votroubek",
+            "title": "Co-Founder & Principal Scientist",
+            "bg": ""
+          }
+        ],
+        "board": [
+          {
+            "name": "Ajay Royan",
+            "role": "Director",
+            "bg": "Mithril Capital (co-founded with Peter Thiel)"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Capricorn ★",
+            "who": "Existing major investor"
+          },
+          {
+            "via": "Sam Altman",
+            "who": "Major individual investor"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-12",
+          "text": "Activated Polaris prototype"
+        },
+        {
+          "date": "2025-01",
+          "text": "Series F $425M; $5.4B post-money; SoftBank + Lightspeed first time"
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "name": "Form Energy",
+      "sector": "storage",
+      "hq": "Somerville, MA",
+      "status": "private",
+      "tech": "Iron-air battery (100-hr duration); WV plant; 75GWh commercial pipeline; 300MW/30GWh deal with Xcel for Google MN data center",
+      "round": {
+        "type": "Series F",
+        "amount": 405,
+        "date": "2024-10-09",
+        "lead": "T. Rowe Price (with GE Vernova as new strategic)"
+      },
+      "cindyVCBackers": [
+        "Breakthrough",
+        "TPG Rise Climate",
+        "Capricorn",
+        "EIP",
+        "Gigascale"
+      ],
+      "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/",
+      "leadership": {
+        "ceo": {
+          "name": "Mateo Jaramillo",
+          "title": "CEO & Co-Founder",
+          "bg": "Ex-Tesla Energy VP; Harvard A.B. Economics; Yale Divinity Masters"
+        },
+        "cofounders": [
+          {
+            "name": "Ted Wiley",
+            "title": "Co-Founder, President & COO",
+            "bg": ""
+          },
+          {
+            "name": "Dr. Yet-Ming Chiang",
+            "title": "Co-Founder & CSO",
+            "bg": "MIT Prof"
+          },
+          {
+            "name": "William Woodford",
+            "title": "Co-Founder & CTO",
+            "bg": ""
+          }
+        ],
+        "board": [
+          {
+            "name": "Joseph Thorp",
+            "role": "Director",
+            "bg": "Sr. Director of Tech, Saudi Aramco Energy Ventures"
+          },
+          {
+            "name": "Claudio Descalzi Pieri",
+            "role": "Director",
+            "bg": "Also on CFS board"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "5 Cindy-VC backers ★",
+            "who": "Breakthrough · TPG Rise · Capricorn · EIP · Gigascale"
+          },
+          {
+            "via": "Aramco Energy Ventures",
+            "who": "via Joseph Thorp board seat"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2026-02",
+          "text": "300MW/30GWh deployment with Xcel Energy for Google MN data center — largest iron-air battery system globally"
+        },
+        {
+          "date": "2026-04",
+          "text": "Commercial pipeline surpassed 75 GWh"
+        }
+      ]
+    },
+    {
+      "id": "antora",
+      "name": "Antora Energy",
+      "sector": "storage",
+      "hq": "Sunnyvale, CA",
+      "status": "private",
+      "tech": "Thermal photovoltaic battery (carbon block heat → TPV cells, >40% efficiency)",
+      "round": {
+        "type": "Series B",
+        "amount": 150,
+        "date": "2024-02-22",
+        "lead": "Decarbonization Partners (BlackRock + Temasek)"
+      },
+      "cindyVCBackers": [
+        "Decarbonization Partners",
+        "Lowercarbon",
+        "Breakthrough",
+        "NextEra",
+        "Overture"
+      ],
+      "source": "https://www.businesswire.com/news/home/20240222603243/en/Antora-Energy-Raises-%24150-Million-to-Slash-Industrial-Emissions-and-Spur-U.S.-Manufacturing",
+      "leadership": {
+        "ceo": {
+          "name": "Andrew Ponec",
+          "title": "CEO & Co-Founder",
+          "bg": "Ex-Dragonfly Systems founder (acquired by SunPower); Stanford"
+        },
+        "cofounders": [
+          {
+            "name": "Justin Briggs, Ph.D.",
+            "title": "Co-Founder & COO",
+            "bg": "Stanford Applied Physics"
+          },
+          {
+            "name": "David Bierman, Ph.D.",
+            "title": "Co-Founder & CCO",
+            "bg": "MIT Mechanical Engineering PhD"
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "5 Cindy-VC backers ★",
+            "who": "Decarbonization Partners · Lowercarbon · Breakthrough · NextEra · Overture"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-12",
+          "text": "Among top green thermal-battery startups for VC"
+        }
+      ]
+    },
+    {
+      "id": "rondo",
+      "name": "Rondo Energy",
+      "sector": "storage",
+      "hq": "Alameda, CA",
+      "status": "private",
+      "tech": "Thermal brick battery for industrial heat; up to 1500°C; SCG Southeast Asia partnership Dec 2025",
+      "round": {
+        "type": "Series B",
+        "amount": 60,
+        "date": "2023-08-16",
+        "lead": "Energy Impact Partners"
+      },
+      "cindyVCBackers": [
+        "EIP",
+        "Breakthrough",
+        "Microsoft Climate Innovation Fund"
+      ],
+      "source": "https://rondo.com/",
+      "leadership": {
+        "ceo": {
+          "name": "Eric Trusiewicz",
+          "title": "CEO (recent appointment)",
+          "bg": "Ex-Breakthrough Energy Ventures EIR; ex-Stanford fellow; Yale B.A. + Stanford MBA"
+        },
+        "cofounders": [
+          {
+            "name": "John O'Donnell",
+            "title": "Founder & Chief Innovation Officer",
+            "bg": ""
+          },
+          {
+            "name": "Pete von Behrens",
+            "title": "Founder & CTO",
+            "bg": ""
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "3 Cindy-VC backers ★",
+            "who": "EIP · Breakthrough · Microsoft Climate Innovation Fund"
+          },
+          {
+            "via": "CEO Eric Trusiewicz",
+            "who": "Came from Breakthrough Energy Ventures"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-06",
+          "text": "€75M project financing — Breakthrough Energy Catalyst + European Investment Bank"
+        },
+        {
+          "date": "2025-12",
+          "text": "SCG (Thailand) partnership — Southeast Asia's first industrial heat battery"
+        }
+      ]
+    },
+    {
+      "id": "esinc",
+      "name": "ESS Inc",
+      "sector": "storage",
+      "hq": "Wilsonville, OR",
+      "status": "public",
+      "ticker": "GWH",
+      "tech": "Iron flow battery for grid-scale long-duration storage",
+      "round": {
+        "type": "SPAC merger close",
+        "amount": 308,
+        "date": "2021-10-08",
+        "lead": "ACON S2 Acquisition Corp"
+      },
+      "cindyVCBackers": [],
+      "source": "https://essinc.com/",
+      "leadership": {
+        "ceo": {
+          "name": "Drew Buckley",
+          "title": "CEO (current)",
+          "bg": "Succeeded Eric Dresselhuys"
+        },
+        "cofounders": [
+          {
+            "name": "Craig Evans",
+            "title": "Co-Founder & President",
+            "bg": "Original CEO; now leading engineering / R&D / mfg"
+          }
+        ],
+        "board": [
+          {
+            "name": "Michael R. Niggli",
+            "role": "Founding Chairman",
+            "bg": ""
+          },
+          {
+            "name": "Raffi Garabedian",
+            "role": "Director",
+            "bg": "CEO of Electric Hydrogen — cross-portfolio link"
+          },
+          {
+            "name": "Sandeep Nijhawan",
+            "role": "Director",
+            "bg": ""
+          },
+          {
+            "name": "Kyle Teamey",
+            "role": "Director",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Public company",
+            "who": "Investor relations"
+          },
+          {
+            "via": "Raffi Garabedian (EH2 CEO) on board",
+            "who": "Cross-portfolio bridge to EH2 outreach"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-25",
+          "text": "Continued grid-scale deployments"
+        }
+      ]
+    },
+    {
+      "id": "sila",
+      "name": "Sila Nanotechnologies",
+      "sector": "storage",
+      "hq": "Alameda, CA",
+      "status": "private",
+      "tech": "Silicon anode (Titan Silicon) for Li-ion; Moses Lake WA plant; Mercedes / Panasonic customers",
+      "round": {
+        "type": "Series G",
+        "amount": 375,
+        "date": "2024-06-27",
+        "lead": "Sutter Hill Ventures + T. Rowe Price"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.businesswire.com/news/home/20240627486898/en/Sila-Raises-%24375M-to-Deliver-Titan-Silicon-for-Auto-Series-Production",
+      "leadership": {
+        "ceo": {
+          "name": "Gene Berdichevsky",
+          "title": "Co-Founder & CEO",
+          "bg": "Tesla employee #7; Principal Engineer on Roadster battery; Stanford MS"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. Gleb Yushin",
+            "title": "Co-Founder & CTO",
+            "bg": "Georgia Tech Materials Science professor"
+          },
+          {
+            "name": "Alex Jacobs",
+            "title": "Co-Founder & VP Engineering",
+            "bg": "Ex-Tesla; ex-IDEO"
+          }
+        ],
+        "board": [
+          {
+            "name": "Michael Speiser",
+            "role": "Director",
+            "bg": "Sutter Hill Ventures MD; Snowflake founding CEO"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Sutter Hill Ventures",
+            "who": "via Michael Speiser"
+          },
+          {
+            "via": "Tesla alumni network",
+            "who": "via CEO Berdichevsky + co-founder Jacobs"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-06",
+          "text": "Series G $375M — Moses Lake plant on schedule"
+        }
+      ]
+    },
+    {
+      "id": "eh2",
+      "name": "Electric Hydrogen",
+      "sector": "hydrogen",
+      "hq": "Natick, MA",
+      "status": "private",
+      "tech": "100MW PEM electrolyzer plants; Devens MA gigafactory (1.2GW capacity); first US H2 unicorn",
+      "round": {
+        "type": "Series C",
+        "amount": 380,
+        "date": "2023-10-03",
+        "lead": "Fortescue + Fifth Wall + Energy Impact Partners"
+      },
+      "cindyVCBackers": [
+        "EIP",
+        "5th Wall",
+        "Microsoft Climate Innovation Fund",
+        "Amazon Climate Pledge",
+        "Breakthrough",
+        "Capricorn",
+        "Prelude Venture",
+        "S2G"
+      ],
+      "source": "https://eh2.com/electric-hydrogen-raises-380-million-to-transform-the-economics-of-green-hydrogen-production-2/",
+      "leadership": {
+        "ceo": {
+          "name": "Raffi Garabedian",
+          "title": "Co-Founder & CEO",
+          "bg": "Ex-First Solar CTO; also on ESS Inc board"
+        },
+        "cofounders": [
+          {
+            "name": "Derek Warnick",
+            "title": "Co-Founder & CFO",
+            "bg": ""
+          },
+          {
+            "name": "Dr. David Eaglesham",
+            "title": "Co-Founder & CTO",
+            "bg": ""
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "8 Cindy-VC backers ★",
+            "who": "EIP · 5th Wall · MSFT Climate · Amazon Climate · Breakthrough · Capricorn · Prelude · S2G"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-03",
+          "text": "$50M equipment financing from Trinity Capital"
+        },
+        {
+          "date": "2024-05",
+          "text": "$100M credit facility from HSBC + JPM + Stifel + Hercules"
+        }
+      ]
+    },
+    {
+      "id": "verdagy",
+      "name": "Verdagy",
+      "sector": "hydrogen",
+      "hq": "Moss Landing, CA",
+      "status": "private",
+      "tech": "Anion exchange membrane (AEM) electrolyzers; eDynamic 20MW modules",
+      "round": {
+        "type": "Series B",
+        "amount": 73,
+        "date": "2023-08-08",
+        "lead": "Temasek + Shell Ventures (co-lead)"
+      },
+      "cindyVCBackers": [
+        "Shell Ventures",
+        "TDK Ventures",
+        "Zeon Ventures"
+      ],
+      "source": "https://verdagy.com/wp-content/uploads/2023/08/Verdagy-Secures-Series-B-Funding-Led-By-Temasek-And-Shell-Ventures.pdf",
+      "leadership": {
+        "ceo": {
+          "name": "Marty Neese",
+          "title": "CEO",
+          "bg": "Ex-SunPower exec; ex-Ballard Power Systems"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. Ryan Gilliam",
+            "title": "Founder & Board Member",
+            "bg": "Serial entrepreneur"
+          }
+        ],
+        "board": [
+          {
+            "name": "Rahul Bammi",
+            "role": "President",
+            "bg": "25+ yrs CxO experience"
+          },
+          {
+            "name": "Peter Cousins",
+            "role": "COO",
+            "bg": "Ex-Tesla gigafactory scaling"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "3 Cindy-VC backers ★",
+            "who": "Shell Ventures · TDK Ventures · Zeon Ventures"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-03",
+          "text": "$39.6M DOE grant"
+        },
+        {
+          "date": "2024-10",
+          "text": "Tupras Ventures led additional venture round"
+        }
+      ]
+    },
+    {
+      "id": "ohmium",
+      "name": "Ohmium",
+      "sector": "hydrogen",
+      "hq": "Fremont, CA",
+      "status": "private",
+      "tech": "PEM electrolyzers; India manufacturing footprint",
+      "round": {
+        "type": "Series C",
+        "amount": 250,
+        "date": "2023-04-26",
+        "lead": "TPG Rise Climate"
+      },
+      "cindyVCBackers": [
+        "TPG Rise Climate",
+        "Energy Transition Venture"
+      ],
+      "source": "https://www.businesswire.com/news/home/20230426005330/en/Green-Hydrogen-Company-Ohmium-Closes-%24250-Million-Series-C-Fundraise-Led-by-TPG-Rise-Climate",
+      "leadership": {
+        "ceo": {
+          "name": "Arne Ballantine",
+          "title": "Founder & CEO",
+          "bg": "Ex-Bloom Energy, ex-Plug Power, ex-IBM"
+        },
+        "cofounders": [],
+        "board": [
+          {
+            "name": "Paul Dainora",
+            "role": "CCO",
+            "bg": ""
+          },
+          {
+            "name": "Enakshi Singh",
+            "role": "CFO",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "2 Cindy-VC backers ★",
+            "who": "TPG Rise Climate · Energy Transition Venture"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-07",
+          "text": "3M backed Ohmium for green hydrogen tech expansion"
+        },
+        {
+          "date": "2024-09",
+          "text": "CE Mark approval for Lotus PEM electrolyzers"
+        }
+      ]
+    },
+    {
+      "id": "climeworks",
+      "name": "Climeworks",
+      "sector": "carbon",
+      "hq": "Zurich, CH",
+      "status": "private",
+      "tech": "Direct air capture; Mammoth plant in Iceland (36k tons CO₂/yr); >$1B total equity",
+      "round": {
+        "type": "Equity round",
+        "amount": 162,
+        "date": "2025-07-02",
+        "lead": "BigPoint Holding + Partners Group"
+      },
+      "cindyVCBackers": [],
+      "source": "https://climeworks.com/press-release/climeworks-raises-usd-162m-to-scale-up-technology",
+      "leadership": {
+        "ceo": {
+          "name": "Dr. Christoph Gebald",
+          "title": "Co-CEO & Co-Founder",
+          "bg": "Mechanical engineer; ETH Zürich + UC Berkeley; PhD ETH Zürich"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. Jan Wurzbacher",
+            "title": "Co-CEO & Co-Founder",
+            "bg": "Mechanical engineer; ETH Zürich + UNSW; PhD ETH Zürich"
+          }
+        ],
+        "board": [
+          {
+            "name": "Alfred Gantner",
+            "role": "Director",
+            "bg": "Co-founder + exec board member, Partners Group"
+          },
+          {
+            "name": "Syrie Crouch",
+            "role": "Director",
+            "bg": "Ex-Shell VP Carbon Capture & Storage"
+          },
+          {
+            "name": "Dr. Maurits van Tol",
+            "role": "Director",
+            "bg": "CEO Catalyst Technologies"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Partners Group",
+            "who": "via Gantner board seat + major investor"
+          },
+          {
+            "via": "Shell network",
+            "who": "via Crouch board seat"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-07",
+          "text": "$162M equity raise — largest carbon-removal investment of 2025 YTD globally"
+        }
+      ]
+    },
+    {
+      "id": "heirloom",
+      "name": "Heirloom Carbon",
+      "sector": "carbon",
+      "hq": "Brisbane, CA",
+      "status": "private",
+      "tech": "Mineralization-based DAC using crushed limestone; Louisiana plant 2026; Microsoft + Frontier credit buyers",
+      "round": {
+        "type": "Series B",
+        "amount": 150,
+        "date": "2024-12-04",
+        "lead": "Future Positive + Lowercarbon Capital (co-lead)"
+      },
+      "cindyVCBackers": [
+        "Lowercarbon",
+        "Breakthrough",
+        "MCJ Collective"
+      ],
+      "source": "https://www.heirloomcarbon.com/news/heirloom-closes-150-million-series-b",
+      "leadership": {
+        "ceo": {
+          "name": "Shashank Samala",
+          "title": "CEO & Co-Founder",
+          "bg": "Ex-Tempo Automation co-founder + VP Product"
+        },
+        "cofounders": [
+          {
+            "name": "Noah McQueen",
+            "title": "Head of Research & Co-Founder",
+            "bg": "PhD Chemical Engineering, UPenn"
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "3 Cindy-VC backers ★",
+            "who": "Lowercarbon · Breakthrough · MCJ Collective"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-12",
+          "text": "Series B $150M — Japan Airlines / Mitsubishi / Mitsui / MOL / Siemens FS / H&M joined"
+        },
+        {
+          "date": "2025-12",
+          "text": "Development Bank of Japan + Chiyoda invest"
+        }
+      ]
+    },
+    {
+      "id": "twelve",
+      "name": "Twelve",
+      "sector": "carbon",
+      "hq": "Berkeley, CA",
+      "status": "private",
+      "tech": "CO₂-to-products electrolysis; AirPlant One SAF plant in Moses Lake WA; Alaska Airlines / IAG customers",
+      "round": {
+        "type": "Series C",
+        "amount": 200,
+        "date": "2024-09-19",
+        "lead": "TPG + Capricorn + Pulse Fund"
+      },
+      "cindyVCBackers": [
+        "TPG Rise Climate",
+        "Capricorn",
+        "5th Wall",
+        "DCVC Climate"
+      ],
+      "source": "https://www.tpg.com/news-and-insights/twelve-announces-645-million-in-funding-led-by-tpg-to-transform-co2-into-jet-fuel-and-electrochemicals-at-scale",
+      "leadership": {
+        "ceo": {
+          "name": "Nicholas Flanders",
+          "title": "CEO & Co-Founder",
+          "bg": "Stanford MBA; ex-McKinsey"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. Etosha Cave",
+            "title": "Co-Founder",
+            "bg": "Stanford PhD"
+          },
+          {
+            "name": "Dr. Kendra Kuhl",
+            "title": "Co-Founder",
+            "bg": "Stanford PhD"
+          }
+        ],
+        "board": [
+          {
+            "name": "Hemai Parthasarathy",
+            "role": "Director",
+            "bg": ""
+          },
+          {
+            "name": "Mark Loch",
+            "role": "Director",
+            "bg": "Highland Ventures Group founder"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "4 Cindy-VC backers ★",
+            "who": "TPG Rise Climate · Capricorn · 5th Wall · DCVC Climate"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-09",
+          "text": "$645M package — Series C $200M + TPG Rise project equity $400M + $45M credit"
+        }
+      ]
+    },
+    {
+      "id": "charm",
+      "name": "Charm Industrial",
+      "sector": "carbon",
+      "hq": "San Francisco, CA",
+      "status": "private",
+      "tech": "Bio-oil pyrolysis from agricultural residue → deep geologic sequestration",
+      "round": {
+        "type": "Series B",
+        "amount": 100,
+        "date": "2023-06-06",
+        "lead": "General Catalyst"
+      },
+      "cindyVCBackers": [
+        "Lowercarbon"
+      ],
+      "source": "https://www.finsmes.com/2023/06/charm-industrial-raises-100m-in-series-b-financing.html",
+      "leadership": {
+        "ceo": {
+          "name": "Peter Reinhardt",
+          "title": "CEO & Co-Founder",
+          "bg": "Ex-Segment CEO & co-founder (sold to Twilio for $3.2B in 2020); MIT aerospace"
+        },
+        "cofounders": [],
+        "board": [
+          {
+            "name": "Tim Thomson",
+            "role": "CFO",
+            "bg": "Ex-Impossible Foods, Stripe, Plenty"
+          },
+          {
+            "name": "Hemant Taneja",
+            "role": "Director",
+            "bg": "CEO & MD General Catalyst"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Lowercarbon ★",
+            "who": "Repeat investor"
+          },
+          {
+            "via": "General Catalyst",
+            "who": "via Hemant Taneja"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-06",
+          "text": "Geological sequestration of carbon patent published"
+        }
+      ]
+    },
+    {
+      "id": "mp",
+      "name": "MP Materials",
+      "sector": "minerals",
+      "hq": "Las Vegas, NV",
+      "status": "public",
+      "ticker": "MP",
+      "tech": "Mountain Pass rare-earth mine (~15% global rare-earth output); Fort Worth magnet plant",
+      "round": {
+        "type": "SPAC merger close",
+        "amount": 545,
+        "date": "2020-11-18",
+        "lead": "Fortress Value Acquisition Corp + PIPE"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.businesswire.com/news/home/20201117006236/en/MP-Materials-Completes-Business-Combination-and-Will-Begin-Trading-on-the-NYSE-under-MP",
+      "leadership": {
+        "ceo": {
+          "name": "James Litinsky",
+          "title": "Founder, Chairman & CEO (since 2017)",
+          "bg": "Founded JHL Capital Group 2006; ex-Fortress; Yale Economics; J.D./MBA Northwestern"
+        },
+        "cofounders": [],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "Public company",
+            "who": "Investor relations"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025+",
+          "text": "Continued rare-earth supply chain buildout"
+        }
+      ]
+    },
+    {
+      "id": "lilac",
+      "name": "Lilac Solutions",
+      "sector": "minerals",
+      "hq": "Oakland, CA",
+      "status": "private",
+      "tech": "Direct lithium extraction (DLE) using ion-exchange tech; brine-based",
+      "round": {
+        "type": "Series C",
+        "amount": 145,
+        "date": "2024-02-12",
+        "lead": "Mercuria + Lowercarbon + Breakthrough (multi-lead)"
+      },
+      "cindyVCBackers": [
+        "Lowercarbon",
+        "Breakthrough"
+      ],
+      "source": "https://lilacsolutions.com/news/lilac-solutions-announces-145-million-series-c-to-scale-lithium-supply-for-the-electric-vehicle-era",
+      "leadership": {
+        "ceo": {
+          "name": "Raef Sully",
+          "title": "CEO (since Feb 2024)",
+          "bg": "Ex-Nutrien $10B nitrogen + phosphate business unit CEO"
+        },
+        "cofounders": [
+          {
+            "name": "David Snydacker",
+            "title": "Founder, President & CTO",
+            "bg": "Solo founded Lilac 2016"
+          }
+        ],
+        "board": [
+          {
+            "name": "David Danielson",
+            "role": "Director",
+            "bg": "Breakthrough Energy Ventures"
+          },
+          {
+            "name": "Clay Dumas",
+            "role": "Director",
+            "bg": "Lowercarbon Capital"
+          },
+          {
+            "name": "Sam Romer",
+            "role": "Director",
+            "bg": "Mercuria — Series C lead"
+          },
+          {
+            "name": "Ian Pearce",
+            "role": "Director",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "2 board members from Cindy universe ★★",
+            "who": "David Danielson (BEV) · Clay Dumas (Lowercarbon)",
+            "note": "Strongest direct-board path in entire universe"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-02",
+          "text": "Series C $145M; total $315M raised; Mitsubishi Corporation new investor"
+        },
+        {
+          "date": "2024-02",
+          "text": "Raef Sully appointed CEO; David Snydacker (founder) moves to President & CTO"
+        }
+      ]
+    },
+    {
+      "id": "energyx",
+      "name": "EnergyX",
+      "sector": "minerals",
+      "hq": "Austin, TX",
+      "status": "private",
+      "tech": "Lithium DLE; Project Lonestar in Smackover formation (TX/AR/LA); 25k tpa target",
+      "round": {
+        "type": "Series B",
+        "amount": 50,
+        "date": "2023-04-11",
+        "lead": "GM Ventures"
+      },
+      "cindyVCBackers": [],
+      "source": "https://energyx.com/press-release/gm-leads-50-million-funding-round-in-energyx-to-unlock-u-s-based-lithium-supply-for-rapidly-scaling-ev-production/",
+      "leadership": {
+        "ceo": {
+          "name": "Teague Egan",
+          "title": "Founder, CEO & Chairman",
+          "bg": "USC Marshall BA Entrepreneurship; ex-Innovation Factory founder"
+        },
+        "cofounders": [
+          {
+            "name": "Kris Haber",
+            "title": "Vice Chairman",
+            "bg": ""
+          },
+          {
+            "name": "Amit Patwardhan",
+            "title": "EVP Tech / CTO",
+            "bg": ""
+          }
+        ],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "GM Ventures",
+            "who": "Series B lead + strategic partner"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-10",
+          "text": "Reg A crowdfunding raised $62M+; Austin innovation lab opening"
+        }
+      ]
+    },
+    {
+      "id": "redwood",
+      "name": "Redwood Materials",
+      "sector": "minerals",
+      "hq": "Carson City, NV",
+      "status": "private",
+      "tech": "Battery recycling and cathode materials; founded by JB Straubel; +$2B DOE loan commitment",
+      "round": {
+        "type": "Series E",
+        "amount": 425,
+        "date": "2026-01",
+        "lead": "Series E close at $425M"
+      },
+      "cindyVCBackers": [
+        "Capricorn",
+        "Microsoft Climate Innovation Fund"
+      ],
+      "source": "https://www.redwoodmaterials.com/about/",
+      "leadership": {
+        "ceo": {
+          "name": "JB Straubel",
+          "title": "Founder & CEO",
+          "bg": "Tesla co-founder + ex-CTO (15 yrs); led cell design + Gigafactory"
+        },
+        "cofounders": [],
+        "board": [
+          {
+            "name": "Colin Campbell",
+            "role": "CTO",
+            "bg": ""
+          },
+          {
+            "name": "Deepak Ahuja",
+            "role": "CFO",
+            "bg": "Ex-Tesla CFO"
+          },
+          {
+            "name": "Cal Lankton",
+            "role": "CCO",
+            "bg": ""
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "Capricorn ★",
+            "who": "Co-lead Series D + repeat investor"
+          },
+          {
+            "via": "Microsoft Climate Innovation Fund ★",
+            "who": "Series D investor"
+          },
+          {
+            "via": "Tesla mafia",
+            "who": "via Straubel + Ahuja"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2025-08",
+          "text": "Caterpillar collaboration begins"
+        },
+        {
+          "date": "2026-01",
+          "text": "Series E closed at $425M"
+        },
+        {
+          "date": "2026-03",
+          "text": "Crusoe partnership expanded"
+        }
+      ]
+    },
+    {
+      "id": "lanzajet",
+      "name": "LanzaJet",
+      "sector": "aviation",
+      "hq": "Skokie, IL",
+      "status": "private",
+      "tech": "Alcohol-to-jet SAF; Freedom Pines plant in Georgia operational since Jan 2024; 10M gal/yr capacity",
+      "round": {
+        "type": "Strategic investment",
+        "amount": null,
+        "date": "2024-04-22",
+        "lead": "Microsoft Climate Innovation Fund (amount undisclosed)"
+      },
+      "cindyVCBackers": [
+        "Microsoft Climate Innovation Fund",
+        "Breakthrough",
+        "Shell Ventures"
+      ],
+      "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-investment-from-microsofts-climate-innovation-fund-supporting-continued-company-growth",
+      "leadership": {
+        "ceo": {
+          "name": "Jimmy Samartzis",
+          "title": "CEO & Board Director",
+          "bg": "Ex-United Airlines executive; MBA Oxford; on Fermi Lab Board"
+        },
+        "cofounders": [],
+        "board": [],
+        "introPaths": [
+          {
+            "via": "3 Cindy-VC backers ★",
+            "who": "Microsoft Climate Innovation Fund · Breakthrough · Shell Ventures"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-01",
+          "text": "Freedom Pines Fuels plant (Georgia) opens — world's first ethanol-to-SAF production plant"
+        },
+        {
+          "date": "2024-04",
+          "text": "Microsoft Climate Innovation Fund investment"
+        }
+      ]
+    },
+    {
+      "id": "beta",
+      "name": "Beta Technologies",
+      "sector": "aviation",
+      "hq": "Burlington, VT",
+      "status": "private",
+      "tech": "Electric aircraft ALIA (CTOL + VTOL variants) for cargo + passenger; FAA certification pursuit",
+      "round": {
+        "type": "Series C",
+        "amount": 318,
+        "date": "2024-10-31",
+        "lead": "QIA (Qatar Investment Authority)"
+      },
+      "cindyVCBackers": [
+        "TPG Rise Climate"
+      ],
+      "source": "https://www.businesswire.com/news/home/20241031872366/en/BETA-Technologies-raises-more-than-%24300M-in-additional-equity-capital-to-fund-growth-and-commercialization",
+      "leadership": {
+        "ceo": {
+          "name": "Kyle Clark",
+          "title": "President, CEO & Board Member",
+          "bg": "Founder; test pilot; Harvard A.B. Materials Sciences"
+        },
+        "cofounders": [
+          {
+            "name": "Dr. David Churchill",
+            "title": "Co-Founder & CTO",
+            "bg": "Ex-LORD-MicroStrain VP Engineering; PhD UPenn"
+          }
+        ],
+        "board": [
+          {
+            "name": "Chuck Davis",
+            "role": "Chair (independent)",
+            "bg": ""
+          },
+          {
+            "name": "Dr. Martine Rothblatt",
+            "role": "Director",
+            "bg": "United Therapeutics founder & CEO; SiriusXM founder"
+          },
+          {
+            "name": "John Slattery",
+            "role": "Director",
+            "bg": "Ex-GE Aviation EVP/CCO; ex-Embraer Commercial Aviation CEO"
+          },
+          {
+            "name": "Amy Gowder",
+            "role": "Director",
+            "bg": "GE representative"
+          }
+        ],
+        "introPaths": [
+          {
+            "via": "TPG Rise Climate ★",
+            "who": "Series B lead + Series C participant"
+          }
+        ]
+      },
+      "recentNews": [
+        {
+          "date": "2024-10",
+          "text": "Series C $318M — QIA-led, with Fidelity + TPG Rise Climate increasing ownership"
+        }
+      ]
+    }
   ],
   "vcs": {
-    "incubator": [{"name":"Greentown Labs","loc":"Somerville, MA"},{"name":"Brooklyn New Lab","loc":"Brooklyn, NY"},{"name":"BXVentures","loc":"NYC"},{"name":"Airminers","loc":"Global"},{"name":"Techstars","loc":"Global"}],
-    "early": [{"name":"ArborView Capital"},{"name":"Accelr8"},{"name":"ArcTern Ventures"},{"name":"Avaana"},{"name":"Audacity Venture"},{"name":"Azolla Venture"},{"name":"Baruch Future Venture"},{"name":"Better Venture"},{"name":"Blue Bear Capital"},{"name":"Braemar Venture"},{"name":"Buoyant Capital Nature"},{"name":"Capricorn"},{"name":"Carbon 13"},{"name":"Carbon Removal Partner"},{"name":"Citylight"},{"name":"CLAI (Climate AI)"},{"name":"Clean Growth Fund"},{"name":"ClearSky"},{"name":"Clean Energy Venture Group"},{"name":"Climate Capital / Scout Fund"},{"name":"Climate VC"},{"name":"Climentum Capital"},{"name":"Counteract"},{"name":"DCVC Climate"},{"name":"Doral Energy-Tech Ventures"},{"name":"Elemental Accelerator"},{"name":"Eneco"},{"name":"Energy Capital Venture"},{"name":"Energy Foundry"},{"name":"Energy Revolution"},{"name":"Engie New Ventures"},{"name":"Energy Transition Venture"},{"name":"Equator"},{"name":"ETF Partners"},{"name":"Evergreen Climate Solutions"},{"name":"Evergy"},{"name":"Evok"},{"name":"Fallline"},{"name":"First Imagine!"},{"name":"Footprint Coalition"},{"name":"Future Energy"},{"name":"GenZero"},{"name":"G Force"},{"name":"G2 Venture"},{"name":"Gigascale"},{"name":"Greensoil"},{"name":"Hatch"},{"name":"Helios Climate"},{"name":"Investible"},{"name":"Katapult VC"},{"name":"Keiki Capital"},{"name":"Keyframe"},{"name":"Kost Capital"},{"name":"Link Capital"},{"name":"Micelio"},{"name":"MCJ Collective"},{"name":"PlanetaryVC"},{"name":"Planet First"},{"name":"New Climate Venture"},{"name":"NGIF"},{"name":"Nomadic Venture Partners"},{"name":"Nucleus"},{"name":"Overview Venture"},{"name":"Overture"},{"name":"Pale Blue Dot"},{"name":"Planet A"},{"name":"Planeteer"},{"name":"Possible Ventures"},{"name":"Plug and Play"},{"name":"Powerhouse Venture"},{"name":"Prelude Venture"},{"name":"ReGen VC"},{"name":"Renown Capital Partners"},{"name":"Sandwater"},{"name":"Satgana"},{"name":"SET Venture"},{"name":"Silence VC"},{"name":"SOSV"},{"name":"SpeedInvest"},{"name":"Startlight Venture"},{"name":"SystemIQ"},{"name":"Thin Line Capital"},{"name":"Third Sphere"},{"name":"Trirec"},{"name":"Vector Capital"},{"name":"Ubermorgen Ventures"},{"name":"H+"},{"name":"Zeon Ventures"},{"name":"Viva"},{"name":"Vita"},{"name":"Volo Venture"},{"name":"Voyager"},{"name":"QPQ Blue Pale Dot"},{"name":"Bessemer Trust AE Blue"},{"name":"Contrarian Ventures"},{"name":"Iron Gate"},{"name":"Acorn Campus"},{"name":"500 Startups / Global"},{"name":"Junction Growth Investors"}],
-    "late": [{"name":"Amazon Climate Pledge"},{"name":"ArcTern Ventures"},{"name":"Climate Innovation Capital"},{"name":"Blue Earth"},{"name":"Capricorn"},{"name":"Decarbonization Partners"},{"name":"Drawdown Fund"},{"name":"Earthshot"},{"name":"Emerald VC"},{"name":"Energize Capital"},{"name":"Galvanize Climate"},{"name":"General Atlantic BeyondZero"},{"name":"Global Cleantech Capital"},{"name":"Grantham Foundation"},{"name":"Just Climate"},{"name":"Lowercarbon"},{"name":"Microsoft Climate Innovation Fund"},{"name":"MKB"},{"name":"Morgan Stanley 1GT"},{"name":"NextEra"},{"name":"5th Wall"},{"name":"Breakthrough"},{"name":"S2G (Builder Vision)"},{"name":"SE Venture"},{"name":"Seaya Andromeda"},{"name":"Shell Ventures"},{"name":"Sustainable Future Ventures"},{"name":"TDK Ventures"},{"name":"Toyota Ventures Climate Fund"},{"name":"The Westly Group"},{"name":"EIP"},{"name":"Amazon / Bezos Earth"},{"name":"Extansia"},{"name":"Doral Energy Ventures"},{"name":"Vidia Equity"},{"name":"Energy & Environment Fund"},{"name":"Congruent"},{"name":"All-Stack Tonic"},{"name":"TPG Rise Climate"}]
+    "incubator": [
+      {
+        "name": "Greentown Labs",
+        "loc": "Somerville, MA"
+      },
+      {
+        "name": "Brooklyn New Lab",
+        "loc": "Brooklyn, NY"
+      },
+      {
+        "name": "BXVentures",
+        "loc": "NYC"
+      },
+      {
+        "name": "Airminers",
+        "loc": "Global"
+      },
+      {
+        "name": "Techstars",
+        "loc": "Global"
+      }
+    ],
+    "early": [
+      {
+        "name": "ArborView Capital"
+      },
+      {
+        "name": "Accelr8"
+      },
+      {
+        "name": "ArcTern Ventures"
+      },
+      {
+        "name": "Avaana"
+      },
+      {
+        "name": "Audacity Venture"
+      },
+      {
+        "name": "Azolla Venture"
+      },
+      {
+        "name": "Baruch Future Venture"
+      },
+      {
+        "name": "Better Venture"
+      },
+      {
+        "name": "Blue Bear Capital"
+      },
+      {
+        "name": "Braemar Venture"
+      },
+      {
+        "name": "Buoyant Capital Nature"
+      },
+      {
+        "name": "Capricorn"
+      },
+      {
+        "name": "Carbon 13"
+      },
+      {
+        "name": "Carbon Removal Partner"
+      },
+      {
+        "name": "Citylight"
+      },
+      {
+        "name": "CLAI (Climate AI)"
+      },
+      {
+        "name": "Clean Growth Fund"
+      },
+      {
+        "name": "ClearSky"
+      },
+      {
+        "name": "Clean Energy Venture Group"
+      },
+      {
+        "name": "Climate Capital / Scout Fund"
+      },
+      {
+        "name": "Climate VC"
+      },
+      {
+        "name": "Climentum Capital"
+      },
+      {
+        "name": "Counteract"
+      },
+      {
+        "name": "DCVC Climate"
+      },
+      {
+        "name": "Doral Energy-Tech Ventures"
+      },
+      {
+        "name": "Elemental Accelerator"
+      },
+      {
+        "name": "Eneco"
+      },
+      {
+        "name": "Energy Capital Venture"
+      },
+      {
+        "name": "Energy Foundry"
+      },
+      {
+        "name": "Energy Revolution"
+      },
+      {
+        "name": "Engie New Ventures"
+      },
+      {
+        "name": "Energy Transition Venture"
+      },
+      {
+        "name": "Equator"
+      },
+      {
+        "name": "ETF Partners"
+      },
+      {
+        "name": "Evergreen Climate Solutions"
+      },
+      {
+        "name": "Evergy"
+      },
+      {
+        "name": "Evok"
+      },
+      {
+        "name": "Fallline"
+      },
+      {
+        "name": "First Imagine!"
+      },
+      {
+        "name": "Footprint Coalition"
+      },
+      {
+        "name": "Future Energy"
+      },
+      {
+        "name": "GenZero"
+      },
+      {
+        "name": "G Force"
+      },
+      {
+        "name": "G2 Venture"
+      },
+      {
+        "name": "Gigascale"
+      },
+      {
+        "name": "Greensoil"
+      },
+      {
+        "name": "Hatch"
+      },
+      {
+        "name": "Helios Climate"
+      },
+      {
+        "name": "Investible"
+      },
+      {
+        "name": "Katapult VC"
+      },
+      {
+        "name": "Keiki Capital"
+      },
+      {
+        "name": "Keyframe"
+      },
+      {
+        "name": "Kost Capital"
+      },
+      {
+        "name": "Link Capital"
+      },
+      {
+        "name": "Micelio"
+      },
+      {
+        "name": "MCJ Collective"
+      },
+      {
+        "name": "PlanetaryVC"
+      },
+      {
+        "name": "Planet First"
+      },
+      {
+        "name": "New Climate Venture"
+      },
+      {
+        "name": "NGIF"
+      },
+      {
+        "name": "Nomadic Venture Partners"
+      },
+      {
+        "name": "Nucleus"
+      },
+      {
+        "name": "Overview Venture"
+      },
+      {
+        "name": "Overture"
+      },
+      {
+        "name": "Pale Blue Dot"
+      },
+      {
+        "name": "Planet A"
+      },
+      {
+        "name": "Planeteer"
+      },
+      {
+        "name": "Possible Ventures"
+      },
+      {
+        "name": "Plug and Play"
+      },
+      {
+        "name": "Powerhouse Venture"
+      },
+      {
+        "name": "Prelude Venture"
+      },
+      {
+        "name": "ReGen VC"
+      },
+      {
+        "name": "Renown Capital Partners"
+      },
+      {
+        "name": "Sandwater"
+      },
+      {
+        "name": "Satgana"
+      },
+      {
+        "name": "SET Venture"
+      },
+      {
+        "name": "Silence VC"
+      },
+      {
+        "name": "SOSV"
+      },
+      {
+        "name": "SpeedInvest"
+      },
+      {
+        "name": "Startlight Venture"
+      },
+      {
+        "name": "SystemIQ"
+      },
+      {
+        "name": "Thin Line Capital"
+      },
+      {
+        "name": "Third Sphere"
+      },
+      {
+        "name": "Trirec"
+      },
+      {
+        "name": "Vector Capital"
+      },
+      {
+        "name": "Ubermorgen Ventures"
+      },
+      {
+        "name": "H+"
+      },
+      {
+        "name": "Zeon Ventures"
+      },
+      {
+        "name": "Viva"
+      },
+      {
+        "name": "Vita"
+      },
+      {
+        "name": "Volo Venture"
+      },
+      {
+        "name": "Voyager"
+      },
+      {
+        "name": "QPQ Blue Pale Dot"
+      },
+      {
+        "name": "Bessemer Trust AE Blue"
+      },
+      {
+        "name": "Contrarian Ventures"
+      },
+      {
+        "name": "Iron Gate"
+      },
+      {
+        "name": "Acorn Campus"
+      },
+      {
+        "name": "500 Startups / Global"
+      },
+      {
+        "name": "Junction Growth Investors"
+      }
+    ],
+    "late": [
+      {
+        "name": "Amazon Climate Pledge"
+      },
+      {
+        "name": "ArcTern Ventures"
+      },
+      {
+        "name": "Climate Innovation Capital"
+      },
+      {
+        "name": "Blue Earth"
+      },
+      {
+        "name": "Capricorn"
+      },
+      {
+        "name": "Decarbonization Partners"
+      },
+      {
+        "name": "Drawdown Fund"
+      },
+      {
+        "name": "Earthshot"
+      },
+      {
+        "name": "Emerald VC"
+      },
+      {
+        "name": "Energize Capital"
+      },
+      {
+        "name": "Galvanize Climate"
+      },
+      {
+        "name": "General Atlantic BeyondZero"
+      },
+      {
+        "name": "Global Cleantech Capital"
+      },
+      {
+        "name": "Grantham Foundation"
+      },
+      {
+        "name": "Just Climate"
+      },
+      {
+        "name": "Lowercarbon"
+      },
+      {
+        "name": "Microsoft Climate Innovation Fund"
+      },
+      {
+        "name": "MKB"
+      },
+      {
+        "name": "Morgan Stanley 1GT"
+      },
+      {
+        "name": "NextEra"
+      },
+      {
+        "name": "5th Wall"
+      },
+      {
+        "name": "Breakthrough"
+      },
+      {
+        "name": "S2G (Builder Vision)"
+      },
+      {
+        "name": "SE Venture"
+      },
+      {
+        "name": "Seaya Andromeda"
+      },
+      {
+        "name": "Shell Ventures"
+      },
+      {
+        "name": "Sustainable Future Ventures"
+      },
+      {
+        "name": "TDK Ventures"
+      },
+      {
+        "name": "Toyota Ventures Climate Fund"
+      },
+      {
+        "name": "The Westly Group"
+      },
+      {
+        "name": "EIP"
+      },
+      {
+        "name": "Amazon / Bezos Earth"
+      },
+      {
+        "name": "Extansia"
+      },
+      {
+        "name": "Doral Energy Ventures"
+      },
+      {
+        "name": "Vidia Equity"
+      },
+      {
+        "name": "Energy & Environment Fund"
+      },
+      {
+        "name": "Congruent"
+      },
+      {
+        "name": "All-Stack Tonic"
+      },
+      {
+        "name": "TPG Rise Climate"
+      }
+    ]
   }
 }
