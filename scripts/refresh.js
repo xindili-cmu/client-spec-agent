@@ -26,12 +26,14 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import { ingestCtvc } from './ctvc-ingest.js';
 
 const EXA_API_KEY = process.env.EXA_API_KEY;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const EMAIL_TO = process.env.EMAIL_TO || 'cindylips2001@gmail.com';
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const DASHBOARD_URL = process.env.DASHBOARD_URL || 'https://climate-intel.pages.dev';
+const SKIP_CTVC = process.env.SKIP_CTVC === 'true';
 const CURRENT_YEAR = new Date().getFullYear();
 const LAST_YEAR = CURRENT_YEAR - 1;
 
@@ -159,18 +161,39 @@ function fmtAmount(m) {
   return `$${m}M`;
 }
 
-function formatChangelogMd(allChanges, today) {
+function formatChangelogMd(allChanges, today, ctvcResult) {
   const newRounds = allChanges.filter(c => c.kind === 'new-round-candidate');
   const newsItems = allChanges.filter(c => c.kind === 'new-news');
   let md = `# FusionPark Climate Intel — Weekly Diff ${today}\n\n`;
-  md += `## Summary\n\n- ${newRounds.length} potential new funding rounds (require review)\n- ${newsItems.length} new news events (last 30d)\n\n`;
+  md += `## Summary\n\n`;
+  md += `- ${newRounds.length} potential new funding rounds (require review)\n`;
+  md += `- ${newsItems.length} new news events (last 30d)\n`;
+  if (ctvcResult) {
+    md += `- ${ctvcResult.accepted.length} new companies auto-added from CTVC (Critic-approved)\n`;
+    md += `- ${ctvcResult.needsHuman.length} CTVC candidates need your review\n`;
+    md += `- ${ctvcResult.duplicates.length} duplicates skipped · ${ctvcResult.rejected.length} rejected by Critic\n`;
+  }
+  md += `\n`;
+  if (ctvcResult?.accepted.length) {
+    md += `## ✅ Auto-added from CTVC (Critic-approved)\n\n`;
+    for (const a of ctvcResult.accepted) {
+      md += `- **${a.entry.name}** (${a.entry.sector}) — ${a.candidate.roundType || a.candidate.kind} ${fmtAmount(a.candidate.amount)}\n`;
+      md += `  - HQ: ${a.entry.hq}\n  - Tech: ${a.entry.tech}\n  - Critic: _${a.verdict.reason}_ (conf ${a.verdict.confidence})\n\n`;
+    }
+  }
+  if (ctvcResult?.needsHuman.length) {
+    md += `## ❓ CTVC candidates need your review\n\n`;
+    for (const n of ctvcResult.needsHuman) {
+      md += `- **${n.candidate.name}** (${n.candidate.hq}) — ${fmtAmount(n.candidate.amount)} ${n.candidate.roundType || ''}\n`;
+      md += `  - Tech: ${n.candidate.tech}\n  - Critic: _${n.verdict.reason}_\n\n`;
+    }
+  }
   if (newRounds.length) {
-    md += `## ⚡ Potential new funding rounds\n\n`;
+    md += `## ⚡ Potential new funding rounds (existing watchlist)\n\n`;
     md += `> Candidates from Exa search — verify each before updating \`data.json\`.\n\n`;
     for (const c of newRounds) {
       md += `- **${c.startup}**: ${c.candidate.type} ${fmtAmount(c.candidate.amount)} · published ${c.candidate.publishedDate}\n`;
-      md += `  - Title: _${c.candidate.title}_\n`;
-      md += `  - Source: ${c.candidate.url}\n\n`;
+      md += `  - Title: _${c.candidate.title}_\n  - Source: ${c.candidate.url}\n\n`;
     }
   }
   if (newsItems.length) {
@@ -179,33 +202,57 @@ function formatChangelogMd(allChanges, today) {
       md += `- **${n.startup}** · ${n.date} — ${n.title}\n  - ${n.url}\n\n`;
     }
   }
-  if (allChanges.length === 0) {
-    md += `## No changes detected this week\n\nAll 26 startups checked. No new rounds or relevant news found.\n`;
+  if (allChanges.length === 0 && (!ctvcResult || (ctvcResult.accepted.length === 0 && ctvcResult.needsHuman.length === 0))) {
+    md += `## No changes detected this week\n\nAll startups checked. No new rounds or relevant news. CTVC produced no new accept-grade candidates.\n`;
   }
   return md;
 }
 
-function formatEmailHtml(allChanges, today) {
+function formatEmailHtml(allChanges, today, ctvcResult, totalStartups) {
   const newRounds = allChanges.filter(c => c.kind === 'new-round-candidate');
   const newsItems = allChanges.filter(c => c.kind === 'new-news');
-  let html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;color:#0f172a;line-height:1.5">`;
+  const ctvcAccepted = ctvcResult?.accepted || [];
+  const ctvcNeedsHuman = ctvcResult?.needsHuman || [];
+  const totalActivity = newRounds.length + newsItems.length + ctvcAccepted.length + ctvcNeedsHuman.length;
+
+  let html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;color:#0f172a;line-height:1.5">`;
   html += `<h2 style="color:#4f46e5;margin-bottom:4px">FusionPark Climate Intel</h2>`;
   html += `<p style="color:#64748b;margin-top:0">Weekly refresh · ${today}</p>`;
-  if (allChanges.length === 0) {
-    html += `<p style="color:#475569;padding:16px;background:#f4f5f7;border-radius:8px">No changes detected across 26 startups this week. All clear.</p>`;
+
+  if (totalActivity === 0) {
+    html += `<p style="color:#475569;padding:16px;background:#f4f5f7;border-radius:8px">No new signals this week. All clear.</p>`;
   } else {
-    html += `<p><strong>${newRounds.length}</strong> potential new rounds · <strong>${newsItems.length}</strong> news events</p>`;
+    html += `<p style="background:#eef2ff;padding:10px 14px;border-radius:6px;font-size:13px"><strong>${ctvcAccepted.length}</strong> auto-added from CTVC · <strong>${ctvcNeedsHuman.length}</strong> need your review · <strong>${newRounds.length}</strong> existing-watchlist rounds · <strong>${newsItems.length}</strong> news events</p>`;
+
+    if (ctvcAccepted.length) {
+      html += `<h3 style="color:#059669;margin-top:24px">✅ Auto-added from CTVC (Critic-approved)</h3>`;
+      html += `<ul style="padding-left:18px">`;
+      for (const a of ctvcAccepted) {
+        html += `<li style="margin-bottom:10px"><strong>${a.entry.name}</strong> <span style="background:#ecfdf5;color:#059669;padding:1px 6px;border-radius:4px;font-size:11px">${a.entry.sector}</span> · ${fmtAmount(a.candidate.amount)} ${a.candidate.roundType || ''}<br><span style="font-size:12px;color:#475569">${a.entry.tech}</span><br><span style="font-size:11px;color:#94a3b8;font-style:italic">Critic: ${a.verdict.reason} (confidence ${a.verdict.confidence})</span></li>`;
+      }
+      html += `</ul>`;
+    }
+
+    if (ctvcNeedsHuman.length) {
+      html += `<h3 style="color:#d97706;margin-top:24px">❓ Needs your review</h3>`;
+      html += `<p style="color:#64748b;font-size:13px;font-style:italic">Critic flagged as ambiguous — you decide whether to add</p>`;
+      html += `<ul style="padding-left:18px">`;
+      for (const n of ctvcNeedsHuman) {
+        html += `<li style="margin-bottom:10px"><strong>${n.candidate.name}</strong> (${n.candidate.hq}) — ${fmtAmount(n.candidate.amount)} ${n.candidate.roundType || ''}<br><span style="font-size:12px;color:#475569">${n.candidate.tech}</span><br><span style="font-size:11px;color:#94a3b8;font-style:italic">Critic: ${n.verdict.reason}</span></li>`;
+      }
+      html += `</ul>`;
+    }
+
     if (newRounds.length) {
-      html += `<h3 style="color:#059669;margin-top:24px">⚡ Potential new funding rounds</h3>`;
-      html += `<p style="color:#64748b;font-size:13px;font-style:italic">Candidates from Exa search — verify before updating data.json</p>`;
+      html += `<h3 style="color:#0284c7;margin-top:24px">⚡ Existing-watchlist round candidates</h3>`;
       html += `<ul style="padding-left:18px">`;
       for (const c of newRounds) {
-        html += `<li style="margin-bottom:10px"><strong>${c.startup}</strong>: ${c.candidate.type} ${fmtAmount(c.candidate.amount)} <span style="color:#94a3b8">(${c.candidate.publishedDate})</span><br><span style="font-size:12px;color:#475569">${c.candidate.title || ''}</span><br><a href="${c.candidate.url}" style="font-size:12px">Source ↗</a></li>`;
+        html += `<li style="margin-bottom:10px"><strong>${c.startup}</strong>: ${c.candidate.type} ${fmtAmount(c.candidate.amount)} <span style="color:#94a3b8">(${c.candidate.publishedDate})</span><br><a href="${c.candidate.url}" style="font-size:12px">Source ↗</a></li>`;
       }
       html += `</ul>`;
     }
     if (newsItems.length) {
-      html += `<h3 style="color:#0284c7;margin-top:24px">📰 New news (last 30d)</h3>`;
+      html += `<h3 style="color:#475569;margin-top:24px">📰 New news (last 30d)</h3>`;
       html += `<ul style="padding-left:18px">`;
       for (const n of newsItems) {
         html += `<li style="margin-bottom:8px"><strong>${n.startup}</strong> · ${n.date}<br>${n.title}<br><a href="${n.url}" style="font-size:12px">Source ↗</a></li>`;
@@ -214,7 +261,7 @@ function formatEmailHtml(allChanges, today) {
     }
   }
   html += `<hr style="margin-top:32px;border:none;border-top:1px solid #e5e7eb">`;
-  html += `<p style="color:#94a3b8;font-size:11px">Dashboard: <a href="${DASHBOARD_URL}" style="color:#94a3b8">${DASHBOARD_URL}</a> · Auto-refresh: every Monday 9am UTC · 26 startups · 143 VCs</p>`;
+  html += `<p style="color:#94a3b8;font-size:11px">Dashboard: <a href="${DASHBOARD_URL}" style="color:#94a3b8">${DASHBOARD_URL}</a> · ${totalStartups} startups tracked · v3.2 with Critic Agent</p>`;
   html += `</div>`;
   return html;
 }
@@ -268,24 +315,42 @@ async function main() {
     }
   }
 
-  console.log(`[refresh] ${allChanges.length} change candidates detected`);
+  console.log(`[refresh] ${allChanges.length} change candidates detected for existing watchlist`);
+
+  // ---- v3.2: CTVC ingestion + Critic Agent ----
+  let ctvcResult = null;
+  if (!SKIP_CTVC) {
+    try {
+      console.log(`[refresh] Starting CTVC ingestion + Critic Agent`);
+      ctvcResult = await ingestCtvc(data);
+      console.log(`[refresh] CTVC: ${ctvcResult.accepted.length} accept · ${ctvcResult.needsHuman.length} review · ${ctvcResult.duplicates.length} dup · ${ctvcResult.rejected.length} reject`);
+    } catch (err) {
+      console.error(`[refresh] CTVC ingestion failed: ${err.message}`);
+    }
+  } else {
+    console.log(`[refresh] SKIP_CTVC=true, skipping CTVC step`);
+  }
 
   // Write changelog
   await fs.mkdir(CHANGELOG_DIR, { recursive: true });
   const changelogPath = path.join(CHANGELOG_DIR, `changelog_${today}.md`);
-  await fs.writeFile(changelogPath, formatChangelogMd(allChanges, today));
+  await fs.writeFile(changelogPath, formatChangelogMd(allChanges, today, ctvcResult));
   console.log(`[refresh] Wrote ${changelogPath}`);
 
-  // Update dataAsOf only
+  // Update dataAsOf + save (CTVC may have pushed new entries to data.startups in memory)
   data.dataAsOf = today;
   await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2));
-  console.log(`[refresh] Updated ${DATA_PATH} (dataAsOf=${today})`);
+  console.log(`[refresh] Updated ${DATA_PATH} (dataAsOf=${today}, ${data.startups.length} startups)`);
 
   // Email
-  const subject = allChanges.length === 0
+  const ctvcAdded = ctvcResult?.accepted.length || 0;
+  const totalSignals = allChanges.length + (ctvcResult ? ctvcResult.accepted.length + ctvcResult.needsHuman.length : 0);
+  const subject = totalSignals === 0
     ? `FusionPark Climate Intel — No changes (${today})`
-    : `FusionPark Climate Intel — ${allChanges.length} updates (${today})`;
-  await sendEmail(subject, formatEmailHtml(allChanges, today));
+    : ctvcAdded > 0
+      ? `FusionPark Climate Intel — ${ctvcAdded} new from CTVC, ${totalSignals} total signals (${today})`
+      : `FusionPark Climate Intel — ${totalSignals} updates (${today})`;
+  await sendEmail(subject, formatEmailHtml(allChanges, today, ctvcResult, data.startups.length));
 }
 
 main().catch(err => {

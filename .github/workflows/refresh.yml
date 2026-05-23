@@ -24,6 +24,7 @@ jobs:
         env:
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
         run: node scripts/refresh.js

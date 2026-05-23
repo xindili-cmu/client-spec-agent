@@ -32,7 +32,7 @@ GitHub Actions cron (Mon 9am UTC)
 
 ### Step 1 — Get API keys
 
-You'll need 2 API keys before starting:
+You'll need 3 API keys before starting (v3.2 adds Anthropic for the Critic Agent):
 
 1. **Exa REST API key**
    - Go to [exa.ai](https://exa.ai) → sign in → Dashboard → API Keys → Create new
@@ -43,6 +43,11 @@ You'll need 2 API keys before starting:
    - Go to [resend.com](https://resend.com) → sign up (free tier: 3000 emails/month)
    - Settings → API Keys → Create
    - No domain verification required if you use `onboarding@resend.dev` as sender (already configured in the script)
+   - Copy the key
+
+3. **Anthropic API key** (v3.2 — for Critic Agent that reviews CTVC candidates)
+   - Go to [console.anthropic.com](https://console.anthropic.com) → API Keys → Create Key
+   - Cost: Claude Haiku 4.5 at ~$1/M tokens. Weekly refresh uses ~$0.30/week. Pay-as-you-go (no free tier, but tiny spend).
    - Copy the key
 
 ### Step 2 — Create GitHub repo
@@ -80,6 +85,7 @@ In your new repo on github.com:
 |---|---|
 | `EXA_API_KEY` | Your Exa API key from Step 1 |
 | `RESEND_API_KEY` | Your Resend API key from Step 1 |
+| `ANTHROPIC_API_KEY` | Your Anthropic API key from Step 1 (v3.2) |
 | `EMAIL_TO` | `cindylips2001@gmail.com` (or wherever you want digests) |
 | `DASHBOARD_URL` | Leave empty for now — fill in after Step 6 |
 
