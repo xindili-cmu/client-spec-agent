@@ -6,6 +6,11 @@ on:
     - cron: '0 9 * * 1'
   workflow_dispatch:  # allow manual trigger from Actions tab
 
+# Prevent two refresh runs from racing on the same main branch
+concurrency:
+  group: weekly-refresh
+  cancel-in-progress: false  # finish current run before next; don't kill mid-CTVC
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -36,7 +41,24 @@ jobs:
           git add data.json data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "Weekly refresh $(date -u +%Y-%m-%d)"
-            git push
+            exit 0
           fi
+          git commit -m "Weekly refresh $(date -u +%Y-%m-%d)"
+          # Retry push up to 3 times with rebase, handles race conditions
+          # (e.g., if you push manually while this action is running)
+          for attempt in 1 2 3; do
+            echo "Push attempt $attempt..."
+            if git push; then
+              echo "✓ Push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push failed, fetching + rebasing onto latest main..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase conflict — aborting and falling back to merge"
+              git rebase --abort
+              git pull --no-rebase origin main --no-edit || true
+            fi
+          done
+          echo "✗ Push failed after 3 attempts. Manual intervention required."
+          exit 1
