@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-05-22",
+  "dataAsOf": "2026-05-24",
   "schemaVersion": "2.1",
   "startups": [
     {
@@ -1563,6 +1563,71 @@
         {
           "date": "2024-10",
           "text": "Series C $318M — QIA-led, with Fidelity + TPG Rise Climate increasing ownership"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-technologies",
+      "name": "Skeleton Technologies",
+      "sector": "storage",
+      "hq": "Tallinn, Estonia",
+      "status": "private",
+      "tech": "graphene-based ultracapacitors developer",
+      "round": {
+        "type": "Growth",
+        "amount": 39,
+        "date": "2026-05",
+        "lead": "Axon Partners Group"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
+      "discoveredVia": "CTVC-2026-05-24",
+      "criticReason": "Graphene ultracapacitors are energy storage technology; $39M Growth round from credible climate/energy investors (CBMM, Taiwania); storage is core priority sector.",
+      "criticConfidence": 0.82,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-05",
+          "text": "Auto-added from CTVC: Growth $39M led by Axon Partners Group"
+        }
+      ]
+    },
+    {
+      "id": "mantle8",
+      "name": "Mantle8",
+      "sector": "hydrogen",
+      "hq": "Grenoble, France",
+      "status": "private",
+      "tech": "natural hydrogen exploration technology developer",
+      "round": {
+        "type": "Series A",
+        "amount": 36,
+        "date": "2026-05",
+        "lead": "Sandwater"
+      },
+      "cindyVCBackers": [
+        "Sandwater",
+        "Breakthrough Energy Ventures"
+      ],
+      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
+      "discoveredVia": "CTVC-2026-05-24",
+      "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-05",
+          "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
         }
       ]
     }
