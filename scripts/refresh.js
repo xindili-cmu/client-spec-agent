@@ -168,12 +168,33 @@ const AGGREGATOR_DOMAINS = [
   'crunchbase.com/organization', 'dealroom.co', 'owler.com',
 ];
 
+// v3.3.1: Domains that should NEVER auto-mutate data.json regardless of Critic confidence.
+// Reason: these are SEC/IPO/equity-aggregator sites that often misrepresent commercial
+// commitments, ATM raises, or SPAC follow-ons as fresh equity rounds.
+// Example: Oklo $1.2B from biggo.com was a Meta prepayment contract, not equity.
+// Any verdict citing one of these as primary source → forced to needsReview.
+const NEVER_AUTO_APPLY_DOMAINS = [
+  'biggo.com',         // Taiwanese SEC/finance aggregator
+  'accessipos.com',    // IPO speculation/forecasting site
+  'stocktitan.net',    // SEC filing republisher
+  'rareearthexchanges.com', // Speculative commodity blog
+  'tracxn.com',        // Already in AGGREGATOR_DOMAINS but doubled here for clarity
+  'nextinvestors.com', // Retail equity speculation
+];
+
+function isNeverAutoApplyDomain(url) {
+  if (!url) return false;
+  const u = url.toLowerCase();
+  return NEVER_AUTO_APPLY_DOMAINS.some(d => u.includes(d));
+}
+
 /**
  * Group raw candidates by event signature.
  * Two candidates are "same event" if:
  *   - Same startup (caller guarantees)
  *   - Amount within ±15% OR exact match
- *   - Dates within 14 days
+ *   - Dates within 30 days (bumped from 14 in v3.3.1 — funding news cycles span 2-4 weeks
+ *     of follow-up coverage; 14d was missing Last Energy / Twelve same-event duplicates)
  */
 function clusterCandidates(candidates) {
   const clusters = [];
@@ -187,7 +208,7 @@ function clusterCandidates(candidates) {
       const reprDate = new Date(repr.publishedDate);
       const daysApart = Math.abs((cDate - reprDate) / (1000 * 60 * 60 * 24));
       const amountClose = Math.abs(c.amount - repr.amount) / Math.max(repr.amount, 1) < 0.15;
-      if (amountClose && daysApart <= 14) {
+      if (amountClose && daysApart <= 30) {
         cluster.push(c);
         placed = true;
         break;
@@ -388,11 +409,14 @@ function formatChangelogMd(roundBuckets, newsItems, today, ctvcResult) {
     for (const r of needsReview) {
       const isSubThreshold = r.verdict._subThreshold === true;
       const isRefused = r.verdict._applyRefused === true;
-      const tag = isSubThreshold
-        ? `Critic suggested **${describeVerdict(r.verdict)}** but confidence ${r.verdict.confidence} < ${AUTO_APPLY_THRESHOLD} threshold`
-        : isRefused
-          ? `Critic said **${describeVerdict(r.verdict)}** but verdict missing required fields`
-          : `${describeVerdict(r.verdict)}`;
+      const isBlockedDomain = r.verdict._blockedDomain === true;
+      const tag = isBlockedDomain
+        ? `Critic said **${describeVerdict(r.verdict)}** (conf ${r.verdict.confidence}) but source domain is on blocklist`
+        : isSubThreshold
+          ? `Critic suggested **${describeVerdict(r.verdict)}** but confidence ${r.verdict.confidence} < ${AUTO_APPLY_THRESHOLD} threshold`
+          : isRefused
+            ? `Critic said **${describeVerdict(r.verdict)}** but verdict missing required fields`
+            : `${describeVerdict(r.verdict)}`;
       md += `- **${r.startup.name}** — ${tag}\n`;
       md += `  - Critic: _${r.verdict.reason}_\n`;
       if (isSubThreshold && r.verdict.action === 'update_round' && r.verdict.new_round) {
@@ -503,8 +527,11 @@ function formatEmailHtml(roundBuckets, newsItems, today, ctvcResult, totalStartu
         const cs = r.cluster.map(c => `${c.type} ${fmtAmount(c.amount)} · ${c.publishedDate?.slice(0, 10) || '—'}`).join(' / ');
         const isSubThreshold = r.verdict._subThreshold === true;
         const isRefused = r.verdict._applyRefused === true;
+        const isBlockedDomain = r.verdict._blockedDomain === true;
         let badge, suggestion = '';
-        if (isSubThreshold) {
+        if (isBlockedDomain) {
+          badge = `<span style="background:#fee2e2;color:#b91c1c;padding:1px 6px;border-radius:4px;font-size:10px">blocked domain · ${describeVerdict(r.verdict)}</span>`;
+        } else if (isSubThreshold) {
           badge = `<span style="background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:4px;font-size:10px">sub-threshold ${describeVerdict(r.verdict)}</span>`;
           if (r.verdict.action === 'update_round' && r.verdict.new_round) {
             suggestion = `<br><span style="font-size:11px;color:#92400e">Would set: ${r.verdict.new_round.type} ${fmtAmount(r.verdict.new_round.amount)} (${r.verdict.new_round.date || '—'}) — conf ${r.verdict.confidence} &lt; ${AUTO_APPLY_THRESHOLD}</span>`;
@@ -637,8 +664,19 @@ async function main() {
           const verdict = await criticRoundCandidate(startup, cluster);
           const record = { startup, cluster, verdict };
           if (ACCEPT_ACTIONS.includes(verdict.action)) {
-            // Confidence gate — only auto-mutate if Critic is confident enough
-            if (typeof verdict.confidence === 'number' && verdict.confidence >= AUTO_APPLY_THRESHOLD) {
+            // v3.3.1: Domain blocklist check — overrides confidence gate.
+            // Even high-confidence verdicts from these sources get routed to review,
+            // because they're known to misrepresent commercial deals as equity rounds.
+            const chosenIdx = typeof verdict.chosen_source_index === 'number' ? verdict.chosen_source_index : 0;
+            const chosenUrl = cluster[chosenIdx]?.url || cluster[0]?.url;
+            const blockedDomain = isNeverAutoApplyDomain(chosenUrl);
+            if (blockedDomain) {
+              verdict._blockedDomain = true;
+              verdict._blockedUrl = chosenUrl;
+              roundBuckets.needsReview.push(record);
+              console.log(`    🛑 ${verdict.action} blocked by domain (${chosenUrl}): ${verdict.reason}`);
+            } else if (typeof verdict.confidence === 'number' && verdict.confidence >= AUTO_APPLY_THRESHOLD) {
+              // Confidence gate — only auto-mutate if Critic is confident enough
               const mutated = applyVerdict(startup, cluster, verdict);
               if (mutated) {
                 roundBuckets.autoUpdated.push(record);

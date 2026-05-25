@@ -179,13 +179,13 @@
       "ticker": "OKLO",
       "tech": "Aurora microreactor; targeting AI data-center + industrial markets",
       "round": {
-        "type": "Funding round",
-        "amount": 1200,
-        "date": "2025-12-31",
-        "lead": "Meta (prepayment agreement)"
+        "type": "SPAC merger close",
+        "amount": 306,
+        "date": "2024-05-09",
+        "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)"
       },
       "cindyVCBackers": [],
-      "source": "https://finance.biggo.com/news/US_OKLO_2026-03-17",
+      "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm",
       "leadership": {
         "ceo": {
           "name": "Jacob DeWitte",
@@ -228,29 +228,7 @@
           "text": "Chris Wright departed board upon confirmation as US Secretary of Energy"
         }
       ],
-      "_audit": [
-        {
-          "appliedAt": "2026-05-25T00:49:45.981Z",
-          "appliedBy": "critic-round-v3.3",
-          "action": "update_round",
-          "confidence": 0.88,
-          "reason": "New $1.2B funding round from Q4 2025 earnings announced April 2026, post-SPAC merger; Meta prepayment contract suggests equity or debt facility distinct from prior SPAC close",
-          "source": "https://finance.biggo.com/news/US_OKLO_2026-03-17",
-          "sourceTitle": "[OKLO Q4 2025 Earnings Call] Oklo Raises $1.2B, Inks Meta Prepayment for 1.2-GW Ohio Campus as Operating Loss Hits $139.3M — BigGo Finance",
-          "clusterSize": 1,
-          "previousState": {
-            "round": {
-              "type": "SPAC merger close",
-              "amount": 306,
-              "date": "2024-05-09",
-              "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)"
-            },
-            "status": "public",
-            "ticker": "OKLO",
-            "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm"
-          }
-        }
-      ]
+      "_audit": []
     },
     {
       "id": "nuscale",
@@ -426,27 +404,6 @@
       ],
       "_audit": [
         {
-          "appliedAt": "2026-05-25T00:49:52.872Z",
-          "appliedBy": "critic-round-v3.3",
-          "action": "update_round",
-          "confidence": 0.85,
-          "reason": "Series C $100M raised Jan 2026, 16 months after Series B; credible nuclear trade publication source",
-          "source": "https://www.neimagazine.com/news/last-energy-funded-for-pwr-5-pilot/",
-          "sourceTitle": "Last Energy funded for PWR-5 pilot - Nuclear Engineering International",
-          "clusterSize": 1,
-          "previousState": {
-            "round": {
-              "type": "Series B",
-              "amount": 40,
-              "date": "2024-08-29",
-              "lead": "Gigafund"
-            },
-            "status": "private",
-            "ticker": null,
-            "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor"
-          }
-        },
-        {
           "appliedAt": "2026-05-25T00:49:54.565Z",
           "appliedBy": "critic-round-v3.3",
           "action": "update_round",
@@ -457,14 +414,14 @@
           "clusterSize": 2,
           "previousState": {
             "round": {
-              "type": "Series C",
-              "amount": 100,
-              "date": "2026-01-07",
-              "lead": null
+              "type": "Series B",
+              "amount": 40,
+              "date": "2024-08-29",
+              "lead": "Gigafund"
             },
             "status": "private",
             "ticker": null,
-            "source": "https://www.neimagazine.com/news/last-energy-funded-for-pwr-5-pilot/"
+            "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor"
           }
         }
       ]
@@ -1898,15 +1855,15 @@
       "tech": "natural hydrogen exploration technology developer",
       "round": {
         "type": "Series A",
-        "amount": 44,
-        "date": "2026-05-13",
+        "amount": 36,
+        "date": "2026-05",
         "lead": "Sandwater"
       },
       "cindyVCBackers": [
         "Sandwater",
         "Breakthrough Energy Ventures"
       ],
-      "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
+      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
       "discoveredVia": "CTVC-2026-05-24",
       "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
       "criticConfidence": 0.92,
@@ -1922,29 +1879,7 @@
           "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
         }
       ],
-      "_audit": [
-        {
-          "appliedAt": "2026-05-25T00:50:43.196Z",
-          "appliedBy": "critic-round-v3.3",
-          "action": "update_round",
-          "confidence": 0.88,
-          "reason": "Same Series A event May 2026; candidate €31M (≈$44M) vs current $36M likely currency conversion + rounding difference",
-          "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
-          "sourceTitle": "France’s Mantle8 raises €31 million to fund the world’s most advanced natural hydrogen exploration and drilling campaign | EU-Startups",
-          "clusterSize": 1,
-          "previousState": {
-            "round": {
-              "type": "Series A",
-              "amount": 36,
-              "date": "2026-05",
-              "lead": "Sandwater"
-            },
-            "status": "private",
-            "ticker": null,
-            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
-          }
-        }
-      ]
+      "_audit": []
     }
   ],
   "vcs": {
