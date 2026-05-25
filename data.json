@@ -595,10 +595,10 @@
       "status": "private",
       "tech": "Iron-air battery (100-hr duration); WV plant; 75GWh commercial pipeline; 300MW/30GWh deal with Xcel for Google MN data center",
       "round": {
-        "type": "Series G",
-        "amount": 1000,
-        "date": "2026-02-26",
-        "lead": "Google"
+        "type": "Series F",
+        "amount": 405,
+        "date": "2024-10-09",
+        "lead": "T. Rowe Price (with GE Vernova as new strategic)"
       },
       "cindyVCBackers": [
         "Breakthrough",
@@ -607,7 +607,7 @@
         "EIP",
         "Gigascale"
       ],
-      "source": "https://techcrunch.com/2026/02/26/google-paid-startup-form-energy-1b-for-its-massive-100-hour-battery/",
+      "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/",
       "leadership": {
         "ceo": {
           "name": "Mateo Jaramillo",
@@ -664,29 +664,7 @@
           "text": "Commercial pipeline surpassed 75 GWh"
         }
       ],
-      "_audit": [
-        {
-          "appliedAt": "2026-05-25T12:35:55.099Z",
-          "appliedBy": "critic-round-v3.3",
-          "action": "update_round",
-          "confidence": 0.88,
-          "reason": "New $1B funding round from Google in Feb 2026, 16 months after Series F; TechCrunch is authoritative source",
-          "source": "https://techcrunch.com/2026/02/26/google-paid-startup-form-energy-1b-for-its-massive-100-hour-battery/",
-          "sourceTitle": "Google paid startup Form Energy $1B for its massive 100-hour battery | TechCrunch",
-          "clusterSize": 1,
-          "previousState": {
-            "round": {
-              "type": "Series F",
-              "amount": 405,
-              "date": "2024-10-09",
-              "lead": "T. Rowe Price (with GE Vernova as new strategic)"
-            },
-            "status": "private",
-            "ticker": null,
-            "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/"
-          }
-        }
-      ]
+      "_audit": []
     },
     {
       "id": "antora",
@@ -1924,15 +1902,15 @@
       "tech": "natural hydrogen exploration technology developer",
       "round": {
         "type": "Series A",
-        "amount": 44,
-        "date": "2026-05-13",
+        "amount": 36,
+        "date": "2026-05",
         "lead": "Sandwater"
       },
       "cindyVCBackers": [
         "Sandwater",
         "Breakthrough Energy Ventures"
       ],
-      "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
+      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
       "discoveredVia": "CTVC-2026-05-24",
       "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
       "criticConfidence": 0.92,
@@ -1948,29 +1926,7 @@
           "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
         }
       ],
-      "_audit": [
-        {
-          "appliedAt": "2026-05-25T12:36:34.352Z",
-          "appliedBy": "critic-round-v3.3",
-          "action": "update_round",
-          "confidence": 0.88,
-          "reason": "Same Series A event May 2026; candidate amount €31M (~$44M) vs stored $36M likely currency conversion or rounding variance",
-          "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
-          "sourceTitle": "France’s Mantle8 raises €31 million to fund the world’s most advanced natural hydrogen exploration and drilling campaign | EU-Startups",
-          "clusterSize": 1,
-          "previousState": {
-            "round": {
-              "type": "Series A",
-              "amount": 36,
-              "date": "2026-05",
-              "lead": "Sandwater"
-            },
-            "status": "private",
-            "ticker": null,
-            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
-          }
-        }
-      ]
+      "_audit": []
     }
   ],
   "vcs": {
