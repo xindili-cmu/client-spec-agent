@@ -595,10 +595,10 @@
       "status": "private",
       "tech": "Iron-air battery (100-hr duration); WV plant; 75GWh commercial pipeline; 300MW/30GWh deal with Xcel for Google MN data center",
       "round": {
-        "type": "Series F",
-        "amount": 405,
-        "date": "2024-10-09",
-        "lead": "T. Rowe Price (with GE Vernova as new strategic)"
+        "type": "Series G",
+        "amount": 1000,
+        "date": "2026-02-26",
+        "lead": "Google"
       },
       "cindyVCBackers": [
         "Breakthrough",
@@ -607,7 +607,7 @@
         "EIP",
         "Gigascale"
       ],
-      "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/",
+      "source": "https://techcrunch.com/2026/02/26/google-paid-startup-form-energy-1b-for-its-massive-100-hour-battery/",
       "leadership": {
         "ceo": {
           "name": "Mateo Jaramillo",
@@ -662,6 +662,29 @@
         {
           "date": "2026-04",
           "text": "Commercial pipeline surpassed 75 GWh"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T12:35:55.099Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "New $1B funding round from Google in Feb 2026, 16 months after Series F; TechCrunch is authoritative source",
+          "source": "https://techcrunch.com/2026/02/26/google-paid-startup-form-energy-1b-for-its-massive-100-hour-battery/",
+          "sourceTitle": "Google paid startup Form Energy $1B for its massive 100-hour battery | TechCrunch",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series F",
+              "amount": 405,
+              "date": "2024-10-09",
+              "lead": "T. Rowe Price (with GE Vernova as new strategic)"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://formenergy.com/form-energy-secures-405m-in-series-f-financing-to-expand-iron-air-battery-business-and-operations/"
+          }
         }
       ]
     },
@@ -730,7 +753,7 @@
         "type": "Series B",
         "amount": 60,
         "date": "2023-08-16",
-        "lead": "Energy Impact Partners"
+        "lead": "Energy Impact Partners, Global Giants and Leading Climate Investors"
       },
       "cindyVCBackers": [
         "EIP",
@@ -776,6 +799,29 @@
         {
           "date": "2025-12",
           "text": "SCG (Thailand) partnership — Southeast Asia's first industrial heat battery"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T12:35:59.968Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "merge_info",
+          "confidence": 0.92,
+          "reason": "Same Series B $60M round from 2023-08-16; PRNewswire source is official announcement with better lead investor detail",
+          "source": "https://www.prnewswire.com/news-releases/rondo-energy-secures-60-million-from-global-giants-and-leading-climate-investors-to-speed-industrial-decarbonization-301901797.html",
+          "sourceTitle": "Rondo Energy Secures $60 Million from Global Giants and Leading Climate Investors to Speed Industrial Decarbonization",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series B",
+              "amount": 60,
+              "date": "2023-08-16",
+              "lead": "Energy Impact Partners"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://rondo.com/"
+          }
         }
       ]
     },
@@ -1826,7 +1872,7 @@
         "type": "Growth",
         "amount": 39,
         "date": "2026-05",
-        "lead": "Axon Partners Group"
+        "lead": "Axon Partners Group, Axon Partners Group"
       },
       "cindyVCBackers": [],
       "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
@@ -1844,6 +1890,29 @@
           "date": "2026-05",
           "text": "Auto-added from CTVC: Growth $39M led by Axon Partners Group"
         }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T12:36:30.955Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "merge_info",
+          "confidence": 0.88,
+          "reason": "Same May 2026 Growth round $39M; candidate URL clarifies lead and adds IPO signal for future monitoring",
+          "source": "https://www.datacenterdynamics.com/en/news/skeleton-technologies-raises-33m-as-it-targets-2027-ipo/",
+          "sourceTitle": "Skeleton Technologies raises €33m as it targets 2027 IPO - DCD",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Growth",
+              "amount": 39,
+              "date": "2026-05",
+              "lead": "Axon Partners Group"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
+          }
+        }
       ]
     },
     {
@@ -1855,15 +1924,15 @@
       "tech": "natural hydrogen exploration technology developer",
       "round": {
         "type": "Series A",
-        "amount": 36,
-        "date": "2026-05",
+        "amount": 44,
+        "date": "2026-05-13",
         "lead": "Sandwater"
       },
       "cindyVCBackers": [
         "Sandwater",
         "Breakthrough Energy Ventures"
       ],
-      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
+      "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
       "discoveredVia": "CTVC-2026-05-24",
       "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
       "criticConfidence": 0.92,
@@ -1879,7 +1948,29 @@
           "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
         }
       ],
-      "_audit": []
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T12:36:34.352Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "Same Series A event May 2026; candidate amount €31M (~$44M) vs stored $36M likely currency conversion or rounding variance",
+          "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
+          "sourceTitle": "France’s Mantle8 raises €31 million to fund the world’s most advanced natural hydrogen exploration and drilling campaign | EU-Startups",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series A",
+              "amount": 36,
+              "date": "2026-05",
+              "lead": "Sandwater"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
+          }
+        }
+      ]
     }
   ],
   "vcs": {
