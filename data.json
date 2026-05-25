@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-05-24",
+  "dataAsOf": "2026-05-25",
   "schemaVersion": "2.1",
   "startups": [
     {
@@ -57,18 +57,18 @@
       "name": "X-energy",
       "sector": "nuclear",
       "hq": "Rockville, MD",
-      "status": "private",
+      "status": "public",
       "tech": "Xe-100 SMR + TRISO-X fuel; Amazon partnership for 5GW+ by 2039; Dow Seadrift site",
       "round": {
-        "type": "Series C-1 (upsized close)",
-        "amount": 700,
-        "date": "2025-02-06",
-        "lead": "Amazon Climate Pledge Fund (anchor)"
+        "type": "IPO",
+        "amount": 1000,
+        "date": "2026-04-24",
+        "lead": null
       },
       "cindyVCBackers": [
         "Amazon Climate Pledge"
       ],
-      "source": "https://x-energy.com/news/x-energy-closes-upsized-700-million-series-c-1-financing-round-to-accelerate-the-development-of-advanced-small-modular-nuclear-technology/",
+      "source": "https://techcrunch.com/2026/04/24/nuclear-startup-x-energy-raises-1b-in-data-center-driven-ipo/",
       "leadership": {
         "ceo": {
           "name": "J. Clay Sell",
@@ -124,6 +124,50 @@
           "date": "2025-02",
           "text": "Series C-1 upsized to $700M; Segra Capital + Jane Street + Ares + Emerson Collective joined"
         }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:49:35.271Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.95,
+          "reason": "Same Nov 2025 Series D event from two authoritative sources; clear progression from Series C-1 (Feb 2025) to Series D (Nov 2025)",
+          "source": "https://www.businesswire.com/news/home/20251124774353/en/X-energy-Closes-Oversubscribed-%24700-Million-Series-D-Financing-Round-to-Continue-Expansion-to-Meet-Global-Energy-Demand",
+          "sourceTitle": "X-energy Closes Oversubscribed $700 Million Series D Financing Round to Continue Expansion to Meet Global Energy Demand",
+          "clusterSize": 2,
+          "previousState": {
+            "round": {
+              "type": "Series C-1 (upsized close)",
+              "amount": 700,
+              "date": "2025-02-06",
+              "lead": "Amazon Climate Pledge Fund (anchor)"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://x-energy.com/news/x-energy-closes-upsized-700-million-series-c-1-financing-round-to-accelerate-the-development-of-advanced-small-modular-nuclear-technology/"
+          }
+        },
+        {
+          "appliedAt": "2026-05-25T00:49:36.813Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_status",
+          "confidence": 0.98,
+          "reason": "TechCrunch URL explicitly states IPO; X-energy transitioning from private Series D to public company",
+          "source": "https://techcrunch.com/2026/04/24/nuclear-startup-x-energy-raises-1b-in-data-center-driven-ipo/",
+          "sourceTitle": "Nuclear startup X-energy raises $1B in data center-driven IPO | TechCrunch",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series D",
+              "amount": 700,
+              "date": "2025-11-24",
+              "lead": null
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.businesswire.com/news/home/20251124774353/en/X-energy-Closes-Oversubscribed-%24700-Million-Series-D-Financing-Round-to-Continue-Expansion-to-Meet-Global-Energy-Demand"
+          }
+        }
       ]
     },
     {
@@ -135,13 +179,13 @@
       "ticker": "OKLO",
       "tech": "Aurora microreactor; targeting AI data-center + industrial markets",
       "round": {
-        "type": "SPAC merger close",
-        "amount": 306,
-        "date": "2024-05-09",
-        "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)"
+        "type": "Funding round",
+        "amount": 1200,
+        "date": "2025-12-31",
+        "lead": "Meta (prepayment agreement)"
       },
       "cindyVCBackers": [],
-      "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm",
+      "source": "https://finance.biggo.com/news/US_OKLO_2026-03-17",
       "leadership": {
         "ceo": {
           "name": "Jacob DeWitte",
@@ -182,6 +226,29 @@
         {
           "date": "2025-03",
           "text": "Chris Wright departed board upon confirmation as US Secretary of Energy"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:49:45.981Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "New $1.2B funding round from Q4 2025 earnings announced April 2026, post-SPAC merger; Meta prepayment contract suggests equity or debt facility distinct from prior SPAC close",
+          "source": "https://finance.biggo.com/news/US_OKLO_2026-03-17",
+          "sourceTitle": "[OKLO Q4 2025 Earnings Call] Oklo Raises $1.2B, Inks Meta Prepayment for 1.2-GW Ohio Campus as Operating Loss Hits $139.3M — BigGo Finance",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "SPAC merger close",
+              "amount": 306,
+              "date": "2024-05-09",
+              "lead": "AltC Acquisition Corp (Sam Altman / Michael Klein)"
+            },
+            "status": "public",
+            "ticker": "OKLO",
+            "source": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924058297/tm2413786d1_ex99-1.htm"
+          }
         }
       ]
     },
@@ -318,13 +385,13 @@
       "status": "private",
       "tech": "20MWe PWR microreactors; factory-built; Europe-focused (Poland / Romania / UK)",
       "round": {
-        "type": "Series B",
-        "amount": 40,
-        "date": "2024-08-29",
-        "lead": "Gigafund"
+        "type": "Series C",
+        "amount": 100,
+        "date": "2025-12-16",
+        "lead": null
       },
       "cindyVCBackers": [],
-      "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor",
+      "source": "https://techcrunch.com/2025/12/16/nuclear-startup-last-energy-raises-100m-for-its-steel-encased-micro-reactor/",
       "leadership": {
         "ceo": {
           "name": "Bret Kugelmass",
@@ -356,6 +423,50 @@
           "date": "2024",
           "text": "80 commercial unit agreements secured; targeting first plant 2026"
         }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:49:52.872Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.85,
+          "reason": "Series C $100M raised Jan 2026, 16 months after Series B; credible nuclear trade publication source",
+          "source": "https://www.neimagazine.com/news/last-energy-funded-for-pwr-5-pilot/",
+          "sourceTitle": "Last Energy funded for PWR-5 pilot - Nuclear Engineering International",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series B",
+              "amount": 40,
+              "date": "2024-08-29",
+              "lead": "Gigafund"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://lastenergy.com/news-press/last-energy-announces-40m-series-b-accelerates-deployment-of-first-microreactor"
+          }
+        },
+        {
+          "appliedAt": "2026-05-25T00:49:54.565Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.95,
+          "reason": "Same Series C $100M event Dec 2025 from two sources; data.json round date is 22 days later (likely stale); TechCrunch is more authoritative",
+          "source": "https://techcrunch.com/2025/12/16/nuclear-startup-last-energy-raises-100m-for-its-steel-encased-micro-reactor/",
+          "sourceTitle": "Nuclear startup Last Energy raises $100M for its steel-encased micro reactor | TechCrunch",
+          "clusterSize": 2,
+          "previousState": {
+            "round": {
+              "type": "Series C",
+              "amount": 100,
+              "date": "2026-01-07",
+              "lead": null
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.neimagazine.com/news/last-energy-funded-for-pwr-5-pilot/"
+          }
+        }
       ]
     },
     {
@@ -369,7 +480,7 @@
         "type": "Series B2",
         "amount": 863,
         "date": "2025-08-28",
-        "lead": "Oversubscribed; multi-investor round"
+        "lead": "Oversubscribed; multi-investor round, Nvidia, Google, Bill Gates"
       },
       "cindyVCBackers": [
         "Breakthrough",
@@ -429,6 +540,29 @@
         {
           "date": "2025-08",
           "text": "Christopher Liddell joined Board of Directors"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:49:56.021Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "merge_info",
+          "confidence": 0.98,
+          "reason": "Same Series B2 $863M round from Aug 28, 2025; candidates identify specific lead investors (Nvidia, Google, Bill Gates) missing from current generic description",
+          "source": "https://techcrunch.com/2025/08/28/nvidia-google-and-bill-gates-help-commonwealth-fusion-systems-raise-863m/",
+          "sourceTitle": "Nvidia, Google, and Bill Gates help Commonwealth Fusion Systems raise $863M | TechCrunch",
+          "clusterSize": 2,
+          "previousState": {
+            "round": {
+              "type": "Series B2",
+              "amount": 863,
+              "date": "2025-08-28",
+              "lead": "Oversubscribed; multi-investor round"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-863-million-series-b2-round-to-accelerate-the-commercialization-of-fusion-energy/"
+          }
         }
       ]
     },
@@ -697,13 +831,13 @@
       "ticker": "GWH",
       "tech": "Iron flow battery for grid-scale long-duration storage",
       "round": {
-        "type": "SPAC merger close",
-        "amount": 308,
-        "date": "2021-10-08",
-        "lead": "ACON S2 Acquisition Corp"
+        "type": "Funding round",
+        "amount": 40,
+        "date": "2025-10-14",
+        "lead": null
       },
       "cindyVCBackers": [],
-      "source": "https://essinc.com/",
+      "source": "https://essinc.com/ess-announces-closing-of-40-million-financing-transaction/",
       "leadership": {
         "ceo": {
           "name": "Drew Buckley",
@@ -754,6 +888,50 @@
         {
           "date": "2024-25",
           "text": "Continued grid-scale deployments"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:03.397Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.92,
+          "reason": "New $31M insider funding round for public company ESS Inc (GWH) announced July 2025, well after Oct 2021 SPAC close",
+          "source": "https://www.businesswire.com/news/home/20250711017889/en/ESS-Announces-%2431M-Insider-Led-Funding-Package-to-Continue-Execution-of-Strategic-Shift-and-Secures-First-Energy-Base-Order",
+          "sourceTitle": "ESS Announces $31M Insider-Led Funding Package to Continue Execution of Strategic Shift and Secures First Energy Base Order",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "SPAC merger close",
+              "amount": 308,
+              "date": "2021-10-08",
+              "lead": "ACON S2 Acquisition Corp"
+            },
+            "status": "public",
+            "ticker": "GWH",
+            "source": "https://essinc.com/"
+          }
+        },
+        {
+          "appliedAt": "2026-05-25T00:50:04.956Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.94,
+          "reason": "Two sources confirm Oct 2025 $40M financing round, 3+ months after current July round; official PR is most authoritative",
+          "source": "https://www.batteriesinternational.com/news/ess-tech-secures-40m-capital-boost-for-iron-flow-bess/",
+          "sourceTitle": "ESS Tech secures $40m capital boost for iron flow BESS – Batteries International",
+          "clusterSize": 2,
+          "previousState": {
+            "round": {
+              "type": "Funding round",
+              "amount": 31,
+              "date": "2025-07-11",
+              "lead": "insider-led"
+            },
+            "status": "public",
+            "ticker": "GWH",
+            "source": "https://www.businesswire.com/news/home/20250711017889/en/ESS-Announces-%2431M-Insider-Led-Funding-Package-to-Continue-Execution-of-Strategic-Shift-and-Secures-First-Energy-Base-Order"
+          }
         }
       ]
     },
@@ -824,9 +1002,9 @@
       "tech": "100MW PEM electrolyzer plants; Devens MA gigafactory (1.2GW capacity); first US H2 unicorn",
       "round": {
         "type": "Series C",
-        "amount": 380,
-        "date": "2023-10-03",
-        "lead": "Fortescue + Fifth Wall + Energy Impact Partners"
+        "amount": 1000,
+        "date": "2026-05-01",
+        "lead": "Fortescue"
       },
       "cindyVCBackers": [
         "EIP",
@@ -838,7 +1016,7 @@
         "Prelude Venture",
         "S2G"
       ],
-      "source": "https://eh2.com/electric-hydrogen-raises-380-million-to-transform-the-economics-of-green-hydrogen-production-2/",
+      "source": "https://hunternewenergy.com.au/electric-hydrogen-becomes-first-1-billion-green-hydrogen-startup-with-fortescue-as-lead-investor/",
       "leadership": {
         "ceo": {
           "name": "Raffi Garabedian",
@@ -873,6 +1051,29 @@
         {
           "date": "2024-05",
           "text": "$100M credit facility from HSBC + JPM + Stifel + Hercules"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:10.631Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "New Series C milestone $1B round May 2026, ~2.5 years after prior Series C; Fortescue confirmed as lead investor",
+          "source": "https://hunternewenergy.com.au/electric-hydrogen-becomes-first-1-billion-green-hydrogen-startup-with-fortescue-as-lead-investor/",
+          "sourceTitle": "Electric Hydrogen becomes first $1 billion green hydrogen startup, with Fortescue as lead investor - Hunter New Energy",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series C",
+              "amount": 380,
+              "date": "2023-10-03",
+              "lead": "Fortescue + Fifth Wall + Energy Impact Partners"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://eh2.com/electric-hydrogen-raises-380-million-to-transform-the-economics-of-green-hydrogen-production-2/"
+          }
         }
       ]
     },
@@ -1116,9 +1317,9 @@
       "tech": "CO₂-to-products electrolysis; AirPlant One SAF plant in Moses Lake WA; Alaska Airlines / IAG customers",
       "round": {
         "type": "Series C",
-        "amount": 200,
-        "date": "2024-09-19",
-        "lead": "TPG + Capricorn + Pulse Fund"
+        "amount": 85,
+        "date": "2025-03-11",
+        "lead": "Amazon Climate Pledge Fund"
       },
       "cindyVCBackers": [
         "TPG Rise Climate",
@@ -1126,7 +1327,7 @@
         "5th Wall",
         "DCVC Climate"
       ],
-      "source": "https://www.tpg.com/news-and-insights/twelve-announces-645-million-in-funding-led-by-tpg-to-transform-co2-into-jet-fuel-and-electrochemicals-at-scale",
+      "source": "https://www.twelve.co/post/building-a-world-made-from-air-twelve-secures-83-million-in-additional-series-c-project-funding",
       "leadership": {
         "ceo": {
           "name": "Nicholas Flanders",
@@ -1168,6 +1369,50 @@
         {
           "date": "2024-09",
           "text": "$645M package — Series C $200M + TPG Rise project equity $400M + $45M credit"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:16.423Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "Same Series C tranche 6 months after initial close; $85M additional funding explicitly labeled as Series C continuation",
+          "source": "https://www.twelve.co/post/building-a-world-made-from-air-twelve-secures-83-million-in-additional-series-c-project-funding",
+          "sourceTitle": "Twelve Secures $85 million in Additional Series C & Project Funding",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series C",
+              "amount": 200,
+              "date": "2024-09-19",
+              "lead": "TPG + Capricorn + Pulse Fund"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.tpg.com/news-and-insights/twelve-announces-645-million-in-funding-led-by-tpg-to-transform-co2-into-jet-fuel-and-electrochemicals-at-scale"
+          }
+        },
+        {
+          "appliedAt": "2026-05-25T00:50:19.404Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "merge_info",
+          "confidence": 0.88,
+          "reason": "Same Series C round (amounts within 2%, dates 27 days apart in same funding window); candidate identifies lead investor (Amazon Climate Pledge Fund) absent from data.json",
+          "source": "https://esgnews.com/amazons-climate-pledge-fund-backs-twelves-83m-expansion-to-scale-co%E2%82%82-transformation/",
+          "sourceTitle": "Amazon’s Climate Pledge Fund Backs Twelve’s $83M Expansion to Scale CO₂ Transformation - ESG News",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series C",
+              "amount": 85,
+              "date": "2025-03-11",
+              "lead": null
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.twelve.co/post/building-a-world-made-from-air-twelve-secures-83-million-in-additional-series-c-project-funding"
+          }
         }
       ]
     },
@@ -1463,17 +1708,17 @@
       "status": "private",
       "tech": "Alcohol-to-jet SAF; Freedom Pines plant in Georgia operational since Jan 2024; 10M gal/yr capacity",
       "round": {
-        "type": "Strategic investment",
-        "amount": null,
-        "date": "2024-04-22",
-        "lead": "Microsoft Climate Innovation Fund (amount undisclosed)"
+        "type": "Series funding",
+        "amount": 47,
+        "date": "2026-02-19",
+        "lead": "Shell and IAG (co-leads)"
       },
       "cindyVCBackers": [
         "Microsoft Climate Innovation Fund",
         "Breakthrough",
         "Shell Ventures"
       ],
-      "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-investment-from-microsofts-climate-innovation-fund-supporting-continued-company-growth",
+      "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-47m-in-new-capital-and-first-close-of-equity-round-at-650m-pre-money-valuation",
       "leadership": {
         "ceo": {
           "name": "Jimmy Samartzis",
@@ -1498,6 +1743,29 @@
           "date": "2024-04",
           "text": "Microsoft Climate Innovation Fund investment"
         }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:31.154Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.95,
+          "reason": "Four sources confirm Feb 2026 $47M first close of equity round; official company PR and press release are authoritative",
+          "source": "https://www.prnewswire.com/in/news-releases/lanzajet-announces-47m-in-new-capital-and-first-close-of-equity-round-at-650m-pre-money-valuation--further-validating-lanzajets-saf-technology-and-enabling-growth-302692774.html",
+          "sourceTitle": "LANZAJET ANNOUNCES $47M IN NEW CAPITAL AND FIRST CLOSE OF EQUITY ROUND AT $650M PRE-MONEY VALUATION - FURTHER VALIDATING LANZAJET'S SAF TECHNOLOGY AND ENABLING GROWTH",
+          "clusterSize": 4,
+          "previousState": {
+            "round": {
+              "type": "Strategic investment",
+              "amount": null,
+              "date": "2024-04-22",
+              "lead": "Microsoft Climate Innovation Fund (amount undisclosed)"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-investment-from-microsofts-climate-innovation-fund-supporting-continued-company-growth"
+          }
+        }
       ]
     },
     {
@@ -1505,18 +1773,18 @@
       "name": "Beta Technologies",
       "sector": "aviation",
       "hq": "Burlington, VT",
-      "status": "private",
+      "status": "public",
       "tech": "Electric aircraft ALIA (CTOL + VTOL variants) for cargo + passenger; FAA certification pursuit",
       "round": {
-        "type": "Series C",
-        "amount": 318,
-        "date": "2024-10-31",
-        "lead": "QIA (Qatar Investment Authority)"
+        "type": "IPO",
+        "amount": 7400,
+        "date": "2026-02-27",
+        "lead": null
       },
       "cindyVCBackers": [
         "TPG Rise Climate"
       ],
-      "source": "https://www.businesswire.com/news/home/20241031872366/en/BETA-Technologies-raises-more-than-%24300M-in-additional-equity-capital-to-fund-growth-and-commercialization",
+      "source": "https://evtol.travel/blogs/beta-technologies-ipo-7-billion-public-company",
       "leadership": {
         "ceo": {
           "name": "Kyle Clark",
@@ -1564,6 +1832,30 @@
           "date": "2024-10",
           "text": "Series C $318M — QIA-led, with Fidelity + TPG Rise Climate increasing ownership"
         }
+      ],
+      "ticker": "BETA",
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:34.699Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_status",
+          "confidence": 0.95,
+          "reason": "URL title explicitly states IPO with $7.4B valuation; emit both status change and IPO as new round",
+          "source": "https://evtol.travel/blogs/beta-technologies-ipo-7-billion-public-company",
+          "sourceTitle": "BETA Technologies IPO: $7.4B Valuation, NYSE Stock & Order Backlog | eVTOL.Travel",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series C",
+              "amount": 318,
+              "date": "2024-10-31",
+              "lead": "QIA (Qatar Investment Authority)"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.businesswire.com/news/home/20241031872366/en/BETA-Technologies-raises-more-than-%24300M-in-additional-equity-capital-to-fund-growth-and-commercialization"
+          }
+        }
       ]
     },
     {
@@ -1606,15 +1898,15 @@
       "tech": "natural hydrogen exploration technology developer",
       "round": {
         "type": "Series A",
-        "amount": 36,
-        "date": "2026-05",
+        "amount": 44,
+        "date": "2026-05-13",
         "lead": "Sandwater"
       },
       "cindyVCBackers": [
         "Sandwater",
         "Breakthrough Energy Ventures"
       ],
-      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
+      "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
       "discoveredVia": "CTVC-2026-05-24",
       "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
       "criticConfidence": 0.92,
@@ -1628,6 +1920,29 @@
         {
           "date": "2026-05",
           "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-25T00:50:43.196Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "Same Series A event May 2026; candidate €31M (≈$44M) vs current $36M likely currency conversion + rounding difference",
+          "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
+          "sourceTitle": "France’s Mantle8 raises €31 million to fund the world’s most advanced natural hydrogen exploration and drilling campaign | EU-Startups",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series A",
+              "amount": 36,
+              "date": "2026-05",
+              "lead": "Sandwater"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
+          }
         }
       ]
     }
