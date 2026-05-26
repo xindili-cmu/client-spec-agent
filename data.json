@@ -1947,6 +1947,44 @@
         }
       ],
       "_audit": []
+    },
+    {
+      "id": "ecor",
+      "name": "ECOR Global",
+      "sector": "industrial-decarb",
+      "hq": "La Jolla, CA (HQ); Tavnik, Serbia (manufacturing)",
+      "status": "private",
+      "tech": "Converts agricultural and urban waste cellulose fibers into sustainable building panels replacing traditional wood-based products. 100% bio-based, no urea formaldehyde / isocyanides. Panel thickness 1.8-16mm. Customer roster includes Mars, Google, Amazon, Whole Foods, Hunter Douglas, General Mills.",
+      "round": {
+        "type": "Private — funding history not publicly disclosed",
+        "amount": null,
+        "date": null,
+        "lead": null
+      },
+      "cindyVCBackers": [],
+      "source": "https://ecorglobal.com/",
+      "leadership": {
+        "ceo": {
+          "name": "Jay Potter",
+          "title": "Founder & CEO",
+          "bg": "25-year clean-tech veteran; has directed $85M+ into sustainability / circularity ventures"
+        },
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [],
+      "_audit": [
+        {
+          "appliedAt": "2026-05-26T13:20:40.650Z",
+          "appliedBy": "cindy-decision-week3",
+          "action": "add_startup",
+          "reason": "Manually added — Cindy active target. Public-info layer 1 only per Ecor confidentiality constraint discussed 2026-05-26.",
+          "source": "https://ecorglobal.com/",
+          "sourceTitle": "ECOR Global - Home Page (official site)",
+          "previousState": null
+        }
+      ]
     }
   ],
   "vcs": {
