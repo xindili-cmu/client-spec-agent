@@ -1689,7 +1689,7 @@
       "status": "private",
       "tech": "Alcohol-to-jet SAF; Freedom Pines plant in Georgia operational since Jan 2024; 10M gal/yr capacity",
       "round": {
-        "type": "Series funding",
+        "type": "1st close (of $135M planned)",
         "amount": 47,
         "date": "2026-02-19",
         "lead": "Shell and IAG (co-leads)"
@@ -1745,6 +1745,26 @@
             "status": "private",
             "ticker": null,
             "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-investment-from-microsofts-climate-innovation-fund-supporting-continued-company-growth"
+          }
+        },
+        {
+          "appliedAt": "2026-05-26T02:34:56.559Z",
+          "appliedBy": "cindy-decision-week2",
+          "action": "update_round",
+          "confidence": 1,
+          "reason": "Cindy verified ESGPost article: $47M is 1st close of $135M planned round; updating type field to reflect partial-close structure",
+          "source": "https://esgpost.com/lanzajet-secures-first-close-of-135m-equity-round-to-scale-saf-technology/",
+          "sourceTitle": "LanzaJet secures first close of $135m equity round to scale SAF technology",
+          "previousState": {
+            "round": {
+              "type": "Series funding",
+              "amount": 47,
+              "date": "2026-02-19",
+              "lead": "Shell and IAG (co-leads)"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.lanzajet.com/news-insights/lanzajet-announces-47m-in-new-capital-and-first-close-of-equity-round-at-650m-pre-money-valuation"
           }
         }
       ]
