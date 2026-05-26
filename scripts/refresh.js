@@ -443,6 +443,27 @@ function formatChangelogMd(roundBuckets, newsItems, today, ctvcResult) {
     }
   }
 
+  if (ctvcResult?.duplicates.length) {
+    md += `## 🔁 CTVC duplicates (already in watchlist)\n\n`;
+    for (const d of ctvcResult.duplicates) {
+      md += `- **${d.candidate.name}** ≈ ${d.verdict.duplicate_of || 'existing entry'}\n`;
+      md += `  - Critic: _${d.verdict.reason}_\n\n`;
+    }
+  }
+
+  if (ctvcResult?.rejected.length) {
+    md += `## 🤫 CTVC rejected (${ctvcResult.rejected.length}) — verify Critic isn't over-rejecting\n\n`;
+    md += `_If any look like real climate/energy A-round+ companies, the CTVC Critic prompt may be too strict._\n\n`;
+    for (const r of ctvcResult.rejected) {
+      const hq = r.candidate.hq ? ` (${r.candidate.hq})` : '';
+      const amt = r.candidate.amount ? fmtAmount(r.candidate.amount) : '—';
+      const round = r.candidate.roundType || '';
+      md += `- **${r.candidate.name}**${hq} — ${amt} ${round}\n`;
+      md += `  - Tech: ${r.candidate.tech || '—'}\n`;
+      md += `  - Critic: _${r.verdict.reason}_ (conf ${r.verdict.confidence})\n\n`;
+    }
+  }
+
   if (silentReject.length) {
     md += `## 🤫 Silently rejected (noise filtered by Critic)\n\n`;
     const byReason = {};
@@ -550,6 +571,29 @@ function formatEmailHtml(roundBuckets, newsItems, today, ctvcResult, totalStartu
       }
       for (const n of ctvcNeedsHuman) {
         html += `<li style="margin-bottom:10px"><strong>${n.candidate.name}</strong> <span style="color:#94a3b8;font-size:11px">CTVC new</span> (${n.candidate.hq}) — ${fmtAmount(n.candidate.amount)} ${n.candidate.roundType || ''}<br><span style="font-size:12px;color:#475569">${n.candidate.tech}</span><br><span style="font-size:11px;color:#94a3b8;font-style:italic">Critic: ${n.verdict.reason}</span></li>`;
+      }
+      html += `</ul>`;
+    }
+
+    // 🔁 BUCKET 4a: CTVC duplicates — already in watchlist
+    if (ctvcResult?.duplicates.length) {
+      html += `<h3 style="color:#94a3b8;margin-top:28px;font-size:14px">🔁 CTVC duplicates (${ctvcResult.duplicates.length})</h3>`;
+      html += `<ul style="padding-left:18px;color:#64748b;font-size:12px">`;
+      for (const d of ctvcResult.duplicates) {
+        html += `<li><strong>${d.candidate.name}</strong> ≈ ${d.verdict.duplicate_of || 'existing'} — <em>${d.verdict.reason}</em></li>`;
+      }
+      html += `</ul>`;
+    }
+
+    // 🤫 BUCKET 4b: CTVC rejected — full list to verify Critic isn't over-rejecting
+    if (ctvcResult?.rejected.length) {
+      html += `<h3 style="color:#94a3b8;margin-top:28px;font-size:14px">🤫 CTVC rejected (${ctvcResult.rejected.length}) — verify Critic isn't over-rejecting</h3>`;
+      html += `<p style="color:#64748b;font-size:12px;font-style:italic;margin-top:6px">If any look like real climate/energy A-round+ companies, the CTVC Critic prompt may be too strict.</p>`;
+      html += `<ul style="padding-left:18px;color:#64748b;font-size:12px">`;
+      for (const r of ctvcResult.rejected) {
+        const hq = r.candidate.hq ? ` <span style="color:#94a3b8">(${r.candidate.hq})</span>` : '';
+        const amt = r.candidate.amount ? `${fmtAmount(r.candidate.amount)} ${r.candidate.roundType || ''}` : '';
+        html += `<li style="margin-bottom:4px"><strong>${r.candidate.name}</strong>${hq} — ${amt}<br><span style="font-size:11px;color:#94a3b8;font-style:italic">Critic: ${r.verdict.reason}</span></li>`;
       }
       html += `</ul>`;
     }
