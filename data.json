@@ -1954,12 +1954,12 @@
       "sector": "industrial-decarb",
       "hq": "La Jolla, CA (HQ); Tavnik, Serbia (manufacturing)",
       "status": "private",
-      "tech": "Converts agricultural and urban waste cellulose fibers into sustainable building panels replacing traditional wood-based products. 100% bio-based, no urea formaldehyde / isocyanides. Panel thickness 1.8-16mm. Customer roster includes Mars, Google, Amazon, Whole Foods, Hunter Douglas, General Mills.",
+      "tech": "Converts agricultural and urban waste cellulose fibers into sustainable building panels replacing traditional wood-based products. 100% bio-based, no urea formaldehyde / isocyanides. Panel thickness 1.8-16mm. Customer roster includes Mars, Google, Amazon, Whole Foods, Hunter Douglas, General Mills. Legal entity: Noble Environmental Technologies, Inc. (formerly Kiva Advanced Environmental Technologies).",
       "round": {
-        "type": "Private — funding history not publicly disclosed",
+        "type": "Strategic growth (2023-11, amount undisclosed); ~$20M aggregate to date per third-party trackers (PitchBook / Tracxn / Crunchbase)",
         "amount": null,
-        "date": null,
-        "lead": null
+        "date": "2023-11-20",
+        "lead": "Phalanx Impact Partners (2023 strategic); Keshif Ventures (2014 Series A, undisclosed)"
       },
       "cindyVCBackers": [],
       "source": "https://ecorglobal.com/",
@@ -1967,13 +1967,24 @@
         "ceo": {
           "name": "Jay Potter",
           "title": "Founder & CEO",
-          "bg": "25-year clean-tech veteran; has directed $85M+ into sustainability / circularity ventures"
+          "bg": "25-year clean-tech veteran; has directed $85M+ into sustainability / circularity ventures. Director at Beam Global 2006-2018, through that company's NASDAQ listing. Founded GreenCore Capital in 2008. Aerospace engineering background."
         },
-        "cofounders": [],
+        "cofounders": [
+          {
+            "name": "Robert L. Noble",
+            "title": "Co-Founder",
+            "bg": "Co-founded company with Jay Potter in 2006; legal entity Noble Environmental Technologies is named after him."
+          }
+        ],
         "board": [],
         "introPaths": []
       },
-      "recentNews": [],
+      "recentNews": [
+        {
+          "date": "2023-11",
+          "text": "Strategic investment from Phalanx Impact Partners to accelerate pre-construction of first U.S. manufacturing facility and expand Serbian operations"
+        }
+      ],
       "_audit": [
         {
           "appliedAt": "2026-05-26T13:20:40.650Z",
@@ -1983,6 +1994,35 @@
           "source": "https://ecorglobal.com/",
           "sourceTitle": "ECOR Global - Home Page (official site)",
           "previousState": null
+        },
+        {
+          "appliedAt": "2026-05-30T22:23:34.240Z",
+          "appliedBy": "cindy-decision-week3",
+          "action": "backfill_public_info",
+          "reason": "Public-info layer 1 backfill from v3.6 research-agent run on 2026-05-30. Adds legal entity disambiguation, CEO NASDAQ board experience, co-founder, most recent funding event. All sources from research-report Sources section.",
+          "source": "https://www.businesswire.com/news/home/20231120099344/en/ECOR-Global-Inc.-Secures-Funding-from-Phalanx-Impact-Partners-to-Accelerate-Capital-Projects",
+          "sourceTitle": "BusinessWire — ECOR Global Secures Funding from Phalanx Impact Partners (2023-11-20)",
+          "researchReport": "research-reports/ecor-global/research-report.md",
+          "previousState": {
+            "tech": "Converts agricultural and urban waste cellulose fibers into sustainable building panels replacing traditional wood-based products. 100% bio-based, no urea formaldehyde / isocyanides. Panel thickness 1.8-16mm. Customer roster includes Mars, Google, Amazon, Whole Foods, Hunter Douglas, General Mills.",
+            "round": {
+              "type": "Private — funding history not publicly disclosed",
+              "amount": null,
+              "date": null,
+              "lead": null
+            },
+            "leadership": {
+              "ceo": {
+                "name": "Jay Potter",
+                "title": "Founder & CEO",
+                "bg": "25-year clean-tech veteran; has directed $85M+ into sustainability / circularity ventures"
+              },
+              "cofounders": [],
+              "board": [],
+              "introPaths": []
+            },
+            "recentNews": []
+          }
         }
       ]
     }
