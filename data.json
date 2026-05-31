@@ -1,6 +1,6 @@
 {
   "dataAsOf": "2026-05-25",
-  "schemaVersion": "2.1",
+  "schemaVersion": "2.2",
   "startups": [
     {
       "id": "kairos",
@@ -2031,442 +2031,609 @@
     "incubator": [
       {
         "name": "Greentown Labs",
-        "loc": "Somerville, MA"
+        "loc": "Somerville, MA",
+        "entity_type": "VC"
       },
       {
         "name": "Brooklyn New Lab",
-        "loc": "Brooklyn, NY"
+        "loc": "Brooklyn, NY",
+        "entity_type": "VC"
       },
       {
         "name": "BXVentures",
-        "loc": "NYC"
+        "loc": "NYC",
+        "entity_type": "VC"
       },
       {
         "name": "Airminers",
-        "loc": "Global"
+        "loc": "Global",
+        "entity_type": "VC"
       },
       {
         "name": "Techstars",
-        "loc": "Global"
+        "loc": "Global",
+        "entity_type": "VC"
       }
     ],
     "early": [
       {
-        "name": "ArborView Capital"
+        "name": "ArborView Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Accelr8"
+        "name": "Accelr8",
+        "entity_type": "VC"
       },
       {
-        "name": "ArcTern Ventures"
+        "name": "ArcTern Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Avaana"
+        "name": "Avaana",
+        "entity_type": "VC"
       },
       {
-        "name": "Audacity Venture"
+        "name": "Audacity Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Azolla Venture"
+        "name": "Azolla Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Baruch Future Venture"
+        "name": "Baruch Future Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Better Venture"
+        "name": "Better Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Blue Bear Capital"
+        "name": "Blue Bear Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Braemar Venture"
+        "name": "Braemar Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Buoyant Capital Nature"
+        "name": "Buoyant Capital Nature",
+        "entity_type": "VC"
       },
       {
-        "name": "Capricorn"
+        "name": "Capricorn",
+        "entity_type": "VC"
       },
       {
-        "name": "Carbon 13"
+        "name": "Carbon 13",
+        "entity_type": "VC"
       },
       {
-        "name": "Carbon Removal Partner"
+        "name": "Carbon Removal Partner",
+        "entity_type": "VC"
       },
       {
-        "name": "Citylight"
+        "name": "Citylight",
+        "entity_type": "VC"
       },
       {
-        "name": "CLAI (Climate AI)"
+        "name": "CLAI (Climate AI)",
+        "entity_type": "VC"
       },
       {
-        "name": "Clean Growth Fund"
+        "name": "Clean Growth Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "ClearSky"
+        "name": "ClearSky",
+        "entity_type": "VC"
       },
       {
-        "name": "Clean Energy Venture Group"
+        "name": "Clean Energy Venture Group",
+        "entity_type": "VC"
       },
       {
-        "name": "Climate Capital / Scout Fund"
+        "name": "Climate Capital / Scout Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "Climate VC"
+        "name": "Climate VC",
+        "entity_type": "VC"
       },
       {
-        "name": "Climentum Capital"
+        "name": "Climentum Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Counteract"
+        "name": "Counteract",
+        "entity_type": "VC"
       },
       {
-        "name": "DCVC Climate"
+        "name": "DCVC Climate",
+        "entity_type": "VC"
       },
       {
-        "name": "Doral Energy-Tech Ventures"
+        "name": "Doral Energy-Tech Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Elemental Accelerator"
+        "name": "Elemental Accelerator",
+        "entity_type": "VC"
       },
       {
-        "name": "Eneco"
+        "name": "Eneco",
+        "entity_type": "VC"
       },
       {
-        "name": "Energy Capital Venture"
+        "name": "Energy Capital Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Energy Foundry"
+        "name": "Energy Foundry",
+        "entity_type": "VC"
       },
       {
-        "name": "Energy Revolution"
+        "name": "Energy Revolution",
+        "entity_type": "VC"
       },
       {
-        "name": "Engie New Ventures"
+        "name": "Engie New Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Energy Transition Venture"
+        "name": "Energy Transition Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Equator"
+        "name": "Equator",
+        "entity_type": "VC"
       },
       {
-        "name": "ETF Partners"
+        "name": "ETF Partners",
+        "entity_type": "VC"
       },
       {
-        "name": "Evergreen Climate Solutions"
+        "name": "Evergreen Climate Solutions",
+        "entity_type": "VC"
       },
       {
-        "name": "Evergy"
+        "name": "Evergy",
+        "entity_type": "VC"
       },
       {
-        "name": "Evok"
+        "name": "Evok",
+        "entity_type": "VC"
       },
       {
-        "name": "Fallline"
+        "name": "Fallline",
+        "entity_type": "VC"
       },
       {
-        "name": "First Imagine!"
+        "name": "First Imagine!",
+        "entity_type": "VC"
       },
       {
-        "name": "Footprint Coalition"
+        "name": "Footprint Coalition",
+        "entity_type": "VC"
       },
       {
-        "name": "Future Energy"
+        "name": "Future Energy",
+        "entity_type": "VC"
       },
       {
-        "name": "GenZero"
+        "name": "GenZero",
+        "entity_type": "VC"
       },
       {
-        "name": "G Force"
+        "name": "G Force",
+        "entity_type": "VC"
       },
       {
-        "name": "G2 Venture"
+        "name": "G2 Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Gigascale"
+        "name": "Gigascale",
+        "entity_type": "VC"
       },
       {
-        "name": "Greensoil"
+        "name": "Greensoil",
+        "entity_type": "VC"
       },
       {
-        "name": "Hatch"
+        "name": "Hatch",
+        "entity_type": "VC"
       },
       {
-        "name": "Helios Climate"
+        "name": "Helios Climate",
+        "entity_type": "VC"
       },
       {
-        "name": "Investible"
+        "name": "Investible",
+        "entity_type": "VC"
       },
       {
-        "name": "Katapult VC"
+        "name": "Katapult VC",
+        "entity_type": "VC"
       },
       {
-        "name": "Keiki Capital"
+        "name": "Keiki Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Keyframe"
+        "name": "Keyframe",
+        "entity_type": "VC"
       },
       {
-        "name": "Kost Capital"
+        "name": "Kost Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Link Capital"
+        "name": "Link Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Micelio"
+        "name": "Micelio",
+        "entity_type": "VC"
       },
       {
-        "name": "MCJ Collective"
+        "name": "MCJ Collective",
+        "entity_type": "VC"
       },
       {
-        "name": "PlanetaryVC"
+        "name": "PlanetaryVC",
+        "entity_type": "VC"
       },
       {
-        "name": "Planet First"
+        "name": "Planet First",
+        "entity_type": "VC"
       },
       {
-        "name": "New Climate Venture"
+        "name": "New Climate Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "NGIF"
+        "name": "NGIF",
+        "entity_type": "VC"
       },
       {
-        "name": "Nomadic Venture Partners"
+        "name": "Nomadic Venture Partners",
+        "entity_type": "VC"
       },
       {
-        "name": "Nucleus"
+        "name": "Nucleus",
+        "entity_type": "VC"
       },
       {
-        "name": "Overview Venture"
+        "name": "Overview Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Overture"
+        "name": "Overture",
+        "entity_type": "VC"
       },
       {
-        "name": "Pale Blue Dot"
+        "name": "Pale Blue Dot",
+        "entity_type": "VC"
       },
       {
-        "name": "Planet A"
+        "name": "Planet A",
+        "entity_type": "VC"
       },
       {
-        "name": "Planeteer"
+        "name": "Planeteer",
+        "entity_type": "VC"
       },
       {
-        "name": "Possible Ventures"
+        "name": "Possible Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Plug and Play"
+        "name": "Plug and Play",
+        "entity_type": "VC"
       },
       {
-        "name": "Powerhouse Venture"
+        "name": "Powerhouse Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Prelude Venture"
+        "name": "Prelude Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "ReGen VC"
+        "name": "ReGen VC",
+        "entity_type": "VC"
       },
       {
-        "name": "Renown Capital Partners"
+        "name": "Renown Capital Partners",
+        "entity_type": "VC"
       },
       {
-        "name": "Sandwater"
+        "name": "Sandwater",
+        "entity_type": "VC"
       },
       {
-        "name": "Satgana"
+        "name": "Satgana",
+        "entity_type": "VC"
       },
       {
-        "name": "SET Venture"
+        "name": "SET Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Silence VC"
+        "name": "Silence VC",
+        "entity_type": "VC"
       },
       {
-        "name": "SOSV"
+        "name": "SOSV",
+        "entity_type": "VC"
       },
       {
-        "name": "SpeedInvest"
+        "name": "SpeedInvest",
+        "entity_type": "VC"
       },
       {
-        "name": "Startlight Venture"
+        "name": "Startlight Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "SystemIQ"
+        "name": "SystemIQ",
+        "entity_type": "VC"
       },
       {
-        "name": "Thin Line Capital"
+        "name": "Thin Line Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Third Sphere"
+        "name": "Third Sphere",
+        "entity_type": "VC"
       },
       {
-        "name": "Trirec"
+        "name": "Trirec",
+        "entity_type": "VC"
       },
       {
-        "name": "Vector Capital"
+        "name": "Vector Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Ubermorgen Ventures"
+        "name": "Ubermorgen Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "H+"
+        "name": "H+",
+        "entity_type": "VC"
       },
       {
-        "name": "Zeon Ventures"
+        "name": "Zeon Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Viva"
+        "name": "Viva",
+        "entity_type": "VC"
       },
       {
-        "name": "Vita"
+        "name": "Vita",
+        "entity_type": "VC"
       },
       {
-        "name": "Volo Venture"
+        "name": "Volo Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Voyager"
+        "name": "Voyager",
+        "entity_type": "VC"
       },
       {
-        "name": "QPQ Blue Pale Dot"
+        "name": "QPQ Blue Pale Dot",
+        "entity_type": "VC"
       },
       {
-        "name": "Bessemer Trust AE Blue"
+        "name": "Bessemer Trust AE Blue",
+        "entity_type": "VC"
       },
       {
-        "name": "Contrarian Ventures"
+        "name": "Contrarian Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Iron Gate"
+        "name": "Iron Gate",
+        "entity_type": "VC"
       },
       {
-        "name": "Acorn Campus"
+        "name": "Acorn Campus",
+        "entity_type": "VC"
       },
       {
-        "name": "500 Startups / Global"
+        "name": "500 Startups / Global",
+        "entity_type": "VC"
       },
       {
-        "name": "Junction Growth Investors"
+        "name": "Junction Growth Investors",
+        "entity_type": "VC"
       }
     ],
     "late": [
       {
-        "name": "Amazon Climate Pledge"
+        "name": "Amazon Climate Pledge",
+        "entity_type": "VC"
       },
       {
-        "name": "ArcTern Ventures"
+        "name": "ArcTern Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Climate Innovation Capital"
+        "name": "Climate Innovation Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Blue Earth"
+        "name": "Blue Earth",
+        "entity_type": "VC"
       },
       {
-        "name": "Capricorn"
+        "name": "Capricorn",
+        "entity_type": "VC"
       },
       {
-        "name": "Decarbonization Partners"
+        "name": "Decarbonization Partners",
+        "entity_type": "VC"
       },
       {
-        "name": "Drawdown Fund"
+        "name": "Drawdown Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "Earthshot"
+        "name": "Earthshot",
+        "entity_type": "VC"
       },
       {
-        "name": "Emerald VC"
+        "name": "Emerald VC",
+        "entity_type": "VC"
       },
       {
-        "name": "Energize Capital"
+        "name": "Energize Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Galvanize Climate"
+        "name": "Galvanize Climate",
+        "entity_type": "VC"
       },
       {
-        "name": "General Atlantic BeyondZero"
+        "name": "General Atlantic BeyondZero",
+        "entity_type": "VC"
       },
       {
-        "name": "Global Cleantech Capital"
+        "name": "Global Cleantech Capital",
+        "entity_type": "VC"
       },
       {
-        "name": "Grantham Foundation"
+        "name": "Grantham Foundation",
+        "entity_type": "VC"
       },
       {
-        "name": "Just Climate"
+        "name": "Just Climate",
+        "entity_type": "VC"
       },
       {
-        "name": "Lowercarbon"
+        "name": "Lowercarbon",
+        "entity_type": "VC"
       },
       {
-        "name": "Microsoft Climate Innovation Fund"
+        "name": "Microsoft Climate Innovation Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "MKB"
+        "name": "MKB",
+        "entity_type": "VC"
       },
       {
-        "name": "Morgan Stanley 1GT"
+        "name": "Morgan Stanley 1GT",
+        "entity_type": "VC"
       },
       {
-        "name": "NextEra"
+        "name": "NextEra",
+        "entity_type": "VC"
       },
       {
-        "name": "5th Wall"
+        "name": "5th Wall",
+        "entity_type": "VC"
       },
       {
-        "name": "Breakthrough"
+        "name": "Breakthrough",
+        "entity_type": "VC"
       },
       {
-        "name": "S2G (Builder Vision)"
+        "name": "S2G (Builder Vision)",
+        "entity_type": "VC"
       },
       {
-        "name": "SE Venture"
+        "name": "SE Venture",
+        "entity_type": "VC"
       },
       {
-        "name": "Seaya Andromeda"
+        "name": "Seaya Andromeda",
+        "entity_type": "VC"
       },
       {
-        "name": "Shell Ventures"
+        "name": "Shell Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Sustainable Future Ventures"
+        "name": "Sustainable Future Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "TDK Ventures"
+        "name": "TDK Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Toyota Ventures Climate Fund"
+        "name": "Toyota Ventures Climate Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "The Westly Group"
+        "name": "The Westly Group",
+        "entity_type": "VC"
       },
       {
-        "name": "EIP"
+        "name": "EIP",
+        "entity_type": "VC"
       },
       {
-        "name": "Amazon / Bezos Earth"
+        "name": "Amazon / Bezos Earth",
+        "entity_type": "VC"
       },
       {
-        "name": "Extansia"
+        "name": "Extansia",
+        "entity_type": "VC"
       },
       {
-        "name": "Doral Energy Ventures"
+        "name": "Doral Energy Ventures",
+        "entity_type": "VC"
       },
       {
-        "name": "Vidia Equity"
+        "name": "Vidia Equity",
+        "entity_type": "VC"
       },
       {
-        "name": "Energy & Environment Fund"
+        "name": "Energy & Environment Fund",
+        "entity_type": "VC"
       },
       {
-        "name": "Congruent"
+        "name": "Congruent",
+        "entity_type": "VC"
       },
       {
-        "name": "All-Stack Tonic"
+        "name": "All-Stack Tonic",
+        "entity_type": "VC"
       },
       {
-        "name": "TPG Rise Climate"
+        "name": "TPG Rise Climate",
+        "entity_type": "VC"
       }
     ]
-  }
+  },
+  "spacSponsors": [],
+  "pipeInvestors": [],
+  "familyOffices": [],
+  "strategics": [],
+  "_schemaHistory": [
+    {
+      "migratedAt": "2026-05-31T18:49:18.922Z",
+      "appliedBy": "cindy-decision-week3",
+      "from": "2.1",
+      "to": "2.2",
+      "description": "Add entity_type field to VCs + 4 new top-level arrays for SPAC sponsors / PIPE / Family / Strategic. Schema prep for v3.5 Price model + v3.8 Matching Agent.",
+      "stats": {
+        "vcsAddedEntityType": 143,
+        "vcsAlreadyTagged": 0,
+        "arraysAdded": [
+          "spacSponsors",
+          "pipeInvestors",
+          "familyOffices",
+          "strategics"
+        ],
+        "arraysAlreadyExisted": []
+      }
+    }
+  ]
 }
