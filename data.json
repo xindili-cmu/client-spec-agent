@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-05-25",
+  "dataAsOf": "2026-06-01",
   "schemaVersion": "2.2",
   "startups": [
     {
@@ -1569,13 +1569,13 @@
       "status": "private",
       "tech": "Lithium DLE; Project Lonestar in Smackover formation (TX/AR/LA); 25k tpa target",
       "round": {
-        "type": "Series B",
-        "amount": 50,
-        "date": "2023-04-11",
-        "lead": "GM Ventures"
+        "type": "Series B+",
+        "amount": 75,
+        "date": "2024-10-04",
+        "lead": null
       },
       "cindyVCBackers": [],
-      "source": "https://energyx.com/press-release/gm-leads-50-million-funding-round-in-energyx-to-unlock-u-s-based-lithium-supply-for-rapidly-scaling-ev-production/",
+      "source": "https://techcrunch.com/2024/10/04/why-energyx-raised-75m-from-small-investors-even-after-taking-vc-money-from-gm-and-others/",
       "leadership": {
         "ceo": {
           "name": "Teague Egan",
@@ -1606,6 +1606,29 @@
         {
           "date": "2024-10",
           "text": "Reg A crowdfunding raised $62M+; Austin innovation lab opening"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-06-01T15:26:32.554Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "New $75M round in Oct 2024, 18 months after Series B; TechCrunch reports distinct funding event from 'small investors' separate from GM Ventures",
+          "source": "https://techcrunch.com/2024/10/04/why-energyx-raised-75m-from-small-investors-even-after-taking-vc-money-from-gm-and-others/",
+          "sourceTitle": "Why EnergyX raised $75M from small investors, even after taking VC money from GM and others | TechCrunch",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series B",
+              "amount": 50,
+              "date": "2023-04-11",
+              "lead": "GM Ventures"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://energyx.com/press-release/gm-leads-50-million-funding-round-in-energyx-to-unlock-u-s-based-lithium-supply-for-rapidly-scaling-ev-production/"
+          }
         }
       ]
     },
@@ -1922,15 +1945,15 @@
       "tech": "natural hydrogen exploration technology developer",
       "round": {
         "type": "Series A",
-        "amount": 36,
-        "date": "2026-05",
+        "amount": 44,
+        "date": "2026-05-13",
         "lead": "Sandwater"
       },
       "cindyVCBackers": [
         "Sandwater",
         "Breakthrough Energy Ventures"
       ],
-      "source": "https://www.ctvc.co/the-fastest-mw-report-296/",
+      "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
       "discoveredVia": "CTVC-2026-05-24",
       "criticReason": "Natural hydrogen exploration is core hydrogen sector; $36M Series A with Breakthrough Energy Ventures + Bpifrance signals strong climate investor backing; not in existing watchlist.",
       "criticConfidence": 0.92,
@@ -1946,7 +1969,29 @@
           "text": "Auto-added from CTVC: Series A $36M led by Sandwater"
         }
       ],
-      "_audit": []
+      "_audit": [
+        {
+          "appliedAt": "2026-06-01T15:26:46.123Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.88,
+          "reason": "Same Series A event May 2026; candidate amount €31M (~$44M USD) supersedes stale $36M figure",
+          "source": "https://www.eu-startups.com/2026/05/frances-mantle8-raises-e31-million-to-fund-the-worlds-most-advanced-natural-hydrogen-exploration-and-drilling-campaign/",
+          "sourceTitle": "France’s Mantle8 raises €31 million to fund the world’s most advanced natural hydrogen exploration and drilling campaign | EU-Startups",
+          "clusterSize": 1,
+          "previousState": {
+            "round": {
+              "type": "Series A",
+              "amount": 36,
+              "date": "2026-05",
+              "lead": "Sandwater"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.ctvc.co/the-fastest-mw-report-296/"
+          }
+        }
+      ]
     },
     {
       "id": "ecor",
