@@ -1,21 +1,37 @@
-name: Weekly Climate Intel Refresh
+name: Climate Intel Refresh
 
 on:
   schedule:
-    # Every Monday at 09:00 UTC (= 5am ET / 2am PT — adjust if needed)
+    # Weekly startup refresh: every Monday at 09:00 UTC
     - cron: '0 9 * * 1'
-  workflow_dispatch:  # allow manual trigger from Actions tab
+    # Daily CEH news refresh: every day at 07:00 UTC (3pm Beijing)
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Which job to run'
+        required: true
+        default: 'both'
+        type: choice
+        options: [both, news-only, startups-only]
 
-# Prevent two refresh runs from racing on the same main branch
+permissions:
+  contents: write
+
+# Prevent two refresh runs from racing on the same main branch.
+# News + startups jobs share this group so they serialize, not race.
 concurrency:
   group: weekly-refresh
   cancel-in-progress: false  # finish current run before next; don't kill mid-CTVC
 
 jobs:
-  refresh:
+  refresh-news:
+    # Run when daily cron fires OR manual trigger picks news-only / both
+    if: >
+      github.event.schedule == '0 7 * * *' ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.job == 'news-only' || inputs.job == 'both'))
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # allow committing data.json + changelog
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,16 +41,67 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run refresh script
+      - name: Run CEH news refresh
+        env:
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/news-refresh.js
+
+      - name: Commit news.json (with rebase retry)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.json
+          if git diff --staged --quiet; then
+            echo "No news.json changes to commit"
+            exit 0
+          fi
+          git commit -m "📰 CEH news $(date -u +%Y-%m-%d)"
+          # Retry push up to 3 times with rebase (same protection as weekly job)
+          for attempt in 1 2 3; do
+            echo "Push attempt $attempt..."
+            if git push; then
+              echo "✓ Push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push failed, fetching + rebasing onto latest main..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase conflict — aborting and falling back to merge"
+              git rebase --abort
+              git pull --no-rebase origin main --no-edit || true
+            fi
+          done
+          echo "✗ Push failed after 3 attempts. Manual intervention required."
+          exit 1
+
+  refresh-startups:
+    # Run when weekly cron fires OR manual trigger picks startups-only / both
+    if: >
+      github.event.schedule == '0 9 * * 1' ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.job == 'startups-only' || inputs.job == 'both'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run weekly refresh script
         env:
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          AUTO_APPLY_THRESHOLD: ${{ secrets.AUTO_APPLY_THRESHOLD }}
         run: node scripts/refresh.js
 
-      - name: Commit updated data.json + changelog
+      - name: Commit updated data.json + changelog (with rebase retry)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -45,7 +112,7 @@ jobs:
           fi
           git commit -m "Weekly refresh $(date -u +%Y-%m-%d)"
           # Retry push up to 3 times with rebase, handles race conditions
-          # (e.g., if you push manually while this action is running)
+          # (e.g., if news job ran first and committed news.json same hour)
           for attempt in 1 2 3; do
             echo "Push attempt $attempt..."
             if git push; then

@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "lastUpdated": "2026-06-04T09:00:00Z",
+    "totalItems": 6,
+    "categories": ["clean-power", "electrification", "industrial-decarb", "grid-tech", "robotics-ai", "ag-foods"]
+  },
+  "items": [
+    {
+      "id": "news-001",
+      "title": "DOE announces $6B in loan guarantees for next-gen SMR deployments",
+      "summary": "The U.S. Department of Energy expanded its Title XVII loan program to cover small modular reactor projects, with NuScale, Kairos Power, and X-energy among early applicants. The move signals federal commitment to nuclear as baseload clean energy.",
+      "category": "clean-power",
+      "source": "Reuters",
+      "sourceUrl": "https://reuters.com",
+      "publishedAt": "2026-06-04T08:30:00Z",
+      "curatedScore": 92,
+      "curatedReason": "DOE对SMR的$6B贷款担保是核能商业化的里程碑信号，直接影响NuCube等微堆创企的融资环境和估值逻辑。FOAK项目的资本缺口有望被系统性解决。",
+      "tags": ["SMR", "DOE", "loan-guarantee", "NuScale", "FOAK"]
+    },
+    {
+      "id": "news-002",
+      "title": "Form Energy begins construction on first 100-hour iron-air battery plant in West Virginia",
+      "summary": "Form Energy broke ground on its Weirton manufacturing facility, the first commercial-scale plant for iron-air batteries capable of storing electricity for 100 hours at 1/10 the cost of lithium-ion for grid applications.",
+      "category": "grid-tech",
+      "source": "Canary Media",
+      "sourceUrl": "https://canarymedia.com",
+      "publishedAt": "2026-06-03T14:00:00Z",
+      "curatedScore": 90,
+      "curatedReason": "铁-空气电池100小时储能+1/10锂电成本，如果Form Energy量产成功，将彻底改变长时储能的投资逻辑。从TRL到FOAK的跨越正在发生。",
+      "tags": ["Form-Energy", "iron-air", "long-duration-storage", "FOAK"]
+    },
+    {
+      "id": "news-003",
+      "title": "Brookfield closes $15B Global Transition Fund II, largest climate PE fund ever",
+      "summary": "Brookfield Asset Management completed fundraising for its second energy transition fund at $15B, exceeding its $12.5B target. Focus areas include grid-scale storage, green hydrogen infrastructure, and industrial decarbonization.",
+      "category": "clean-power",
+      "source": "Bloomberg",
+      "sourceUrl": "https://bloomberg.com",
+      "publishedAt": "2026-06-03T10:15:00Z",
+      "curatedScore": 88,
+      "curatedReason": "Brookfield $15B超募说明机构资本加速流入能源转型。对FP关注的储能、绿氢赛道是直接利好，也验证了LP对CEH长周期资产的耐心。",
+      "tags": ["Brookfield", "PE", "energy-transition", "fundraising"]
+    },
+    {
+      "id": "news-004",
+      "title": "EU Carbon Border Adjustment Mechanism enters full enforcement phase",
+      "summary": "Starting July 2026, EU importers must purchase CBAM certificates for embedded carbon in steel, cement, aluminum, fertilizers, electricity, and hydrogen. Trading partners including China and India prepare responses.",
+      "category": "industrial-decarb",
+      "source": "Financial Times",
+      "sourceUrl": "https://ft.com",
+      "publishedAt": "2026-06-02T16:45:00Z",
+      "curatedScore": 85,
+      "curatedReason": "CBAM全面执行将重塑全球碳定价格局，对碳捕集、绿氢和低碳钢企业估值有直接拉动，也影响中欧贸易中工业品的合规成本结构。",
+      "tags": ["CBAM", "EU", "carbon-pricing", "steel", "hydrogen"]
+    },
+    {
+      "id": "news-005",
+      "title": "Figure AI raises $675M Series B to scale humanoid robot manufacturing",
+      "summary": "Figure AI closed a $675M Series B led by Microsoft and NVIDIA to build its first humanoid robot factory. Target applications include warehouse logistics, manufacturing assembly, and infrastructure construction.",
+      "category": "robotics-ai",
+      "source": "TechCrunch",
+      "sourceUrl": "https://techcrunch.com",
+      "publishedAt": "2026-06-02T09:00:00Z",
+      "curatedScore": 82,
+      "curatedReason": "Figure AI的巨额融资验证了物理AI/人形机器人赛道的热度。制造业和基础设施应用场景与CEH直接相关——机器人将加速FOAK项目建设。",
+      "tags": ["Figure-AI", "humanoid", "robotics", "manufacturing"]
+    },
+    {
+      "id": "news-006",
+      "title": "Pivot Bio secures $430M for nitrogen-fixing microbe platform, replaces synthetic fertilizer",
+      "summary": "Pivot Bio raised $430M in growth funding for its microbial nitrogen fixation technology that replaces 25-50% of synthetic fertilizer applications in corn and wheat, cutting N2O emissions by up to 40%.",
+      "category": "ag-foods",
+      "source": "AgFunder",
+      "sourceUrl": "https://agfunder.com",
+      "publishedAt": "2026-06-01T11:30:00Z",
+      "curatedScore": 80,
+      "curatedReason": "用微生物替代化肥是农业脱碳的关键路径。Pivot Bio的规模化验证对CEH中ag-foods赛道投资者是重要信号——减排+增产双重价值。",
+      "tags": ["Pivot-Bio", "ag-tech", "nitrogen", "decarbonization"]
+    }
+  ]
+}

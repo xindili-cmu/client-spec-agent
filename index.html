@@ -174,6 +174,65 @@ a:hover{text-decoration:underline}
 ::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:5px}
 
 @media (max-width:980px){.kpi-grid{grid-template-columns:repeat(2,1fr)} .tabs{overflow-x:auto;flex-wrap:nowrap}}
+
+/* ── CEH News tab (scoped under .news-tab to avoid colliding with main dashboard) ── */
+:root{
+  --fp-red:#cf0000; --fp-red-soft:#fef2f2;
+  --cat-power:#b91c1c; --cat-power-bg:#fef2f2;
+  --cat-elec:#0369a1; --cat-elec-bg:#f0f9ff;
+  --cat-decarb:#4d7c0f; --cat-decarb-bg:#f7fee7;
+  --cat-grid:#7c3aed; --cat-grid-bg:#f5f3ff;
+  --cat-robot:#c2410c; --cat-robot-bg:#fff7ed;
+  --cat-ag:#15803d; --cat-ag-bg:#f0fdf4;
+  --mono-news:'SF Mono',Menlo,Monaco,Consolas,monospace;
+}
+.news-tab .news-meta{display:flex;align-items:center;justify-content:space-between;font-family:var(--mono-news);font-size:11px;color:var(--muted);padding:8px 0 4px}
+.news-tab .news-meta-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--success);display:inline-block;margin-right:6px;vertical-align:middle}
+.news-tab .cat-bar{display:flex;gap:6px;padding:14px 0;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.news-tab .cat-btn{padding:6px 12px;border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:500;background:var(--surface);color:var(--text-2);white-space:nowrap;transition:all 0.15s;display:flex;align-items:center;gap:5px;cursor:pointer;font-family:inherit}
+.news-tab .cat-btn:hover{border-color:var(--border-strong);color:var(--text)}
+.news-tab .cat-btn.on{border-color:var(--fp-red);color:var(--fp-red);background:var(--fp-red-soft);font-weight:600}
+.news-tab .cat-btn .cnt{font-family:var(--mono-news);font-size:10.5px;opacity:0.7}
+.news-tab .news-controls{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;flex-wrap:wrap}
+.news-tab .search-box{padding:7px 14px;border:1px solid var(--border);border-radius:6px;font-size:12px;background:var(--surface);color:var(--text);outline:none;width:220px;font-family:inherit}
+.news-tab .search-box:focus{border-color:var(--fp-red)}
+.news-tab .score-ctl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-2)}
+.news-tab .score-ctl select{padding:4px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:inherit;background:var(--surface);color:var(--text)}
+.news-tab .result-count{font-family:var(--mono-news);font-size:11px;color:var(--muted)}
+.news-tab .feed{padding:8px 0 24px}
+.news-tab .news-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 20px;margin-bottom:12px;transition:border-color 0.15s}
+.news-tab .news-card:hover{border-color:var(--border-strong)}
+.news-tab .news-card-top{display:flex;gap:14px;align-items:flex-start}
+.news-tab .score-badge{min-width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono-news);font-size:15px;font-weight:700;color:white;flex-shrink:0}
+.news-tab .score-badge.s90{background:var(--fp-red)}
+.news-tab .score-badge.s80{background:#1d4ed8}
+.news-tab .score-badge.s70{background:#ca8a04}
+.news-tab .score-badge.s60{background:var(--muted)}
+.news-tab .news-card-body{flex:1;min-width:0}
+.news-tab .news-card-meta{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
+.news-tab .cat-tag{padding:2px 8px;border-radius:4px;font-size:10.5px;font-weight:600;white-space:nowrap}
+.news-tab .cat-clean-power{background:var(--cat-power-bg);color:var(--cat-power)}
+.news-tab .cat-electrification{background:var(--cat-elec-bg);color:var(--cat-elec)}
+.news-tab .cat-industrial-decarb{background:var(--cat-decarb-bg);color:var(--cat-decarb)}
+.news-tab .cat-grid-tech{background:var(--cat-grid-bg);color:var(--cat-grid)}
+.news-tab .cat-robotics-ai{background:var(--cat-robot-bg);color:var(--cat-robot)}
+.news-tab .cat-ag-foods{background:var(--cat-ag-bg);color:var(--cat-ag)}
+.news-tab .news-src{font-size:11px;color:var(--muted);font-family:var(--mono-news)}
+.news-tab .news-when{font-size:11px;color:var(--muted);font-family:var(--mono-news)}
+.news-tab .news-card-title{font-size:14.5px;font-weight:600;line-height:1.4;margin-bottom:5px}
+.news-tab .news-card-title a{color:var(--text);text-decoration:none}
+.news-tab .news-card-title a:hover{color:var(--fp-red);text-decoration:underline}
+.news-tab .news-card-summary{font-size:12.5px;color:var(--text-2);line-height:1.65;margin-bottom:10px}
+.news-tab .news-card-reason{border-left:3px solid var(--fp-red);padding:8px 12px;background:var(--fp-red-soft);border-radius:0 6px 6px 0;margin-bottom:10px}
+.news-tab .news-card-reason-label{font-size:10px;font-weight:700;color:var(--fp-red);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}
+.news-tab .news-card-reason-text{font-size:12px;color:var(--text);line-height:1.6}
+.news-tab .news-tags{display:flex;gap:4px;flex-wrap:wrap}
+.news-tab .news-tag{padding:2px 6px;background:var(--surface-2);border-radius:3px;font-size:10.5px;color:var(--text-2);font-family:var(--mono-news)}
+.news-tab .news-empty{text-align:center;padding:60px 20px;color:var(--text-2)}
+.news-tab .news-empty-icon{font-size:36px;margin-bottom:10px}
+.news-tab .news-empty-clear{color:var(--fp-red);background:none;border:none;font-size:13px;margin-top:10px;cursor:pointer}
+.news-tab .news-loading{text-align:center;padding:60px 20px;color:var(--text-2);font-size:13px}
+.news-tab .news-error{padding:16px;background:var(--fp-red-soft);color:var(--fp-red);border-radius:6px;font-size:12px;font-family:var(--mono-news)}
 </style>
 </head>
 <body>
@@ -484,10 +543,141 @@ const Provenance = () => (
   </div>
 );
 
+// ---- CEH News Tab (scoped under .news-tab CSS class, sub-app feel) ----
+const NEWS_CATS = {
+  'clean-power':       { label: 'Clean Power',      icon: '⚡' },
+  'electrification':   { label: 'Electrification',  icon: '🔌' },
+  'industrial-decarb': { label: 'Industrial Decarb', icon: '🏭' },
+  'grid-tech':         { label: 'Grid Tech',         icon: '🔋' },
+  'robotics-ai':       { label: 'Robotics & AI',     icon: '🤖' },
+  'ag-foods':          { label: 'Ag & Foods',        icon: '🌾' }
+};
+const newsTimeAgo = d => { const m = Math.floor((Date.now() - new Date(d)) / 60000); if (m < 60) return `${m}m`; const h = Math.floor(m / 60); return h < 24 ? `${h}h` : `${Math.floor(h / 24)}d`; };
+const newsScoreClass = s => s >= 90 ? 's90' : s >= 80 ? 's80' : s >= 70 ? 's70' : 's60';
+const newsFmtDate = d => d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
+
+function NewsCard({ item }) {
+  const cat = NEWS_CATS[item.category] || { label: item.category, icon: '📰' };
+  return (
+    <div className="news-card">
+      <div className="news-card-top">
+        <div className={`score-badge ${newsScoreClass(item.curatedScore)}`}>{item.curatedScore}</div>
+        <div className="news-card-body">
+          <div className="news-card-meta">
+            <span className={`cat-tag cat-${item.category}`}>{cat.icon} {cat.label}</span>
+            <span className="news-src">{item.source}</span>
+            <span className="news-when">{newsTimeAgo(item.publishedAt)}</span>
+          </div>
+          <div className="news-card-title">
+            <a href={item.sourceUrl} target="_blank" rel="noopener">{item.title}</a>
+          </div>
+          <div className="news-card-summary">{item.summary}</div>
+          {item.curatedReason && (
+            <div className="news-card-reason">
+              <div className="news-card-reason-label">精选 · Curated</div>
+              <div className="news-card-reason-text">{item.curatedReason}</div>
+            </div>
+          )}
+          {item.tags?.length > 0 && (
+            <div className="news-tags">
+              {item.tags.map((t, i) => <span key={i} className="news-tag">{t}</span>)}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NewsFeed() {
+  const [news, setNews] = useState(null);
+  const [err, setErr] = useState(null);
+  const [cat, setCat] = useState(null);
+  const [q, setQ] = useState('');
+  const [minScore, setMinScore] = useState(0);
+
+  useEffect(() => {
+    fetch('news.json', { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then(setNews).catch(e => setErr(e.message));
+  }, []);
+
+  const counts = useMemo(() => {
+    if (!news?.items) return {};
+    const c = {};
+    news.items.forEach(i => { c[i.category] = (c[i.category] || 0) + 1; });
+    return c;
+  }, [news]);
+
+  const filtered = useMemo(() => {
+    if (!news?.items) return [];
+    let items = news.items;
+    if (cat) items = items.filter(i => i.category === cat);
+    if (minScore) items = items.filter(i => i.curatedScore >= minScore);
+    if (q.trim()) {
+      const lq = q.toLowerCase();
+      items = items.filter(i =>
+        i.title.toLowerCase().includes(lq) || i.summary?.toLowerCase().includes(lq) ||
+        i.tags?.some(t => t.toLowerCase().includes(lq)) || i.curatedReason?.includes(q)
+      );
+    }
+    return items;
+  }, [news, cat, q, minScore]);
+
+  if (err) return <div className="news-tab"><div className="news-error">Failed to load news.json: {err}</div></div>;
+  if (!news) return <div className="news-tab"><div className="news-loading">Loading CEH news…</div></div>;
+
+  const total = news.items?.length || 0;
+
+  return (
+    <div className="news-tab">
+      <div className="news-meta">
+        <span className="news-meta-live">Updated {newsFmtDate(news.meta?.lastUpdated)}</span>
+        <span>{total} curated stories · daily 7am UTC refresh</span>
+      </div>
+      <div className="cat-bar">
+        <button className={`cat-btn ${!cat ? 'on' : ''}`} onClick={() => setCat(null)}>
+          All <span className="cnt">{total}</span>
+        </button>
+        {Object.entries(NEWS_CATS).map(([k, v]) => (
+          <button key={k} className={`cat-btn ${cat === k ? 'on' : ''}`} onClick={() => setCat(cat === k ? null : k)}>
+            {v.icon} {v.label} <span className="cnt">{counts[k] || 0}</span>
+          </button>
+        ))}
+      </div>
+      <div className="news-controls">
+        <input className="search-box" placeholder="Search… 搜索" value={q} onChange={e => setQ(e.target.value)} />
+        <div className="score-ctl">
+          <span>Score:</span>
+          <select value={minScore} onChange={e => setMinScore(+e.target.value)}>
+            <option value={0}>All</option>
+            <option value={70}>70+</option>
+            <option value={80}>80+ 重要</option>
+            <option value={90}>90+ 里程碑</option>
+          </select>
+          <span className="result-count">{filtered.length}/{total}</span>
+        </div>
+      </div>
+      <div className="feed">
+        {filtered.length === 0 ? (
+          <div className="news-empty">
+            <div className="news-empty-icon">📭</div>
+            <div>No results matching filters</div>
+            <button className="news-empty-clear" onClick={() => { setCat(null); setQ(''); setMinScore(0); }}>
+              Clear all
+            </button>
+          </div>
+        ) : filtered.map(item => <NewsCard key={item.id} item={item} />)}
+      </div>
+    </div>
+  );
+}
+
 const TABS = [
   { id:'overview', label:'Overview · Action Queue', count: null },
   { id:'startups', label:'Watchlist', count: null },
   { id:'vcs', label:'VC Universe', count: null },
+  { id:'news', label:'CEH News', count: null },
   { id:'prov', label:'Provenance', count: null },
 ];
 
@@ -514,6 +704,7 @@ const App = () => {
         {tab === 'overview' && <Overview />}
         {tab === 'startups' && <StartupWatchlist />}
         {tab === 'vcs' && <VCUniverse />}
+        {tab === 'news' && <NewsFeed />}
         {tab === 'prov' && <Provenance />}
       </div>
       <div className="footer">
