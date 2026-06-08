@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-06-01",
+  "dataAsOf": "2026-06-08",
   "schemaVersion": "2.2",
   "startups": [
     {
@@ -531,15 +531,15 @@
       "status": "private",
       "tech": "Pulsed magneto-inertial fusion; Polaris prototype; Microsoft PPA targeting 2028 electricity",
       "round": {
-        "type": "Series F",
-        "amount": 425,
-        "date": "2025-01-28",
-        "lead": "Lightspeed + SoftBank Vision Fund 2 · Sam Altman + Mithril + Capricorn"
+        "type": "Series G",
+        "amount": 465,
+        "date": "2026-06-04",
+        "lead": null
       },
       "cindyVCBackers": [
         "Capricorn"
       ],
-      "source": "https://www.helionenergy.com/articles/helion-announces-425m-series-f-investment-to-scale-commercialized-fusion-power/",
+      "source": "https://www.helionenergy.com/newsroom/helion-raises-465-million-series-g-funding-round-to-meet-surging-global-demand-for-power",
       "leadership": {
         "ceo": {
           "name": "Dr. David Kirtley",
@@ -584,6 +584,29 @@
         {
           "date": "2025-01",
           "text": "Series F $425M; $5.4B post-money; SoftBank + Lightspeed first time"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-06-08T13:11:06.748Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.98,
+          "reason": "Four independent sources confirm identical $465M Series G on 2026-06-04, 5 months after current Series F; official company PR is most authoritative",
+          "source": "https://www.businesswire.com/news/home/20260604740624/en/Helion-Raises-$465-Million-Series-G-Funding-Round-to-Meet-Surging-Global-Demand-for-Power",
+          "sourceTitle": "Helion Raises $465 Million Series G Funding Round to Meet Surging Global Demand for Power",
+          "clusterSize": 4,
+          "previousState": {
+            "round": {
+              "type": "Series F",
+              "amount": 425,
+              "date": "2025-01-28",
+              "lead": "Lightspeed + SoftBank Vision Fund 2 · Sam Altman + Mithril + Capricorn"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.helionenergy.com/articles/helion-announces-425m-series-f-investment-to-scale-commercialized-fusion-power/"
+          }
         }
       ]
     },
