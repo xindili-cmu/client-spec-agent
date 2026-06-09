@@ -39,18 +39,19 @@ function gsFmtDate(publishedAt) {
 
 function gsTransformItem(item) {
   return {
-    id:        item.id,
-    day:       gsDayBucket(item.publishedAt),
-    category:  CAT_ALIAS[item.category] || item.category,
-    score:     item.curatedScore,
-    source:    item.source,
-    sourceUrl: item.sourceUrl,
-    time:      gsFmtTime(item.publishedAt),
-    date:      gsFmtDate(item.publishedAt),
-    title:     item.title,
-    summary:   item.summary,
-    why:       item.curatedReason,
-    tags:      item.tags || [],
+    id:          item.id,
+    day:         gsDayBucket(item.publishedAt),
+    category:    CAT_ALIAS[item.category] || item.category,
+    score:       item.curatedScore,
+    source:      item.source,
+    sourceUrl:   item.sourceUrl,
+    publishedAt: item.publishedAt,  // raw ISO retained for SourcesGrid "latest" sort
+    time:        gsFmtTime(item.publishedAt),
+    date:        gsFmtDate(item.publishedAt),
+    title:       item.title,
+    summary:     item.summary,
+    why:         item.curatedReason,
+    tags:        item.tags || [],
   };
 }
 
@@ -58,12 +59,13 @@ function gsTransformItem(item) {
 // Left-nav and "following" sources are not in news.json; they're product chrome.
 // Kept here so the shell renders without extra fetches.
 
+// Saved omitted from v1 — would need bookmark UI on NewsCard + localStorage
+// persistence. Restore when account / sync story is decided.
 window.GS_NAV = [
   { id: 'curated', label: 'Curated',     icon: 'sparkles' },
   { id: 'all',     label: 'All stories', icon: 'list' },
   { id: 'daily',   label: 'Daily brief', icon: 'newspaper' },
   { id: 'sources', label: 'Sources',     icon: 'rss' },
-  { id: 'saved',   label: 'Saved',       icon: 'bookmark' },
 ];
 
 // Curated default "Following" list — replace with real subscriptions later.
