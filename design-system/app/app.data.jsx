@@ -68,16 +68,11 @@ window.GS_NAV = [
   { id: 'sources', label: 'Sources',     icon: 'rss' },
 ];
 
-// Curated default "Following" list — replace with real subscriptions later.
-window.GS_SOURCES = [
-  { name: 'Bloomberg',   cat: 'clean-power' },
-  { name: 'Reuters',     cat: 'industrial' },
-  { name: 'CTVC',        cat: 'clean-power' },
-  { name: 'Canary Media', cat: 'electrification' },
-  { name: 'Heatmap',     cat: 'industrial' },
-  { name: 'FT',          cat: 'governance' },
-  { name: 'AgFunder',    cat: 'agriculture' },
-];
+// GS_SOURCES removed 2026-06-09 — the Sources view auto-builds the real outlet
+// directory from news.json on every render, so the hardcoded left-rail
+// "Following" list (Bloomberg / Reuters / CTVC / etc.) was redundant and
+// semantically wrong ("Following" implies user-curated subscriptions).
+// Restore only if a real subscription / personalization story ships.
 
 // ── Async load → render ─────────────────────────────────────────────────────
 // We use a module-level promise so app.main.jsx can render after the data is
