@@ -2,7 +2,7 @@
   "meta": {
     "lastUpdated": "2026-06-04T09:00:00Z",
     "totalItems": 6,
-    "categories": ["clean-power", "electrification", "industrial-decarb", "grid-tech", "robotics-ai", "ag-foods"]
+    "categories": ["clean-power", "electrification", "industrial", "grid", "robotics", "agriculture", "social", "governance"]
   },
   "items": [
     {
@@ -21,7 +21,7 @@
       "id": "news-002",
       "title": "Form Energy begins construction on first 100-hour iron-air battery plant in West Virginia",
       "summary": "Form Energy broke ground on its Weirton manufacturing facility, the first commercial-scale plant for iron-air batteries capable of storing electricity for 100 hours at 1/10 the cost of lithium-ion for grid applications.",
-      "category": "grid-tech",
+      "category": "grid",
       "source": "Canary Media",
       "sourceUrl": "https://canarymedia.com",
       "publishedAt": "2026-06-03T14:00:00Z",
@@ -45,7 +45,7 @@
       "id": "news-004",
       "title": "EU Carbon Border Adjustment Mechanism enters full enforcement phase",
       "summary": "Starting July 2026, EU importers must purchase CBAM certificates for embedded carbon in steel, cement, aluminum, fertilizers, electricity, and hydrogen. Trading partners including China and India prepare responses.",
-      "category": "industrial-decarb",
+      "category": "industrial",
       "source": "Financial Times",
       "sourceUrl": "https://ft.com",
       "publishedAt": "2026-06-02T16:45:00Z",
@@ -57,7 +57,7 @@
       "id": "news-005",
       "title": "Figure AI raises $675M Series B to scale humanoid robot manufacturing",
       "summary": "Figure AI closed a $675M Series B led by Microsoft and NVIDIA to build its first humanoid robot factory. Target applications include warehouse logistics, manufacturing assembly, and infrastructure construction.",
-      "category": "robotics-ai",
+      "category": "robotics",
       "source": "TechCrunch",
       "sourceUrl": "https://techcrunch.com",
       "publishedAt": "2026-06-02T09:00:00Z",
@@ -69,7 +69,7 @@
       "id": "news-006",
       "title": "Pivot Bio secures $430M for nitrogen-fixing microbe platform, replaces synthetic fertilizer",
       "summary": "Pivot Bio raised $430M in growth funding for its microbial nitrogen fixation technology that replaces 25-50% of synthetic fertilizer applications in corn and wheat, cutting N2O emissions by up to 40%.",
-      "category": "ag-foods",
+      "category": "agriculture",
       "source": "AgFunder",
       "sourceUrl": "https://agfunder.com",
       "publishedAt": "2026-06-01T11:30:00Z",

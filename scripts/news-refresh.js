@@ -31,7 +31,10 @@ const MAX_ITEMS = 30;
 const LOOKBACK_DAYS = 3;
 const CURATE_TOP_N = 25;
 
-// ── CEH Category Queries ────────────────────────────────────────────────────
+// ── GreenStack ESG Category Queries ─────────────────────────────────────────
+// Slugs are the canonical short form used by the UI components in
+// design-system/components/feed/categories.js. Don't drift from that file.
+// Taxonomy reference: project-greenstack-taxonomy memory.
 
 const CATEGORY_QUERIES = [
   {
@@ -51,7 +54,7 @@ const CATEGORY_QUERIES = [
     ]
   },
   {
-    category: 'industrial-decarb',
+    category: 'industrial',
     queries: [
       'carbon capture CCUS direct air capture startup funding 2026',
       'green hydrogen electrolyzer production investment',
@@ -59,7 +62,7 @@ const CATEGORY_QUERIES = [
     ]
   },
   {
-    category: 'grid-tech',
+    category: 'grid',
     queries: [
       'grid-scale battery storage long duration energy startup 2026',
       'transmission grid modernization FERC policy',
@@ -67,7 +70,7 @@ const CATEGORY_QUERIES = [
     ]
   },
   {
-    category: 'robotics-ai',
+    category: 'robotics',
     queries: [
       'humanoid robot manufacturing automation startup funding 2026',
       'industrial robotics physical AI infrastructure construction',
@@ -75,11 +78,27 @@ const CATEGORY_QUERIES = [
     ]
   },
   {
-    category: 'ag-foods',
+    category: 'agriculture',
     queries: [
       'alternative protein cultivated meat startup funding 2026',
       'precision agriculture agtech climate smart farming',
       'fertilizer alternative biotech agricultural decarbonization'
+    ]
+  },
+  {
+    category: 'social',
+    queries: [
+      'clean energy workforce union strike just transition 2026',
+      'supply chain conflict minerals forced labor audit climate',
+      'indigenous land rights transition minerals lithium cobalt'
+    ]
+  },
+  {
+    category: 'governance',
+    queries: [
+      'SEC climate disclosure rule TCFD ISSB CSRD 2026',
+      'ESG ratings methodology MSCI Sustainalytics downgrade',
+      'anti-greenwashing regulation board climate competence'
     ]
   }
 ];
@@ -154,27 +173,34 @@ async function curateWithClaude(rawItems) {
     source: item.source
   }));
 
-  const systemPrompt = `你是 Fusion Park 的 CEH (Climate · Energy · Hardware) 新闻策展 AI。
+  const systemPrompt = `你是 GreenStack 的 ESG 新闻策展 AI。
 
-Fusion Park 是一家专注清洁能源和硬科技的战略与资本顾问公司，帮助 CEH 公司从商业化就绪走向 FOAK 和上市。
+GreenStack 是独立 ESG 新闻品牌（covering Environmental + Social + Governance），读者是 climate-tech operators、ESG 投资人、可持续业务从业者、研究者。语气：professional and credible, never consumer-cute。
 
-6 个 CEH 垂直领域：
-1. Clean Power (clean-power) — 太阳能、风电、核能(SMR/聚变)、地热
-2. Electrification & Efficiency (electrification) — EV、热泵、建筑能效、数据中心
-3. Industrial Decarbonization (industrial-decarb) — CCS/DAC、绿钢/绿色水泥、氢能、碳关税
-4. Grid Tech (grid-tech) — 储能、输电、电网软件、微网
-5. Robotics & Physical AI (robotics-ai) — 人形机器人、工业自动化、物理AI
-6. Agriculture & Foods (ag-foods) — 替代蛋白、精准农业、生物肥料
+8 个 ESG 垂直分类（slug 必须精确匹配；不要发明新 slug）：
+1. Clean Power (clean-power) — solar / wind / SMR / fusion / storage / grid modernization
+2. Electrification & Efficiency (electrification) — EV、充电、热泵、建筑能效、数据中心
+3. Industrial Decarbonization (industrial) — CCS/DAC、绿钢/绿色水泥、氢能、CBAM、关键矿物
+4. Grid Tech (grid) — 输电优化、microgrid、分布式能源、调度
+5. Robotics & Physical AI (robotics) — 人形机器人、工业自动化、自主交通、农业机器人
+6. Agriculture & Foods (agriculture) — alt protein、精准农业、生物肥料、waste-to-energy
+7. Social (social) — workforce/labor、supply chain ethics、just transition、community impact、DEI、human rights
+8. Governance (governance) — 信披(SEC Climate Rule/TCFD/ISSB/CSRD/CBAM-as-G)、董事会/高管、监管、ratings (MSCI/Sustainalytics)、反腐败/伦理
 
-评分标准（以对 CEH 公司融资/上市/FOAK 的影响力为核心）：
-- 90+ = 行业里程碑，直接影响投资决策
+评分标准（信号质量为核心，不只是融资）：
+- 90+ = 里程碑，重塑判断或重新定价整个赛道
 - 80-89 = 重要进展，值得深度跟踪
-- 70-79 = 有参考价值
+- 70-79 = 有参考价值的动态
 - 60-69 = 一般动态
 - <60 = 噪音
 
+编辑标准：
+- summary：1-2 句中性英文，front-load "what changed"。不要 hype，不要 doom。
+- curatedReason ("why it matters")：1-2 句中文，**第二人称**对读者说话，给一个 take 而不是 recap。告诉 practitioner 这条新闻怎么改变他的判断 / 模型 / 关注点。
+- 数字优先于形容词。不用 emoji。
+
 请只返回 JSON 数组（不要 markdown 代码块），格式：
-[{"index":0,"curatedScore":85,"curatedReason":"中文推荐理由（一句话，点明对CEH公司/投资者的影响）","tags":["tag1","tag2"],"summary":"One-line English summary"}]
+[{"index":0,"curatedScore":85,"curatedReason":"中文 why-it-matters，第二人称给 take","tags":["tag1","tag2"],"summary":"One-line English neutral summary"}]
 
 只保留 curatedScore >= 65 的条目。`;
 
