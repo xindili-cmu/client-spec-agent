@@ -116,6 +116,17 @@ function FeedApp() {
   const isSources = view === 'sources';
   const q = query.trim().toLowerCase();
 
+  // DigestRail "Today's Signal" handler — set selected state + smooth-scroll
+  // the main feed to that card. Wrapper divs around NewsCard carry the id.
+  const scrollToStory = React.useCallback((id) => {
+    setSelected(id);
+    // give React one tick to flush selected-state class onto the card
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`gs-card-${id}`);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }, []);
+
   // Source-of-truth filter — search + category narrowing applies to every view.
   let stories = window.GS_STORIES.filter((s) => {
     if (category !== 'all' && s.category !== category) return false;
@@ -162,7 +173,7 @@ function FeedApp() {
     <div style={{ minHeight: '100vh', background: 'var(--surface-page)' }}>
       <AppHeader query={query} onQuery={setQuery} />
       <div style={{ maxWidth: 'var(--content-max)', margin: '0 auto', display: 'flex', alignItems: 'flex-start', gap: 24, padding: '0 24px' }}>
-        <NavRail view={view} onView={setView} sources={window.GS_SOURCES} />
+        <NavRail view={view} onView={setView} />
 
         <main style={{ flex: 1, minWidth: 0, maxWidth: 'var(--feed-column)', padding: '24px 0 64px' }}>
           <FeedToolbar view={view} count={isSources ? null : stories.length} />
@@ -218,19 +229,25 @@ function FeedApp() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {g.items.map((s) => (
-                  <NewsCard key={s.id}
-                    variant={s.id === leadId ? 'lead' : (compact ? 'compact' : 'default')}
-                    category={s.category} score={s.score} source={s.source} time={s.time} date={s.date}
-                    title={s.title} summary={s.summary} whyItMatters={compact ? null : s.why}
-                    selected={selected === s.id}
-                    onClick={() => setSelected(s.id)} />
+                  <div key={s.id} id={`gs-card-${s.id}`} style={{ scrollMarginTop: 'calc(var(--header-height) + 16px)' }}>
+                    <NewsCard
+                      variant={s.id === leadId ? 'lead' : (compact ? 'compact' : 'default')}
+                      category={s.category} score={s.score} source={s.source} time={s.time} date={s.date}
+                      title={s.title} summary={s.summary} whyItMatters={compact ? null : s.why}
+                      selected={selected === s.id}
+                      onClick={() => setSelected(s.id)} />
+                  </div>
                 ))}
               </div>
             </section>
           ))}
         </main>
 
-        <DigestRail stories={window.GS_STORIES.filter((s) => s.day === (isDaily ? 'yesterday' : 'today'))} onPick={setSelected} />
+        {!isSources && (
+          <DigestRail
+            stories={window.GS_STORIES.filter((s) => s.day === (isDaily ? 'yesterday' : 'today'))}
+            onPick={scrollToStory} />
+        )}
       </div>
     </div>
   );
