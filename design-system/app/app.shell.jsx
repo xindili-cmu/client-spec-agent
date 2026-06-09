@@ -1,5 +1,5 @@
 // GreenStack UI kit — app shell: header, left nav rail, right digest rail.
-const { Logo, Button, Input, Icon, CategoryTag, SignalScore, getCategory, CATEGORIES } = window;
+const { Logo, Button, Input, Icon, CategoryTag, SignalScore, CATEGORIES } = window;
 
 function AppHeader({ query, onQuery }) {
   return (
@@ -26,7 +26,11 @@ const iconBtn = {
   background: 'transparent', border: '1px solid transparent', borderRadius: 'var(--radius-md)', cursor: 'pointer',
 };
 
-function NavRail({ view, onView, sources }) {
+// NavRail v2 — pure navigation. The "Following" hardcoded outlet list was
+// removed 2026-06-09 once Sources view shipped: it auto-builds the real list
+// from window.GS_STORIES so a static left-rail copy was both redundant and
+// semantically wrong ("Following" implies user-curated subscriptions).
+function NavRail({ view, onView }) {
   return (
     <nav style={{ width: 'var(--rail-left)', flex: 'none', padding: '20px 14px', position: 'sticky', top: 'var(--header-height)', alignSelf: 'flex-start' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -43,30 +47,9 @@ function NavRail({ view, onView, sources }) {
             }}>
               <Icon name={item.icon} size={17} style={{ color: active ? 'var(--green-700)' : 'var(--text-tertiary)' }} />
               {item.label}
-              {item.id === 'curated' && <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--green-700)', background: 'var(--green-100)', borderRadius: 'var(--radius-pill)', padding: '1px 7px' }}>8</span>}
             </button>
           );
         })}
-      </div>
-
-      <div style={{ height: 1, background: 'var(--border-subtle)', margin: '18px 12px' }} />
-
-      <div style={{ padding: '0 12px' }}>
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--text-tertiary)', marginBottom: 12 }}>Following</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-          {sources.map((s) => {
-            const accent = getCategory(s.cat).accent;
-            return (
-              <div key={s.name} style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-                <span style={{ width: 18, height: 18, borderRadius: 'var(--radius-xs)', background: `var(--cat-${accent}-soft)`, color: `var(--cat-${accent}-ink)`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 600, flex: 'none' }}>{s.name[0]}</span>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--text-secondary)' }}>{s.name}</span>
-              </div>
-            );
-          })}
-          <button type="button" style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginTop: 2, fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 600, color: 'var(--green-700)' }}>
-            <Icon name="plus" size={15} /> Add source
-          </button>
-        </div>
       </div>
     </nav>
   );
