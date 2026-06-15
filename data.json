@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-06-08",
+  "dataAsOf": "2026-06-15",
   "schemaVersion": "2.2",
   "startups": [
     {
@@ -2091,6 +2091,227 @@
             },
             "recentNews": []
           }
+        }
+      ]
+    },
+    {
+      "id": "encosa-energy",
+      "name": "encosa energy",
+      "sector": "storage",
+      "hq": "Munich, Germany",
+      "status": "private",
+      "tech": "C&I battery storage developer",
+      "round": {
+        "type": "Seed",
+        "amount": 29,
+        "date": "2026-06",
+        "lead": "Reályze Ventures"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "C&I battery storage (core storage sector), €29M Seed round, strong German climate VC syndicate, not duplicate",
+      "criticConfidence": 0.9,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Seed $29M led by Reályze Ventures"
+        }
+      ]
+    },
+    {
+      "id": "atana-elements",
+      "name": "Atana Elements",
+      "sector": "minerals",
+      "hq": "San Francisco, CA",
+      "status": "private",
+      "tech": "critical minerals explorer",
+      "round": {
+        "type": "Seed",
+        "amount": 28,
+        "date": "2026-06",
+        "lead": "Lowercarbon Capital"
+      },
+      "cindyVCBackers": [
+        "Lowercarbon Capital",
+        "Earthshot Ventures",
+        "Overture VC"
+      ],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Critical minerals explorer, $28M Seed round, strong climate VC syndicate (Lowercarbon, Earthshot, Redwoods), fits minerals priority sector.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Seed $28M led by Lowercarbon Capital"
+        }
+      ]
+    },
+    {
+      "id": "terraai",
+      "name": "TerraAI",
+      "sector": "minerals",
+      "hq": "Palo Alto, CA",
+      "status": "private",
+      "tech": "AI-powered subsurface modeling platform for critical minerals and energy exploration",
+      "round": {
+        "type": "Series A",
+        "amount": 20,
+        "date": "2026-06",
+        "lead": "Khosla Ventures"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Critical minerals exploration via AI subsurface modeling; $20M Series A with Khosla + BHP Ventures backing; clear fit to minerals sector priority.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Series A $20M led by Khosla Ventures"
+        }
+      ]
+    },
+    {
+      "id": "esvolta",
+      "name": "esVolta",
+      "sector": "storage",
+      "hq": "Newport Beach, CA",
+      "status": "private",
+      "tech": "utility-scale energy storage project developer",
+      "round": {
+        "type": "Debt",
+        "amount": 250,
+        "date": "2026-06",
+        "lead": "Nomura"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Utility-scale energy storage developer, $250M debt round from major infrastructure investors (Nomura, CIP, AllianzGI), core storage sector, not yet on watchlist.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Debt $250M led by Nomura"
+        }
+      ]
+    },
+    {
+      "id": "aukera-energy",
+      "name": "Aukera Energy",
+      "sector": "renewable",
+      "hq": "Brussels, Belgium",
+      "status": "private",
+      "tech": "renewable energy developer",
+      "round": {
+        "type": "PF Debt",
+        "amount": 113,
+        "date": "2026-06",
+        "lead": "ABN AMRO"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Renewable energy developer with €113M project finance debt round from credible green banks; material capital raise; fits adjacent renewable sector priority.",
+      "criticConfidence": 0.88,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: PF Debt $113M led by ABN AMRO"
+        }
+      ]
+    },
+    {
+      "id": "ingetam-corporacion",
+      "name": "Ingetam Corporacion",
+      "sector": "renewable",
+      "hq": "Zamudio, Spain",
+      "status": "private",
+      "tech": "developer of electrical energy conversion and renewable energy technologies",
+      "round": {
+        "type": "Debt",
+        "amount": 87,
+        "date": "2026-06",
+        "lead": "European Investment Bank (EIB)"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Renewable energy developer with material €87M debt round from EIB; clear sector fit and strong institutional backing.",
+      "criticConfidence": 0.82,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Debt $87M led by European Investment Bank (EIB)"
+        }
+      ]
+    },
+    {
+      "id": "rpower",
+      "name": "R.Power",
+      "sector": "storage",
+      "hq": "Warsaw, Poland",
+      "status": "private",
+      "tech": "renewable energy and battery energy storage project developer",
+      "round": {
+        "type": "PF Debt",
+        "amount": 74,
+        "date": "2026-06",
+        "lead": "Erste Bank"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "discoveredVia": "CTVC-2026-06-15",
+      "criticReason": "Renewable energy + battery storage developer, material debt round from tier-1 banks, fits adjacent storage/renewable priority sectors",
+      "criticConfidence": 0.85,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: PF Debt $74M led by Erste Bank"
         }
       ]
     }
