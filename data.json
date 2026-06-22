@@ -1,5 +1,5 @@
 {
-  "dataAsOf": "2026-06-15",
+  "dataAsOf": "2026-06-22",
   "schemaVersion": "2.2",
   "startups": [
     {
@@ -2200,12 +2200,12 @@
       "tech": "utility-scale energy storage project developer",
       "round": {
         "type": "Debt",
-        "amount": 250,
-        "date": "2026-06",
+        "amount": 450,
+        "date": "2026-06-03",
         "lead": "Nomura"
       },
       "cindyVCBackers": [],
-      "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/",
+      "source": "https://www.prnewswire.com/news-releases/esvolta-secures-upsized-corporate-credit-facility-to-support-expansion-of-energy-storage-portfolio-302790260.html",
       "discoveredVia": "CTVC-2026-06-15",
       "criticReason": "Utility-scale energy storage developer, $250M debt round from major infrastructure investors (Nomura, CIP, AllianzGI), core storage sector, not yet on watchlist.",
       "criticConfidence": 0.92,
@@ -2219,6 +2219,29 @@
         {
           "date": "2026-06",
           "text": "Auto-added from CTVC: Debt $250M led by Nomura"
+        }
+      ],
+      "_audit": [
+        {
+          "appliedAt": "2026-06-22T14:45:53.003Z",
+          "appliedBy": "critic-round-v3.3",
+          "action": "update_round",
+          "confidence": 0.95,
+          "reason": "Same June 2026 debt facility event; $450M upsized amount vs $250M in data.json; PRNewswire is official announcement source",
+          "source": "https://www.prnewswire.com/news-releases/esvolta-secures-upsized-corporate-credit-facility-to-support-expansion-of-energy-storage-portfolio-302790260.html",
+          "sourceTitle": "esVolta Secures Upsized Corporate Credit Facility to Support Expansion of Energy Storage Portfolio",
+          "clusterSize": 4,
+          "previousState": {
+            "round": {
+              "type": "Debt",
+              "amount": 250,
+              "date": "2026-06",
+              "lead": "Nomura"
+            },
+            "status": "private",
+            "ticker": null,
+            "source": "https://www.ctvc.co/mike-schroepfer-ex-meta-cto-chats-250m-for-climate-atoms-299/"
+          }
         }
       ]
     },
@@ -2312,6 +2335,101 @@
         {
           "date": "2026-06",
           "text": "Auto-added from CTVC: PF Debt $74M led by Erste Bank"
+        }
+      ]
+    },
+    {
+      "id": "endurance-energy",
+      "name": "Endurance Energy",
+      "sector": "renewable",
+      "hq": "Seattle, WA",
+      "status": "private",
+      "tech": "seafloor geothermal energy developer",
+      "round": {
+        "type": "Series A",
+        "amount": 54,
+        "date": "2026-06",
+        "lead": "Founders Fund"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/the-ipo-boom-is-back-baby-300/",
+      "discoveredVia": "CTVC-2026-06-22",
+      "criticReason": "Seafloor geothermal is renewable energy infrastructure with material Series A ($54M) from tier-1 climate VCs; clearly adjacent to Cindy's priority sectors and not yet tracked.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Series A $54M led by Founders Fund"
+        }
+      ]
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "sector": "storage",
+      "hq": "Paris,France",
+      "status": "private",
+      "tech": "battery energy storage platform provider",
+      "round": {
+        "type": "Series A",
+        "amount": 23,
+        "date": "2026-06",
+        "lead": "BNP Paribas"
+      },
+      "cindyVCBackers": [],
+      "source": "https://www.ctvc.co/the-ipo-boom-is-back-baby-300/",
+      "discoveredVia": "CTVC-2026-06-22",
+      "criticReason": "Storage sector, €23M Series A, credible lead (BNP Paribas), distinct from existing watchlist entries.",
+      "criticConfidence": 0.92,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Series A $23M led by BNP Paribas"
+        }
+      ]
+    },
+    {
+      "id": "exponent-energy",
+      "name": "Exponent Energy",
+      "sector": "transport-ev",
+      "hq": "Bengaluru, India",
+      "status": "private",
+      "tech": "EV rapid-charging energy platform",
+      "round": {
+        "type": "Series B",
+        "amount": 21,
+        "date": "2026-06",
+        "lead": "360 One Asset Management"
+      },
+      "cindyVCBackers": [
+        "TDK Ventures"
+      ],
+      "source": "https://www.ctvc.co/the-ipo-boom-is-back-baby-300/",
+      "discoveredVia": "CTVC-2026-06-22",
+      "criticReason": "EV rapid-charging infrastructure is core transport-EV decarbonization; $21M Series B with credible deep-tech VCs (Eight Roads, TDK Ventures); no duplicate on watchlist.",
+      "criticConfidence": 0.88,
+      "leadership": {
+        "ceo": null,
+        "cofounders": [],
+        "board": [],
+        "introPaths": []
+      },
+      "recentNews": [
+        {
+          "date": "2026-06",
+          "text": "Auto-added from CTVC: Series B $21M led by 360 One Asset Management"
         }
       ]
     }
